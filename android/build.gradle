@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.4.2'
     }
 }
 
@@ -16,10 +16,15 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
     }
 }
 
 apply plugin: 'com.android.library'
+
+dependencies {
+    implementation group: 'com.zopim.android', name: 'sdk', version: '1.4.5'
+}
 
 android {
     compileSdkVersion 28
