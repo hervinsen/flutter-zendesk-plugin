@@ -1,5 +1,7 @@
 #import "ZendeskFlutterPlugin.h"
 
+#import <ZDCChat/ZDCChat.h>
+
 @implementation ZendeskFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
@@ -10,8 +12,20 @@
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([@"getPlatformVersion" isEqualToString:call.method]) {
+  if ([@"init" isEqualToString:call.method]) {
+    [ZDCChat initializeWithAccountKey:call.arguments[@"accountKey"]];
+    result(@(true));
+  } else if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  } else if ([@"startChat" isEqualToString:call.method]) {
+    NSString *name = call.arguments[@"visitorName"];
+    [ZDCChat updateVisitor:^(ZDCVisitorInfo *user) {
+      if (![name isKindOfClass:[NSNull class]]) {
+              user.name = name;
+          }
+    }];
+    [ZDCChat startChat:nil];
+    result(@(true));
   } else {
     result(FlutterMethodNotImplemented);
   }
