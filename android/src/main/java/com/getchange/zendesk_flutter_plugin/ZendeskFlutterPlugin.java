@@ -78,6 +78,22 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.success(null);
         }
         break;
+      case "updateUser":
+        if (config == null) {
+          result.error("NOT_INITIALIZED", null, null);
+        } else {
+          String visitorName = call.argument("visitorName");
+          String visitorEmail = call.argument("visitorEmail");
+          String visitorPhone = call.argument("visitorPhone");
+
+          VisitorInfo visitorInfo = new VisitorInfo.Builder()
+            .name(!TextUtils.isEmpty(visitorName) ? visitorName : this.visitorInfo.getName())
+            .email(!TextUtils.isEmpty(visitorEmail) ? visitorEmail : this.visitorInfo.getEmail())
+            .phoneNumber(!TextUtils.isEmpty(visitorPhone) ? visitorPhone : this.visitorInfo.getPhoneNumber())
+            .build();
+
+          ZopimChat.setVisitorInfo(visitorInfo);
+        }
       default:
         result.notImplemented();
     }

@@ -17,6 +17,22 @@
     result(nil);
   } else if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  } else if ([@"updateUser" isEqualToString:call.method]) {
+    NSString *name = call.arguments[@"visitorName"];
+    NSString *email = call.arguments[@"visitorEmail"];
+    NSString *phoneNumber = call.arguments[@"visitorPhone"];
+    [ZDCChat updateVisitor:^(ZDCVisitorInfo *user) {
+      if (![name isKindOfClass:[NSNull class]]) {
+              user.name = name;
+      }
+      if (![email isKindOfClass:[NSNull class]]) {
+              user.email = email;
+      }
+      if (![phoneNumber isKindOfClass:[NSNull class]]) {
+              user.phone = phoneNumber;
+      }
+    }];
+    result(nil);
   } else if ([@"startChat" isEqualToString:call.method]) {
     NSString *name = call.arguments[@"visitorName"];
     NSString *email = call.arguments[@"visitorEmail"];
