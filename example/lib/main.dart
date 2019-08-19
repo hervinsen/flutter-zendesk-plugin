@@ -14,6 +14,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
+  // (so) That's a trial account key
+  String _zendeskAccountkey = 'qKizjx120DiKmJNDcGfrkGBVRlbSsEzX';
 
   @override
   void initState() {
@@ -33,7 +35,7 @@ class _MyAppState extends State<MyApp> {
 
     String chatStatus;
     try {
-      await ZendeskFlutterPlugin.init('qwertyuiopasdfghjklzxcvbnm', visitorName: 'Test User');
+      await ZendeskFlutterPlugin.init(_zendeskAccountkey, visitorName: 'Test User');
       chatStatus = 'INITIALIZED';
     } on PlatformException {
       chatStatus = 'Failed to initialize.';

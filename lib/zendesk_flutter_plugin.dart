@@ -10,16 +10,20 @@ class ZendeskFlutterPlugin {
     return version;
   }
 
-  static Future<void> init(String accountKey, {String visitorName}) async {
+  static Future<void> init(String accountKey, {String visitorName, String visitorEmail, String visitorPhone}) async {
     await _channel.invokeMethod('init', <String, dynamic>{
       'accountKey': accountKey,
       'visitorName': visitorName,
+      'visitorEmail': visitorEmail,
+      'visitorPhone': visitorPhone
     });
   }
 
-  static Future<void> startChat({String visitorName}) async {
+  static Future<void> startChat({String visitorName, String visitorEmail, String visitorPhone}) async {
     await _channel.invokeMethod('startChat', <String, dynamic>{
       'visitorName': visitorName,
+      'visitorEmail': visitorEmail,
+      'visitorPhone': visitorPhone
     });
   }
 }

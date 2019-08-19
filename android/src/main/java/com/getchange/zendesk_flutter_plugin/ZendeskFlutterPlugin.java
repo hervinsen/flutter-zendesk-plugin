@@ -20,7 +20,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   private Activity context;
   private MethodChannel methodChannel;
   private ZopimChat.DefaultConfig config = null;
-  private String visitorName = null;
+  private VisitorInfo visitorInfo = null;
 
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "zendesk_flutter_plugin");
@@ -41,7 +41,11 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         break;
       case "init":
         if (config == null) {
-          this.visitorName = call.argument("visitorName");
+          this.visitorInfo = new VisitorInfo.Builder()
+              .name((String)call.argument("visitorName"))
+              .email((String)call.argument("visitorEmail"))
+              .phoneNumber((String)call.argument("visitorPhone"))
+              .build();
           final String accountKey = call.argument("accountKey");
           try {
             config = ZopimChat.init(accountKey);
@@ -49,7 +53,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
             result.error("UNABLE_TO_INITIALIZE_CHAT", e.getMessage(), e);
             break;
           }
-          Log.d(TAG, "Init: accountKey=" +accountKey + " visitorName=" + visitorName);
+          Log.d(TAG, "Init: accountKey=" +accountKey + " visitorName=" + visitorInfo.getName());
         }
         result.success(null);
         break;
@@ -58,15 +62,18 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.error("NOT_INITIALIZED", null, null);
         } else {
           String visitorName = call.argument("visitorName");
-          if (TextUtils.isEmpty(visitorName)) {
-            visitorName = this.visitorName;
-          }
-          if (!TextUtils.isEmpty(visitorName)) {
-            ZopimChat.setVisitorInfo(new VisitorInfo.Builder()
-                .name(visitorName)
-                .build());
-          }
-          Log.d(TAG, "StartChat: visitorName=" + visitorName);
+          String visitorEmail = call.argument("visitorEmail");
+          String visitorPhone = call.argument("visitorPhone");
+
+          VisitorInfo visitorInfo = new VisitorInfo.Builder()
+              .name(!TextUtils.isEmpty(visitorName) ? visitorName : this.visitorInfo.getName())
+              .email(!TextUtils.isEmpty(visitorEmail) ? visitorEmail : this.visitorInfo.getEmail())
+              .phoneNumber(!TextUtils.isEmpty(visitorPhone) ? visitorPhone : this.visitorInfo.getPhoneNumber())
+              .build();
+
+          ZopimChat.setVisitorInfo(visitorInfo);
+
+          Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName());
           context.startActivity(new Intent(context, ZopimChatActivity.class));
           result.success(null);
         }
