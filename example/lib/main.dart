@@ -68,7 +68,8 @@ class _MyAppState extends State<MyApp> {
               Text('Chat status: $_chatStatus'),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin.startChat(visitorName: 'TEST VISITOR');
+                  await ZendeskFlutterPlugin.updateUser(visitorName: 'Test Visitor Name');
+                  await ZendeskFlutterPlugin.startChat(visitorName: 'Test Visitor Name');
                 },
                 child: Text("Start Chat"),
               ),

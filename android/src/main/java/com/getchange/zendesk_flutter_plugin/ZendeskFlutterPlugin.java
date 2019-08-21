@@ -92,7 +92,9 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
             .phoneNumber(!TextUtils.isEmpty(visitorPhone) ? visitorPhone : this.visitorInfo.getPhoneNumber())
             .build();
 
+          Log.d(TAG, "UpdateUser: visitorName=" + visitorInfo.getName());
           ZopimChat.setVisitorInfo(visitorInfo);
+          result.success(null);
         }
       default:
         result.notImplemented();
