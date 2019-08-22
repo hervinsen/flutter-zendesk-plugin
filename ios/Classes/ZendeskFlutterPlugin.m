@@ -1,6 +1,9 @@
 #import "ZendeskFlutterPlugin.h"
+#import "ChatStyling.h"
+#import "ViewController.h"
 
 #import <ZDCChat/ZDCChat.h>
+
 
 @implementation ZendeskFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -13,6 +16,10 @@
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"init" isEqualToString:call.method]) {
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.2431f green:0.8588f blue:0.7098f alpha:1]];
+    // [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
+    [ChatStyling applyStyling];
     [ZDCChat initializeWithAccountKey:call.arguments[@"accountKey"]];
     result(nil);
   } else if ([@"getPlatformVersion" isEqualToString:call.method]) {
@@ -48,7 +55,10 @@
               user.phone = phoneNumber;
           }
     }];
-    [ZDCChat startChat:nil];
+    [ZDCChat startChat:^(ZDCConfig *config) {
+      config.preChatDataRequirements.department = ZDCPreChatDataRequiredEditable;
+      config.preChatDataRequirements.message = ZDCPreChatDataRequired;
+    }];
     result(nil);
   } else {
     result(FlutterMethodNotImplemented);

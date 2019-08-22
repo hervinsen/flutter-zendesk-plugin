@@ -5,4 +5,5 @@
     <string name="pre_chat_departments_hint">Select a topic</string>
     <string name="pre_chat_message_hint">Message</string>
     <string name="pre_chat_menu_next_button">Chat with us</string>
+    <string name="chat_activity_title">Change Support</string>
 </resources>
