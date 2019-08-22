@@ -8,11 +8,14 @@ import android.util.Log;
 import com.zopim.android.sdk.api.ZopimChat;
 import com.zopim.android.sdk.model.VisitorInfo;
 import com.zopim.android.sdk.prechat.ZopimChatActivity;
+import com.zopim.android.sdk.prechat.PreChatForm;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import com.zopim.android.sdk.prechat.ZopimPreChatFragment;
+
 
 public class ZendeskFlutterPlugin implements MethodCallHandler {
   private static final String TAG = "ZendeskFlutterPlugin";
@@ -73,8 +76,14 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
 
           ZopimChat.setVisitorInfo(visitorInfo);
 
+          PreChatForm preChatConfig = new PreChatForm.Builder()
+              .department(PreChatForm.Field.REQUIRED_EDITABLE)
+              .message(PreChatForm.Field.REQUIRED_EDITABLE)
+              .build();
+
+          ZopimChat.SessionConfig config = new ZopimChat.SessionConfig().preChatForm(preChatConfig);
           Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName());
-          context.startActivity(new Intent(context, ZopimChatActivity.class));
+          ZopimChatActivity.startActivity(context, config);
           result.success(null);
         }
         break;
