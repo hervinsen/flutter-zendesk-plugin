@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Chat Sample</string>
+    <string name="chat_fragment_title">Chat (fragment)</string>
+    <string name="button_no_config">Chat (no config)</string>
+
+</resources>

@@ -14,7 +14,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  // (so) That's a trial account key
   String _zendeskAccountkey = '';
 
   @override
