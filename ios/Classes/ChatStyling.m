@@ -6,7 +6,7 @@
 {
     UIEdgeInsets insets;
 
-    //Style of the pre-chat form
+
     insets = UIEdgeInsetsMake(10.0f, 15.0f, 0.0f, 15.0f);
     [[ZDCFormCellDepartment appearance] setTextFrameInsets:[NSValue valueWithUIEdgeInsets:insets]];
     insets = UIEdgeInsetsMake(5.0f, 15.0f, 5.0f, 15.0f);
