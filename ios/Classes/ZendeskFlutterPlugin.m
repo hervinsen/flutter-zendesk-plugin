@@ -18,7 +18,6 @@
   if ([@"init" isEqualToString:call.method]) {
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.2431f green:0.8588f blue:0.7098f alpha:1]];
-    // [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     [ChatStyling applyStyling];
     [ZDCChat initializeWithAccountKey:call.arguments[@"accountKey"]];
     result(nil);
