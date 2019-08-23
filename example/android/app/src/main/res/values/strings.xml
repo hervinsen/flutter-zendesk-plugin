@@ -6,4 +6,9 @@
     <string name="pre_chat_message_hint">Message</string>
     <string name="pre_chat_menu_next_button">Chat with us</string>
     <string name="chat_activity_title">Change Support</string>
+    <string name="pre_chat_departments_error_message">Topic is required</string>
+    <string name="pre_chat_departments_error_hint">Please select a topic</string>
+    <string name="no_agents_title">No changemaker agent available</string>
+    <string name="no_agents_message">Sorry, we aren\'t online at the moment. Leave a message and we\'ll get back to you ;)</string>
+    <string name="offline_message_button">Leave a message</string>
 </resources>
