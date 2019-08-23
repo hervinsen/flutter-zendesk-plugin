@@ -42,7 +42,7 @@
 
     [[ZDCChatUI appearance] setChatBackgroundImage:@"ChangeLogo"];
     [[ZDCChatUI appearance] setBackChatButtonImage:@"ChangeLogo"];
-    
+    [UIButton appearanceWhenContainedIn:[ZDCLoadingErrorView class], nil].alpha = 0;
     [[ZDCOfflineMessageView appearance] setTintColor:[UIColor colorWithRed:0.2431f green:0.8588f blue:0.7098f alpha:1]];
     [[ZDCLoadingErrorView appearance] setButtonBackgroundColor:[UIColor colorWithRed:0.2431f green:0.8588f blue:0.7098f alpha:1]];
     [[ZDCLoadingErrorView appearance] setIconImage:@"ChangeLogo"];
