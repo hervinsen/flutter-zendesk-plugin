@@ -7,6 +7,4 @@
 @property (nonatomic, assign) BOOL modal;
 @property (nonatomic, assign) BOOL nested;
 
-- (UIButton*) buildButtonWithFrame:(CGRect)frame andTitle:(NSString*)title;
-
 @end

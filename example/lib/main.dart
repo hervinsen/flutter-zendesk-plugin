@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  String _zendeskAccountkey = '';
+  String _zendeskAccountkey = '2a4ijImfXbSkhZAUaUowwsKJZ7248PpL';
 
   @override
   void initState() {
