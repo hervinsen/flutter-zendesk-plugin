@@ -4,4 +4,10 @@
         <!-- Show a splash screen on the activity. Automatically removed when
              Flutter draws its first frame -->
     </style>
+
+    <style name="RequestsTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">#44BB44</item>
+        <item name="colorPrimaryDark">#448844</item>
+        <item name="colorAccent">#DDDD00</item>
+    </style>
 </resources>
