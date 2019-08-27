@@ -2,65 +2,249 @@
 #import "ChatStyling.h"
 #import "ViewController.h"
 
-#import <ZDCChat/ZDCChat.h>
+@implementation EventChannelStreamHandler
 
+- (void) send:(NSObject*)event {
+  if (self.eventSink) {
+    self.eventSink(event);
+  }
+}
+
+- (FlutterError* _Nullable)onListenWithArguments:(id _Nullable)arguments
+                                       eventSink:(FlutterEventSink)events {
+  self.eventSink = events;
+  return nil;
+}
+
+- (FlutterError* _Nullable)onCancelWithArguments:(id _Nullable)arguments {
+  _eventSink = nil;
+  return nil;
+}
+
+@end
 
 @implementation ZendeskFlutterPlugin
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"zendesk_flutter_plugin"
-            binaryMessenger:[registrar messenger]];
+  FlutterMethodChannel* callsChannel = [FlutterMethodChannel
+      methodChannelWithName:@"plugins.flutter.zendesk_chat_api/calls"
+      binaryMessenger:[registrar messenger]];
+
+  FlutterEventChannel* connectionStatusEventsChannel = [FlutterEventChannel
+      eventChannelWithName:@"plugins.flutter.zendesk_chat_api/connection_status_events"
+      binaryMessenger:[registrar messenger]];
+
+  FlutterEventChannel* accountStatusEventsChannel = [FlutterEventChannel
+      eventChannelWithName:@"plugins.flutter.zendesk_chat_api/account_status_events"
+      binaryMessenger:[registrar messenger]];
+
+  FlutterEventChannel* agentEventsChannel = [FlutterEventChannel
+      eventChannelWithName:@"plugins.flutter.zendesk_chat_api/agent_events"
+      binaryMessenger:[registrar messenger]];
+      
+  FlutterEventChannel* chatItemsEventsChannel = [FlutterEventChannel
+      eventChannelWithName:@"plugins.flutter.zendesk_chat_api/chat_items_events"
+      binaryMessenger:[registrar messenger]];
+
   ZendeskFlutterPlugin* instance = [[ZendeskFlutterPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+  
+  instance.connectionStreamHandler = [EventChannelStreamHandler new];
+  instance.accountStreamHandler = [EventChannelStreamHandler new];
+  instance.agentsStreamHandler = [EventChannelStreamHandler new];
+  instance.chatItemsStreamHandler = [EventChannelStreamHandler new];
+  
+  [registrar addMethodCallDelegate:instance channel:callsChannel];
+  [connectionStatusEventsChannel setStreamHandler:instance.connectionStreamHandler];
+  [accountStatusEventsChannel setStreamHandler:instance.accountStreamHandler];
+  [agentEventsChannel setStreamHandler:instance.agentsStreamHandler];
+  [chatItemsEventsChannel setStreamHandler:instance.chatItemsStreamHandler];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([@"init" isEqualToString:call.method]) {
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.2431f green:0.8588f blue:0.7098f alpha:1]];
-    [ChatStyling applyStyling];
-    [ZDCChat initializeWithAccountKey:call.arguments[@"accountKey"]];
-    result(nil);
-  } else if ([@"getPlatformVersion" isEqualToString:call.method]) {
+  if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
-  } else if ([@"updateUser" isEqualToString:call.method]) {
-    NSString *name = call.arguments[@"visitorName"];
-    NSString *email = call.arguments[@"visitorEmail"];
-    NSString *phoneNumber = call.arguments[@"visitorPhone"];
-    [ZDCChat updateVisitor:^(ZDCVisitorInfo *user) {
-      if (![name isKindOfClass:[NSNull class]]) {
-              user.name = name;
-      }
-      if (![email isKindOfClass:[NSNull class]]) {
-              user.email = email;
-      }
-      if (![phoneNumber isKindOfClass:[NSNull class]]) {
-              user.phone = phoneNumber;
-      }
-    }];
+  } else if ([@"init" isEqualToString:call.method]) {
+    self.accountKey = call.arguments[@"accountKey"];
     result(nil);
   } else if ([@"startChat" isEqualToString:call.method]) {
-    NSString *name = call.arguments[@"visitorName"];
-    NSString *email = call.arguments[@"visitorEmail"];
-    NSString *phoneNumber = call.arguments[@"visitorPhone"];
-    [ZDCChat updateVisitor:^(ZDCVisitorInfo *user) {
-      if (![name isKindOfClass:[NSNull class]]) {
-              user.name = name;
-          }
-      if (![email isKindOfClass:[NSNull class]]) {
-              user.email = email;
-          }
-      if (![phoneNumber isKindOfClass:[NSNull class]]) {
-              user.phone = phoneNumber;
-          }
-    }];
-    [ZDCChat startChat:^(ZDCConfig *config) {
-      config.preChatDataRequirements.department = ZDCPreChatDataRequiredEditable;
-      config.preChatDataRequirements.message = ZDCPreChatDataRequired;
-    }];
+    if (self.chatApi) {
+      result([FlutterError errorWithCode:@"CHAT_SESSION_ALREADY_OPEN" message:nil details:nil]);
+      return;
+    }
+    self.chatApi = [ZDCChatAPI instance];
+    
+    ZDCVisitorInfo *visitorInfo = [[ZDCVisitorInfo alloc] init];
+    visitorInfo.name = call.arguments[@"visitorName"];
+    visitorInfo.email = call.arguments[@"visitorEmail"];
+    visitorInfo.phone = call.arguments[@"visitorPhone"];
+    
+    self.chatApi.visitorInfo = visitorInfo;
+    
+    ZDCAPIConfig *chatConfig = [[ZDCAPIConfig alloc] init];
+    chatConfig.department = call.arguments[@"department"];
+    NSString *tags = call.arguments[@"tags"];
+    if ([tags length] != 0) {
+      chatConfig.tags = [tags componentsSeparatedByString:@","];
+    }
+    
+    [self.chatApi startChatWithAccountKey:self.accountKey config: chatConfig];
+    [self bindChatListeners];
+    result(nil);
+  } else if ([@"endChat" isEqualToString:call.method]) {
+    if (self.chatApi != nil) {
+      [self unbindChatListeners];
+      [self.chatApi endChat];
+      self.chatApi = nil;
+    }
+    result(nil);
+  } else if ([@"getDepartments" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    result([self toJson:self.chatApi.departments]);
+  } else if ([@"setDepartment" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    // Unable to set department for ongoing session
+    result(nil);
+  } else if ([@"sendMessage" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    [self.chatApi sendChatMessage:call.arguments[@"accountKey"]];
+    result(nil);
+  } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    [self.chatApi sendOfflineMessage:call.arguments[@"accountKey"] ];
     result(nil);
   } else {
     result(FlutterMethodNotImplemented);
+  }
+}
+
+- (void) bindChatListeners {
+  [self unbindChatListeners];
+  [self.chatApi addObserver:self forConnectionEvents:@selector(connectionStateUpdated)];
+  [self.chatApi addObserver:self forAgentEvents:@selector(agentsUpdated)];
+  [self.chatApi addObserver:self forAccountEvents:@selector(accountUpdated)];
+  [self.chatApi addObserver:self forChatLogEvents:@selector(chatLogUpdated)];
+}
+
+- (void) connectionStateUpdated {
+  NSString *value;
+  switch (self.chatApi.connectionStatus) {
+    case ZDCConnectionStatusConnecting:
+      value = @("CONNECTING");
+      break;
+    case ZDCConnectionStatusConnected:
+      value = @("CONNECTED");
+      break;
+    case ZDCConnectionStatusClosed:
+      value = @("CLOSED");
+      break;
+    case ZDCConnectionStatusDisconnected:
+      value = @("DISCONNECTED");
+      break;
+    case ZDCConnectionStatusNoConnection:
+      value = @("NO_CONNECTION");
+      break;
+    default:
+      value = @("UNKNOWN");
+      break;
+  }
+  [self.connectionStreamHandler send:value];
+}
+
+- (void) agentsUpdated {
+  [self.agentsStreamHandler send:[self toJson:self.chatApi.agents]];
+}
+
+- (void) accountUpdated {
+  [self.accountStreamHandler send:(self.chatApi.isAccountOnline ? @("ONLINE") : @("OFFLINE"))];
+}
+
+- (void) chatLogUpdated {
+  NSArray<ZDCChatEvent*> *chatLog = self.chatApi.livechatLog;
+  NSMutableArray* out = [[NSMutableArray alloc] initWithCapacity:[chatLog count]];
+  for (ZDCChatEvent* event in chatLog) {
+    NSMutableDictionary* chatItem = [[NSMutableDictionary alloc] init];
+    [chatItem setValue:event.eventId forKey:@"id"];
+    [chatItem setValue:event.timestamp forKey:@"timestamp"];
+    [chatItem setValue:event.nickname forKey:@"nick"];
+    [chatItem setValue:event.displayName forKey:@"display_name"];
+    [chatItem setValue:event.message forKey:@"msg"];
+    [chatItem setValue:[self chatEventTypeToString:event.type] forKey:@"type"];
+    [chatItem setValue:[[NSNumber alloc] initWithBool:event.verified] forKey:@"verified"];
+    if ([event.options count] > 0) {
+      [chatItem setValue:event.options forKey:@"options"];
+      [chatItem setValue:[[NSNumber alloc] initWithLong:event.selectedOptionIndex] forKey:@"selectedOptionIndex"];
+    }
+    if (event.attachment != nil) {
+      [chatItem setValue:[self attachmentToDictionary:event.attachment] forKey:@"attachment"];
+    }
+    [out addObject:chatItem];
+  }
+  [self.chatItemsStreamHandler send:[self toJson:out]];
+}
+
+- (void) unbindChatListeners {
+  [self.chatApi removeObserverForConnectionEvents:self];
+  [self.chatApi removeObserverForAgentEvents:self];
+  [self.chatApi removeObserverForAccountEvents:self];
+  [self.chatApi removeObserverForConnectionEvents:self];
+}
+
+- (NSString*) chatEventTypeToString:(ZDCChatEventType)type {
+  switch (type) {
+    case ZDCChatEventTypeMemberJoin:
+      return @"chat.memberjoin";
+    case ZDCChatEventTypeMemberLeave:
+      return @"chat.memberleave";
+    case ZDCChatEventTypeSystemMessage:
+      return @"chat.systemmsg";
+    case ZDCChatEventTypeTriggerMessage:
+      return @"chat.triggermsg";
+    case ZDCChatEventTypeAgentMessage:
+    case ZDCChatEventTypeVisitorMessage:
+      return @"chat.msg";
+    case ZDCChatEventTypeRating:
+      return @"chat.request.rating";
+      
+    default:
+      return @"UNKNOWN";
+  }
+}
+
+- (NSDictionary*) attachmentToDictionary:(ZDCChatAttachment*)attachment {
+  if (attachment == nil) {
+    return nil;
+  }
+  NSMutableDictionary* out = [[NSMutableDictionary alloc] init];
+  [out setValue:attachment.url forKey:@"url"];
+  [out setValue:attachment.thumbnailURL forKey:@"thumbnail_url"];
+  [out setValue:attachment.fileSize forKey:@"size"];
+  [out setValue:attachment.mimeType forKey:@"mime_type"];
+  [out setValue:attachment.fileName forKey:@"name"];
+  return out;
+}
+
+- (NSString*) toJson:(NSObject*)object {
+  NSError *error = nil;
+  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object options:0 error:&error];
+  if (error != nil) {
+    NSLog(@("An json serialization error happened: %@"), error);
+    return nil;
+  } else if ([jsonData length] == 0) {
+    return nil;
+  } else {
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
   }
 }
 
