@@ -4,17 +4,29 @@ import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-
+import com.zendesk.service.ErrorResponse;
+import com.zendesk.service.ZendeskCallback;
+import com.zendesk.util.StringUtils;
 import com.zopim.android.sdk.api.ZopimChat;
 import com.zopim.android.sdk.model.VisitorInfo;
-import com.zopim.android.sdk.prechat.ZopimChatActivity;
 import com.zopim.android.sdk.prechat.PreChatForm;
+import com.zopim.android.sdk.prechat.ZopimChatActivity;
+import com.zopim.android.sdk.prechat.ZopimPreChatFragment;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
-import com.zopim.android.sdk.prechat.ZopimPreChatFragment;
+import zendesk.core.UserProvider;
+import zendesk.core.Zendesk;
+import zendesk.support.guide.HelpCenterActivity;
+import zendesk.support.request.RequestActivity;
+import zendesk.support.requestlist.RequestListActivity;
+import zendesk.support.Support;
+import zendesk.core.AnonymousIdentity;
+
+
+
 
 
 public class ZendeskFlutterPlugin implements MethodCallHandler {
@@ -60,6 +72,27 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         }
         result.success(null);
         break;
+      case "initSupport":
+        if (config == null) {
+          final String zendeskUrl = call.argument("zendeskUrl");
+          final String appId = call.argument("appId");
+          final String clientId = call.argument("clientId");
+          try {
+            Zendesk.INSTANCE.init(context, zendeskUrl,
+            appId,
+            clientId);
+            Zendesk.INSTANCE.setIdentity(
+              new AnonymousIdentity.Builder().build()
+            );
+            Support.INSTANCE.init(Zendesk.INSTANCE);
+          }
+          catch (Exception e) {
+            result.error("UNABLE_TO_INITIALIZE_CHAT", e.getMessage(), e);
+            break;
+          }
+          Log.d(TAG, "InitSupport");
+        }
+        result.success(null);
       case "startChat":
         if (config == null) {
           result.error("NOT_INITIALIZED", null, null);
@@ -87,6 +120,22 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.success(null);
         }
         break;
+      case "startRequestSupport":
+        if(config == null) {
+          result.error("NOT INITIALIZED", null, null);
+        } else {
+          RequestActivity.builder()
+            .show(context);
+          result.success(null);
+        }
+      case "startListRequestSupport":
+        if (config == null) { 
+          result.error("NOT INITIALIZED", null, null);
+        } else {
+          RequestListActivity.builder()
+            .show(context);
+          result.success(null);
+        }
       case "updateUser":
         if (config == null) {
           result.error("NOT_INITIALIZED", null, null);

@@ -15,6 +15,10 @@ class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
   String _zendeskAccountkey = '';
+  String _supportStatus = 'Unitialized';
+  String _zendeskUrl = 'https://getchange.zendesk.com';
+  String _appId = '5e7a4d82910fc81dfac7870d65fc79fb31cf4cf951ba256e';
+  String _clientId = 'mobile_sdk_client_efd3d8a5cb8d67f84fd4';
 
   @override
   void initState() {
@@ -32,10 +36,20 @@ class _MyAppState extends State<MyApp> {
       platformVersion = 'Failed to get platform version.';
     }
 
+    String supportStatus;
+    try{
+      await ZendeskFlutterPlugin.initSupport(_zendeskUrl, _appId, _clientId);
+      supportStatus = 'INITIALIZED';
+
+    } on PlatformException {
+      supportStatus = 'Failed to initialize';
+    }
+
     String chatStatus;
     try {
       await ZendeskFlutterPlugin.init(_zendeskAccountkey, visitorName: 'Test User');
       chatStatus = 'INITIALIZED';
+
     } on PlatformException {
       chatStatus = 'Failed to initialize.';
     }
@@ -48,6 +62,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
       _chatStatus = chatStatus;
+      _supportStatus = supportStatus;
     });
   }
 
@@ -72,6 +87,19 @@ class _MyAppState extends State<MyApp> {
                 },
                 child: Text("Start Chat"),
               ),
+              Text('Support Status: $_supportStatus'),
+              RaisedButton(
+                onPressed: () async {
+                  await ZendeskFlutterPlugin.startRequestSupport();
+                },
+                child: Text("Start support"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await ZendeskFlutterPlugin.startListRequestSupport();
+                },
+                child: Text("Start list request support"),
+              )
             ],
           )
         ),
