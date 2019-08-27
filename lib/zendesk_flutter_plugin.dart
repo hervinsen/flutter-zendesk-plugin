@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'dart:io' show Platform;
 import 'package:flutter/services.dart';
 import 'chat_models.dart';
 
@@ -107,7 +108,13 @@ class ZendeskFlutterPlugin {
     if (_chatItemsEventsStream == null) {
       _chatItemsEventsStream = _chatItemsEventsChannel
           .receiveBroadcastStream()
-          .map((dynamic event) => ChatItem.parseChatItemsJson(event));
+          .map((dynamic event) {
+            if (Platform.isAndroid) {
+              return ChatItem.parseChatItemsJsonForAndroid(event);
+            } else if (Platform.isIOS) {
+              return ChatItem.parseChatItemsJsonForIOS(event);
+            }
+          });
     }
     return _chatItemsEventsStream;
   }
