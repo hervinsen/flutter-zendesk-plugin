@@ -16,9 +16,9 @@ class _MyAppState extends State<MyApp> {
   String _chatStatus = 'Uninitialized';
   String _zendeskAccountkey = '';
   String _supportStatus = 'Unitialized';
-  String _zendeskUrl = 'https://getchange.zendesk.com';
-  String _appId = '5e7a4d82910fc81dfac7870d65fc79fb31cf4cf951ba256e';
-  String _clientId = 'mobile_sdk_client_efd3d8a5cb8d67f84fd4';
+  String _zendeskUrl = 'https://.zendesk.com';
+  String _appId = '';
+  String _clientId = '';
 
   @override
   void initState() {
