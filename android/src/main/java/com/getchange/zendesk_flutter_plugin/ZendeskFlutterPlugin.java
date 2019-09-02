@@ -1,161 +1,268 @@
 package com.getchange.zendesk_flutter_plugin;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import com.zendesk.service.ErrorResponse;
-import com.zendesk.service.ZendeskCallback;
-import com.zendesk.util.StringUtils;
-import com.zopim.android.sdk.api.ZopimChat;
+
+import com.google.gson.GsonBuilder;
+import com.zopim.android.sdk.api.ChatApi;
+import com.zopim.android.sdk.api.ZopimChatApi;
+import com.zopim.android.sdk.data.DataSource;
+import com.zopim.android.sdk.data.observers.AccountObserver;
+import com.zopim.android.sdk.data.observers.AgentsObserver;
+import com.zopim.android.sdk.data.observers.ChatLogObserver;
+import com.zopim.android.sdk.data.observers.ConnectionObserver;
+import com.zopim.android.sdk.model.Account;
+import com.zopim.android.sdk.model.Agent;
+import com.zopim.android.sdk.model.ChatLog;
+import com.zopim.android.sdk.model.Connection;
+import com.zopim.android.sdk.model.Department;
 import com.zopim.android.sdk.model.VisitorInfo;
-import com.zopim.android.sdk.prechat.PreChatForm;
-import com.zopim.android.sdk.prechat.ZopimChatActivity;
-import com.zopim.android.sdk.prechat.ZopimPreChatFragment;
+
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-import zendesk.core.UserProvider;
-import zendesk.core.Zendesk;
-import zendesk.support.guide.HelpCenterActivity;
-import zendesk.support.request.RequestActivity;
-import zendesk.support.requestlist.RequestListActivity;
-import zendesk.support.Support;
-import zendesk.core.AnonymousIdentity;
+import io.flutter.plugin.common.PluginRegistry;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-
+import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES;
 
 
 public class ZendeskFlutterPlugin implements MethodCallHandler {
   private static final String TAG = "ZendeskFlutterPlugin";
 
-  private Activity context;
-  private MethodChannel methodChannel;
-  private ZopimChat.DefaultConfig config = null;
-  private VisitorInfo visitorInfo = null;
+  private Handler mainHandler = new Handler(Looper.getMainLooper());
+  private PluginRegistry.Registrar registrar;
+  private ZopimChatApi.DefaultConfig config = null;
+  private ChatApi chatApi = null;
+  private DataSource datasource = null;
 
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "zendesk_flutter_plugin");
-    channel.setMethodCallHandler(new ZendeskFlutterPlugin(registrar.activity(), channel));
+  private ZendeskFlutterPlugin.EventChannelStreamHandler connectionStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
+  private ZendeskFlutterPlugin.EventChannelStreamHandler accountStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
+  private ZendeskFlutterPlugin.EventChannelStreamHandler agentsStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
+  private ZendeskFlutterPlugin.EventChannelStreamHandler chatItemsStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
+
+  private static class EventChannelStreamHandler implements EventChannel.StreamHandler {
+    private EventChannel.EventSink eventSink = null;
+
+    public void success(Object event) {
+      if (eventSink != null) {
+        eventSink.success(event);
+      }
+    }
+
+    public void error(String errorCode, String errorMessage, Object errorDetails) {
+      if (eventSink != null) {
+        eventSink.error(errorCode, errorMessage, errorDetails);
+      }
+    }
+
+    @Override
+    public void onListen(Object o, EventChannel.EventSink eventSink) {
+      this.eventSink = eventSink;
+    }
+
+    @Override
+    public void onCancel(Object o) {
+      this.eventSink = null;
+    }
   }
 
-  private ZendeskFlutterPlugin(Activity activity, MethodChannel methodChannel) {
-    this.context = activity;
-    this.methodChannel = methodChannel;
-    this.methodChannel.setMethodCallHandler(this);
+  public static void registerWith(PluginRegistry.Registrar registrar) {
+    if (!(registrar.activity() instanceof FragmentActivity)) {
+      throw new IllegalArgumentException("FRAGMENT_ACTIVITY_REQUIRED. Add dependency \"implementation 'com.android.support:support-v4:28.0.0'\" in build.gradle and extend your MainActivity from FlutterFragmentActivity");
+    }
+    final MethodChannel callsChannel = new MethodChannel(registrar.messenger(), "plugins.flutter.zendesk_chat_api/calls");
+    final EventChannel connectionStatusEventsChannel = new EventChannel(registrar.messenger(), "plugins.flutter.zendesk_chat_api/connection_status_events");
+    final EventChannel accountStatusEventsChannel = new EventChannel(registrar.messenger(),"plugins.flutter.zendesk_chat_api/account_status_events");
+    final EventChannel agentEventsChannel = new EventChannel(registrar.messenger(),"plugins.flutter.zendesk_chat_api/agent_events");
+    final EventChannel chatItemsEventsChannel = new EventChannel(registrar.messenger(),"plugins.flutter.zendesk_chat_api/chat_items_events");
+
+    ZendeskFlutterPlugin plugin = new ZendeskFlutterPlugin(registrar);
+
+    callsChannel.setMethodCallHandler(plugin);
+
+    connectionStatusEventsChannel.setStreamHandler(plugin.connectionStreamHandler);
+    accountStatusEventsChannel.setStreamHandler(plugin.accountStreamHandler);
+    agentEventsChannel.setStreamHandler(plugin.agentsStreamHandler);
+    chatItemsEventsChannel.setStreamHandler(plugin.chatItemsStreamHandler);
+  }
+
+  private ZendeskFlutterPlugin(PluginRegistry.Registrar registrar) {
+    this.registrar = registrar;
   }
 
   @Override
-  public void onMethodCall(MethodCall call, Result result) {
+  public void onMethodCall(MethodCall call, MethodChannel.Result result) {
     switch(call.method) {
       case "getPlatformVersion":
         result.success("Android " + android.os.Build.VERSION.RELEASE);
         break;
       case "init":
         if (config == null) {
-          this.visitorInfo = new VisitorInfo.Builder()
-              .name((String)call.argument("visitorName"))
-              .email((String)call.argument("visitorEmail"))
-              .phoneNumber((String)call.argument("visitorPhone"))
-              .build();
           final String accountKey = call.argument("accountKey");
           try {
-            config = ZopimChat.init(accountKey);
+            config = ZopimChatApi.init(accountKey);
           } catch (Exception e) {
-            result.error("UNABLE_TO_INITIALIZE_CHAT", e.getMessage(), e);
+            result.error("UNABLE_TO_INITIALIZE_CHAT_API", e.getMessage(), e);
             break;
           }
-          Log.d(TAG, "Init: accountKey=" +accountKey + " visitorName=" + visitorInfo.getName());
+          Log.d(TAG, "Init: accountKey=" +accountKey);
         }
         result.success(null);
         break;
-      case "initSupport":
-        if (config == null) {
-          final String zendeskUrl = call.argument("zendeskUrl");
-          final String appId = call.argument("appId");
-          final String clientId = call.argument("clientId");
-          try {
-            Zendesk.INSTANCE.init(context, zendeskUrl,
-            appId,
-            clientId);
-            Zendesk.INSTANCE.setIdentity(
-              new AnonymousIdentity.Builder().build()
-            );
-            Support.INSTANCE.init(Zendesk.INSTANCE);
-          }
-          catch (Exception e) {
-            result.error("UNABLE_TO_INITIALIZE_CHAT", e.getMessage(), e);
-            break;
-          }
-          Log.d(TAG, "InitSupport");
-        }
-        result.success(null);
       case "startChat":
         if (config == null) {
           result.error("NOT_INITIALIZED", null, null);
+        } else if (chatApi != null) {
+          result.error("CHAT_SESSION_ALREADY_OPEN", null, null);
         } else {
-          String visitorName = call.argument("visitorName");
-          String visitorEmail = call.argument("visitorEmail");
-          String visitorPhone = call.argument("visitorPhone");
-
           VisitorInfo visitorInfo = new VisitorInfo.Builder()
-              .name(!TextUtils.isEmpty(visitorName) ? visitorName : this.visitorInfo.getName())
-              .email(!TextUtils.isEmpty(visitorEmail) ? visitorEmail : this.visitorInfo.getEmail())
-              .phoneNumber(!TextUtils.isEmpty(visitorPhone) ? visitorPhone : this.visitorInfo.getPhoneNumber())
+              .name(call.argument("visitorName"))
+              .email(call.argument("visitorEmail"))
+              .phoneNumber(call.argument("visitorPhone"))
               .build();
 
-          ZopimChat.setVisitorInfo(visitorInfo);
+          ZopimChatApi.setVisitorInfo(visitorInfo);
 
-          PreChatForm preChatConfig = new PreChatForm.Builder()
-              .department(PreChatForm.Field.REQUIRED_EDITABLE)
-              .message(PreChatForm.Field.REQUIRED_EDITABLE)
-              .build();
+          String department = call.argument("department");
+          String tags = call.argument("tags");
 
-          ZopimChat.SessionConfig config = new ZopimChat.SessionConfig().preChatForm(preChatConfig);
+          ZopimChatApi.SessionConfig sessionConfig = new ZopimChatApi.SessionConfig();
+
+          if (!TextUtils.isEmpty(department)) {
+            sessionConfig.department(department);
+          }
+          if (!TextUtils.isEmpty(tags)) {
+            sessionConfig.tags(tags.split(","));
+          }
+
+          chatApi = sessionConfig.build((FragmentActivity)registrar.activity());
+          bindChatListeners();
+
           Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName());
-          ZopimChatActivity.startActivity(context, config);
           result.success(null);
         }
         break;
-      case "startRequestSupport":
-        if(config == null) {
-          result.error("NOT INITIALIZED", null, null);
+      case "endChat":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
         } else {
-          RequestActivity.builder()
-            .show(context);
+          unbindChatListeners();
+          chatApi.endChat();
+          chatApi = null;
+          Log.d(TAG, "endChat");
           result.success(null);
         }
-      case "startListRequestSupport":
-        if (config == null) { 
-          result.error("NOT INITIALIZED", null, null);
+        break;
+      case "getDepartments":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
         } else {
-          RequestListActivity.builder()
-            .show(context);
+          Map<String, Department> departments = ZopimChatApi.getDataSource().getDepartments();
+          Log.d(TAG, "getDepartments");
+          result.success(toJson(departments));
+        }
+        break;
+      case "setDepartment":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
+        } else {
+          String department = call.argument("department");
+          chatApi.setDepartment(department);
+          Log.d(TAG, "setDepartment: "+department);
           result.success(null);
         }
-      case "updateUser":
-        if (config == null) {
-          result.error("NOT_INITIALIZED", null, null);
+        break;
+      case "sendMessage":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
         } else {
-          String visitorName = call.argument("visitorName");
-          String visitorEmail = call.argument("visitorEmail");
-          String visitorPhone = call.argument("visitorPhone");
-
-          VisitorInfo visitorInfo = new VisitorInfo.Builder()
-            .name(!TextUtils.isEmpty(visitorName) ? visitorName : this.visitorInfo.getName())
-            .email(!TextUtils.isEmpty(visitorEmail) ? visitorEmail : this.visitorInfo.getEmail())
-            .phoneNumber(!TextUtils.isEmpty(visitorPhone) ? visitorPhone : this.visitorInfo.getPhoneNumber())
-            .build();
-
-          Log.d(TAG, "UpdateUser: visitorName=" + visitorInfo.getName());
-          ZopimChat.setVisitorInfo(visitorInfo);
+          String message = call.argument("message");
+          chatApi.send(message);
+          Log.d(TAG, "sendMessage: xxx");
           result.success(null);
         }
+        break;
+      case "sendOfflineMessage":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
+        } else {
+          Log.d(TAG, "sendOfflineMessage: xxx");
+          result.success(chatApi.sendOfflineMessage(call.argument("visitorName"),
+              call.argument("visitorEmail"),
+              call.argument("message")));
+        }
+        break;
       default:
         result.notImplemented();
     }
+  }
+
+  private void bindChatListeners() {
+    unbindChatListeners();
+
+    datasource = ZopimChatApi.getDataSource();
+    datasource.addConnectionObserver(new ConnectionObserver() {
+      @Override
+      protected void update(Connection connection) {
+        mainHandler.post(() -> {
+          //Log.d(TAG, "Connection status=" + connection.getStatus());
+          connectionStreamHandler.success(connection.getStatus().name());
+        });
+      }
+    }).trigger();
+
+    datasource.addAccountObserver(new AccountObserver() {
+      @Override
+      public void update(Account account) {
+        mainHandler.post(() -> {
+          //Log.d(TAG, "Account status=" + account.getStatus());
+          accountStreamHandler.success(account.getStatus() != null ? account.getStatus().getValue() : Account.Status.UNKNOWN.getValue());
+        });
+      }
+    }).trigger();
+
+    datasource.addAgentsObserver(new AgentsObserver() {
+      @Override
+      protected void update(Map<String, Agent> agents) {
+        mainHandler.post(() -> {
+          String json = toJson(agents);
+          //Log.d(TAG, "Agents: " + json);
+          agentsStreamHandler.success(json);
+        });
+      }
+    }).trigger();
+
+    datasource.addChatLogObserver(new ChatLogObserver() {
+      @Override
+      protected void update(LinkedHashMap<String, ChatLog> items) {
+        mainHandler.post(() -> {
+          String json = toJson(items);
+          //Log.d(TAG, "ChatLog: " + json);
+          chatItemsStreamHandler.success(json);
+        });
+      }
+    }).trigger();
+  }
+
+  private void unbindChatListeners() {
+    if (datasource != null) {
+      datasource.deleteObservers();
+      datasource = null;
+    }
+  }
+
+  private String toJson(Object object) {
+    return new GsonBuilder()
+        .setFieldNamingPolicy(LOWER_CASE_WITH_UNDERSCORES)
+        .create()
+        .toJson(object)
+        .replaceAll("\\$.+?\":", "\":");
   }
 }

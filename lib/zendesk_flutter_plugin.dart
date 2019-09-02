@@ -1,56 +1,114 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'chat_models.dart';
 
 class ZendeskFlutterPlugin {
-  static const MethodChannel _channel = const MethodChannel('zendesk_flutter_plugin');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
+  static ZendeskFlutterPlugin _instance;
+  static const MethodChannel _callsChannel = MethodChannel('plugins.flutter.zendesk_chat_api/calls');
+  static const EventChannel _connectionStatusEventsChannel = EventChannel('plugins.flutter.zendesk_chat_api/connection_status_events');
+  static const EventChannel _accountStatusEventsChannel = EventChannel('plugins.flutter.zendesk_chat_api/account_status_events');
+  static const EventChannel _agentEventsChannel = EventChannel('plugins.flutter.zendesk_chat_api/agent_events');
+  static const EventChannel _chatItemsEventsChannel = EventChannel('plugins.flutter.zendesk_chat_api/chat_items_events');
+
+  Stream<ConnectionStatus> _connectionStatusEventsStream;
+  Stream<AccountStatus> _accountStatusEventsStream;
+  Stream<List<Agent>> _agentEventsStream;
+  Stream<List<ChatItem>> _chatItemsEventsStream;
+
+  factory ZendeskFlutterPlugin() {
+    if (_instance == null) {
+      _instance = ZendeskFlutterPlugin._();
+    }
+    return _instance;
+  }
+
+  ZendeskFlutterPlugin._();
+
+  Future<String> get platformVersion async {
+    final String version = await _callsChannel.invokeMethod('getPlatformVersion');
     return version;
   }
 
-  static Future<void> init(String accountKey, {String visitorName, String visitorEmail, String visitorPhone}) async {
-    await _channel.invokeMethod('init', <String, dynamic>{
-      'accountKey': accountKey,
-      'visitorName': visitorName,
-      'visitorEmail': visitorEmail,
-      'visitorPhone': visitorPhone
+  Future<void> init(String accountKey) async {
+    await _callsChannel.invokeMethod('init', <String, dynamic> {
+      'accountKey': accountKey
     });
   }
 
-  static Future<void> updateUser({String visitorName, String visitorEmail, String visitorPhone}) async {
-    await _channel.invokeMethod('updateUser', <String, dynamic> {
+  Future<void> startChat(String visitorName, {String visitorEmail, String visitorPhone, String department, List<String> tags}) async {
+    return await _callsChannel.invokeMethod('startChat', <String, dynamic> {
       'visitorName': visitorName,
       'visitorEmail': visitorEmail,
       'visitorPhone': visitorPhone,
+      'department': department,
+      'tags': tags?.join(',')
     });
   }
 
-  static Future<void> initSupport(String zendeskUrl, String appId, String clientId) async {
-    await _channel.invokeMethod('initSupport', <String, dynamic> {
-      'zendeskUrl': zendeskUrl,
-      'appId': appId,
-      'clientId': clientId
+  Future<void> endChat() async {
+    return await _callsChannel.invokeMethod('endChat');
+  }
+
+  Future<List<Department>> getDepartments() async {
+    final dynamic json = await _callsChannel.invokeMethod('getDepartments');
+    return Department.parseDepartmentsJson(json);
+  }
+
+  Future<void> setDepartment(String department) async {
+    return await _callsChannel.invokeMethod('setDepartment', <String, dynamic> {
+      'department': department
     });
   }
 
-  static Future<void> startRequestSupport() async {
-    await _channel.invokeMethod('startRequestSupport', <String, dynamic> {
+  Future<void> sendMessage(String message) async {
+    return await _callsChannel.invokeMethod('sendMessage',  <String, dynamic> {
+      'message': message
     });
   }
 
-  static Future<void> startListRequestSupport() async {
-    await _channel.invokeMethod('startListRequestSupport', <String, dynamic> {
-
-    });
-  }
-
-  static Future<void> startChat({String visitorName, String visitorEmail, String visitorPhone}) async {
-    await _channel.invokeMethod('startChat', <String, dynamic>{
+  Future<bool> sendOfflineMessage(String visitorName, String visitorEmail, String message) async {
+    return await _callsChannel.invokeMethod('sendOfflineMessage', <String, dynamic> {
       'visitorName': visitorName,
       'visitorEmail': visitorEmail,
-      'visitorPhone': visitorPhone
+      'message': message
     });
+  }
+
+  Stream<ConnectionStatus> get onConnectionStatusChanged {
+    if (_connectionStatusEventsStream == null) {
+      _connectionStatusEventsStream = _connectionStatusEventsChannel
+          .receiveBroadcastStream()
+          .map((dynamic event) => toConnectionStatus(event));
+    }
+    return _connectionStatusEventsStream;
+  }
+
+  Stream<AccountStatus> get onAccountStatusChanged {
+    if (_accountStatusEventsStream == null) {
+      _accountStatusEventsStream = _accountStatusEventsChannel
+          .receiveBroadcastStream()
+          .map((dynamic event) => toAccountStatus(event));
+    }
+    return _accountStatusEventsStream;
+  }
+
+  Stream<List<Agent>> get onAgentsChanged {
+    if (_agentEventsStream == null) {
+      _agentEventsStream = _agentEventsChannel
+          .receiveBroadcastStream()
+          .map((dynamic event) => Agent.parseAgentsJson(event));
+    }
+    return _agentEventsStream;
+  }
+
+  Stream<List<ChatItem>> get onChatItemsChanged {
+    if (_chatItemsEventsStream == null) {
+      _chatItemsEventsStream = _chatItemsEventsChannel
+          .receiveBroadcastStream()
+          .map((dynamic event) => ChatItem.parseChatItemsJson(event));
+    }
+    return _chatItemsEventsStream;
   }
 }

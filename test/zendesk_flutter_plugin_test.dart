@@ -16,6 +16,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await ZendeskFlutterPlugin.platformVersion, '42');
+    expect(await ZendeskFlutterPlugin().platformVersion, '42');
   });
 }

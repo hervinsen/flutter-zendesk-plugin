@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
+import 'package:zendesk_flutter_plugin/chat_models.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,11 +15,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  String _zendeskAccountkey = '';
-  String _supportStatus = 'Unitialized';
-  String _zendeskUrl = 'https://.zendesk.com';
-  String _appId = '';
-  String _clientId = '';
+  String _zendeskAccountkey = '2a4ijImfXbSkhZAUaUowwsKJZ7248PpL';
+
+  final ZendeskFlutterPlugin _chatApi = ZendeskFlutterPlugin();
+
+  StreamSubscription<ConnectionStatus> _chatConnectivitySubscription;
+  StreamSubscription<AccountStatus> _chatAccountSubscription;
+  StreamSubscription<List<Agent>> _chatAgentsSubscription;
+  StreamSubscription<List<ChatItem>> _chatItemsSubscription;
 
   @override
   void initState() {
@@ -31,25 +35,20 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await ZendeskFlutterPlugin.platformVersion;
+      platformVersion = await _chatApi.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
 
-    String supportStatus;
-    try{
-      await ZendeskFlutterPlugin.initSupport(_zendeskUrl, _appId, _clientId);
-      supportStatus = 'INITIALIZED';
-
-    } on PlatformException {
-      supportStatus = 'Failed to initialize';
-    }
+    _chatConnectivitySubscription = _chatApi.onConnectionStatusChanged.listen(_chatConnectivityUpdated);
+    _chatAccountSubscription = _chatApi.onAccountStatusChanged.listen(_chatAccountUpdated);
+    _chatAgentsSubscription = _chatApi.onAgentsChanged.listen(_chatAgentsUpdated);
+    _chatItemsSubscription = _chatApi.onChatItemsChanged.listen(_chatItemsUpdated);
 
     String chatStatus;
     try {
-      await ZendeskFlutterPlugin.init(_zendeskAccountkey, visitorName: 'Test User');
+      await _chatApi.init(_zendeskAccountkey);
       chatStatus = 'INITIALIZED';
-
     } on PlatformException {
       chatStatus = 'Failed to initialize.';
     }
@@ -62,8 +61,33 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
       _chatStatus = chatStatus;
-      _supportStatus = supportStatus;
     });
+  }
+
+  @override
+  void dispose() {
+    _chatConnectivitySubscription.cancel();
+    _chatAccountSubscription.cancel();
+    _chatAgentsSubscription.cancel();
+    _chatItemsSubscription.cancel();
+    _chatApi.endChat();
+    super.dispose();
+  }
+
+  void _chatConnectivityUpdated(ConnectionStatus status) {
+    print('chatConnectivityUpdated: $status');
+  }
+
+  void _chatAccountUpdated(AccountStatus status) {
+    print('chatAccountUpdated: $status');
+  }
+
+  void _chatAgentsUpdated(List<Agent> agents) {
+    print('chatAgentsUpdated: $agents');
+  }
+
+  void _chatItemsUpdated(List<ChatItem> chatLog) {
+    print('chatItemsUpdated: $chatLog');
   }
 
   @override
@@ -82,24 +106,38 @@ class _MyAppState extends State<MyApp> {
               Text('Chat status: $_chatStatus'),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin.updateUser(visitorName: 'Test Visitor Name');
-                  await ZendeskFlutterPlugin.startChat(visitorName: 'Test Visitor Name');
+                  await ZendeskFlutterPlugin().startChat('Test Visitor Name');
                 },
                 child: Text("Start Chat"),
               ),
-              Text('Support Status: $_supportStatus'),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin.startRequestSupport();
+                  await ZendeskFlutterPlugin().getDepartments().then((List<Department> departments) {
+                    print(departments);
+                  }).catchError((e) {
+                    print(e);
+                  });
                 },
-                child: Text("Start support"),
+                child: Text("Get Departments"),
               ),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin.startListRequestSupport();
+                  await ZendeskFlutterPlugin().setDepartment('Card');
                 },
-                child: Text("Start list request support"),
-              )
+                child: Text("Set Card Department"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await ZendeskFlutterPlugin().sendMessage('Greeting from Visitor');
+                },
+                child: Text("Send Greeting Message"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await ZendeskFlutterPlugin().endChat();
+                },
+                child: Text("EndChat"),
+              ),
             ],
           )
         ),

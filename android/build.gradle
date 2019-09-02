@@ -23,8 +23,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 dependencies {
-    implementation group: 'com.zopim.android', name: 'sdk', version: '1.4.5'
-    implementation group: 'com.zendesk', name: 'support', version: '3.0.1'
+    implementation 'com.zopim.android:sdk:1.4.5'
 }
 
 android {
@@ -36,5 +35,9 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
