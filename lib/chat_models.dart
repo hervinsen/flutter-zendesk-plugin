@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io' show Platform;
 
 enum DepartmentStatus {
   UNKNOWN,
@@ -133,9 +134,24 @@ class Department extends AbstractModel {
 class Agent extends AbstractModel {
   Agent(String id, Map attributes) : super(id, attributes);
 
-  String get displayName { return attribute('display_name'); }
+  String get displayName {
+    if (Platform.isAndroid) {
+      return attribute('display_name');
+    } else if (Platform.isIOS) {
+      return attribute('displayName');
+    } else {
+      return null;
+    }
+  }
   bool get isTyping {return attribute('typing'); }
-  String get avatarUri {return attribute('avatar_path'); }
+
+  String get avatarUri {
+    if (Platform.isAndroid) {
+      return attribute('avatar_path');
+    } else if (Platform.isIOS) {
+      return attribute('avatarURL');
+    }
+  }
 
   static List<Agent> parseAgentsJson(String json) {
     var out = List<Agent>();
@@ -155,6 +171,7 @@ class Attachment extends AbstractModel {
   int get size { return attribute('size'); }
   String get type { return attribute('type'); }
   String get url { return attribute('url');}
+  String get thumbnailUrl { return attribute('thumbnail_url'); }
 }
 
 class ChatOption extends AbstractModel {
@@ -165,13 +182,15 @@ class ChatOption extends AbstractModel {
 }
 
 class ChatItem extends AbstractModel {
-  ChatItem(String id, Map attributes) : super(id, attributes);
+  ChatItem(String id, Map attrs) : super(id, attrs);
 
   DateTime get timestamp => DateTime.fromMillisecondsSinceEpoch(attribute('timestamp'), isUtc: false);
 
   ChatItemType get type => toChatItemType(attribute('type'));
 
   String get displayName => attribute('display_name');
+
+  String get message => attribute('msg');
 
   String get nick => attribute('nick');
 
@@ -180,7 +199,17 @@ class ChatItem extends AbstractModel {
     return (raw != null && raw is Map) ? Attachment(raw) : null;
   }
 
-  bool get unverified => attribute('unverified');
+  bool get unverified {
+    if (Platform.isAndroid) {
+      return attribute('unverified');
+    } else if (Platform.isIOS) {
+      int verified = attribute('verified');
+      return verified != null ? verified == 0 : null;
+    } else {
+      return null;
+    }
+  }
+
   bool get failed => attribute('failed');
 
   String get options => attribute('options');
@@ -197,11 +226,20 @@ class ChatItem extends AbstractModel {
 
   int get uploadProgress { return attribute('upload_progress');}
 
-  static List<ChatItem> parseChatItemsJson(String json) {
+  static List<ChatItem> parseChatItemsJsonForAndroid(String json) {
     var out = List<ChatItem>();
     print('parseChatItemsJson: \'$json\'');
     jsonDecode(json).forEach((key, value) {
       out.add(ChatItem(key, value));
+    });
+    return out;
+  }
+
+  static List<ChatItem> parseChatItemsJsonForIOS(String json) {
+    var out = List<ChatItem>();
+    print('parseChatItemsJson: \'$json\'');
+    jsonDecode(json).forEach((value) {
+      out.add(ChatItem(value['id'], value));
     });
     return out;
   }
