@@ -214,8 +214,6 @@ class ChatItem extends AbstractModel {
 
   String get options => attribute('options');
 
-  String get message => attribute('msg');
-
   List<ChatOption> get convertedOptions {
     List<dynamic> raw = attribute('converted_options');
     if (raw == null || raw.isEmpty) {
