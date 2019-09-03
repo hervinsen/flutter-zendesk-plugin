@@ -1,6 +1,4 @@
 #import "ZendeskFlutterPlugin.h"
-#import "ChatStyling.h"
-#import "ViewController.h"
 
 @implementation EventChannelStreamHandler
 
