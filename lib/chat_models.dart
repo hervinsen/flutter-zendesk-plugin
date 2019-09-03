@@ -1,13 +1,6 @@
 import 'dart:convert';
 import 'dart:io' show Platform;
 
-enum DepartmentStatus {
-  UNKNOWN,
-  ONLINE,
-  OFFLINE,
-  AWAY
-}
-
 enum ConnectionStatus {
   UNKNOWN,
   NO_CONNECTION,
@@ -28,23 +21,9 @@ enum ChatItemType {
   MEMBER_JOIN,
   MEMBER_LEAVE,
   MESSAGE,
+  SYSTEM_MESSAGE,
+  TRIGGER_MESSAGE,
   REQUEST_RATING,
-}
-
-DepartmentStatus toDepartmentStatus(String value) {
-  switch(value) {
-    case 'online':
-    case 'ONLINE':
-      return DepartmentStatus.ONLINE;
-    case 'offline':
-    case 'OFFLINE':
-      return DepartmentStatus.OFFLINE;
-    case 'away':
-    case 'AWAY':
-      return DepartmentStatus.AWAY;
-    default:
-      return DepartmentStatus.UNKNOWN;
-  }
 }
 
 ConnectionStatus toConnectionStatus(String value) {
@@ -107,27 +86,6 @@ class AbstractModel {
 
   dynamic attribute(String attrname) {
     return _attributes != null ? _attributes[attrname] : null;
-  }
-}
-
-class Department extends AbstractModel {
-  Department(String id, Map attributes) : super(id, attributes);
-
-  String get name {
-    return attribute('display_name');
-  }
-
-  DepartmentStatus get status {
-    return toDepartmentStatus(attribute('status'));
-  }
-
-  static List<Department> parseDepartmentsJson(String json) {
-    var out = List<Department>();
-    print('parseDepartmentsJson: \'$json\'');
-    jsonDecode(json).forEach((key, value) {
-      out.add(Department(key, value));
-    });
-    return out;
   }
 }
 
@@ -203,8 +161,8 @@ class ChatItem extends AbstractModel {
     if (Platform.isAndroid) {
       return attribute('unverified');
     } else if (Platform.isIOS) {
-      int verified = attribute('verified');
-      return verified != null ? verified == 0 : null;
+      bool verified = attribute('verified');
+      return verified != null ? !verified : null;
     } else {
       return null;
     }

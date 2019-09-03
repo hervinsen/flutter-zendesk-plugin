@@ -48,10 +48,10 @@
 
   ZendeskFlutterPlugin* instance = [[ZendeskFlutterPlugin alloc] init];
   
-  instance.connectionStreamHandler = [EventChannelStreamHandler new];
-  instance.accountStreamHandler = [EventChannelStreamHandler new];
-  instance.agentsStreamHandler = [EventChannelStreamHandler new];
-  instance.chatItemsStreamHandler = [EventChannelStreamHandler new];
+  instance.connectionStreamHandler = [[EventChannelStreamHandler alloc] init];
+  instance.accountStreamHandler = [[EventChannelStreamHandler alloc] init];
+  instance.agentsStreamHandler = [[EventChannelStreamHandler alloc] init];
+  instance.chatItemsStreamHandler = [[EventChannelStreamHandler alloc] init];
   
   [registrar addMethodCallDelegate:instance channel:callsChannel];
   [connectionStatusEventsChannel setStreamHandler:instance.connectionStreamHandler];
@@ -67,23 +67,25 @@
     self.accountKey = call.arguments[@"accountKey"];
     result(nil);
   } else if ([@"startChat" isEqualToString:call.method]) {
+    if ([self.accountKey length] == 0) {
+      result([FlutterError errorWithCode:@"NOT_INITIALIZED" message:nil details:nil]);
+      return;
+    }
     if (self.chatApi) {
       result([FlutterError errorWithCode:@"CHAT_SESSION_ALREADY_OPEN" message:nil details:nil]);
       return;
     }
     self.chatApi = [ZDCChatAPI instance];
     
-    ZDCVisitorInfo *visitorInfo = [[ZDCVisitorInfo alloc] init];
-    visitorInfo.name = call.arguments[@"visitorName"];
-    visitorInfo.email = call.arguments[@"visitorEmail"];
-    visitorInfo.phone = call.arguments[@"visitorPhone"];
-    
-    self.chatApi.visitorInfo = visitorInfo;
+    self.chatApi.visitorInfo.shouldPersist = NO;
+    self.chatApi.visitorInfo.name = call.arguments[@"visitorName"];
+    self.chatApi.visitorInfo.email = call.arguments[@"visitorEmail"];
+    self.chatApi.visitorInfo.phone = call.arguments[@"visitorPhone"];
     
     ZDCAPIConfig *chatConfig = [[ZDCAPIConfig alloc] init];
     chatConfig.department = call.arguments[@"department"];
     NSString *tags = call.arguments[@"tags"];
-    if ([tags length] != 0) {
+    if ([tags isKindOfClass:[NSString class]] && [tags length] != 0) {
       chatConfig.tags = [tags componentsSeparatedByString:@","];
     }
     
@@ -97,32 +99,19 @@
       self.chatApi = nil;
     }
     result(nil);
-  } else if ([@"getDepartments" isEqualToString:call.method]) {
-    if (self.chatApi == nil) {
-      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
-      return;
-    }
-    result([self toJson:self.chatApi.departments]);
-  } else if ([@"setDepartment" isEqualToString:call.method]) {
-    if (self.chatApi == nil) {
-      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
-      return;
-    }
-    // Unable to set department for ongoing session
-    result(nil);
   } else if ([@"sendMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
       result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
       return;
     }
-    [self.chatApi sendChatMessage:call.arguments[@"accountKey"]];
+    [self.chatApi sendChatMessage:call.arguments[@"message"]];
     result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
       result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
       return;
     }
-    [self.chatApi sendOfflineMessage:call.arguments[@"accountKey"] ];
+    [self.chatApi sendOfflineMessage:call.arguments[@"message"]];
     result(nil);
   } else {
     result(FlutterMethodNotImplemented);
@@ -163,7 +152,17 @@
 }
 
 - (void) agentsUpdated {
-  [self.agentsStreamHandler send:[self toJson:self.chatApi.agents]];
+  NSMutableDictionary *out = [[NSMutableDictionary alloc] initWithCapacity:[self.chatApi.agents count]];
+  [self.chatApi.agents enumerateKeysAndObjectsUsingBlock:^(NSString *key, ZDCChatAgent *agent, BOOL *stop) {
+    NSMutableDictionary *agentDict = [[NSMutableDictionary alloc] init];
+    [agentDict setValue:agent.displayName forKey:@"displayName"];
+    [agentDict setValue:agent.avatarURL forKey:@"avaratURL"];
+    [agentDict setValue:@(agent.typing) forKey:@"typing"];
+    [agentDict setValue:agent.title forKey:@"title"];
+    [out setObject:agentDict forKey:key];
+  }];
+  [self.agentsStreamHandler send:[self toJson:out]];
+  
 }
 
 - (void) accountUpdated {
@@ -181,7 +180,7 @@
     [chatItem setValue:event.displayName forKey:@"display_name"];
     [chatItem setValue:event.message forKey:@"msg"];
     [chatItem setValue:[self chatEventTypeToString:event.type] forKey:@"type"];
-    [chatItem setValue:[[NSNumber alloc] initWithBool:event.verified] forKey:@"verified"];
+    [chatItem setValue:@(event.verified) forKey:@"verified"];
     if ([event.options count] > 0) {
       [chatItem setValue:event.options forKey:@"options"];
       [chatItem setValue:[[NSNumber alloc] initWithLong:event.selectedOptionIndex] forKey:@"selectedOptionIndex"];
@@ -216,7 +215,6 @@
       return @"chat.msg";
     case ZDCChatEventTypeRating:
       return @"chat.request.rating";
-      
     default:
       return @"UNKNOWN";
   }

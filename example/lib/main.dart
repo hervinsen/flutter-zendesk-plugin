@@ -106,31 +106,24 @@ class _MyAppState extends State<MyApp> {
               Text('Chat status: $_chatStatus'),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin().startChat('Test Visitor Name');
+                  await ZendeskFlutterPlugin().startChat('Test Visitor Name',
+                      visitorEmail:'sogurtsov@rightandabove.com',
+                      visitorPhone:'+380679999999',
+                      department:'Card');
                 },
                 child: Text("Start Chat"),
               ),
-              RaisedButton(
-                onPressed: () async {
-                  await ZendeskFlutterPlugin().getDepartments().then((List<Department> departments) {
-                    print(departments);
-                  }).catchError((e) {
-                    print(e);
-                  });
-                },
-                child: Text("Get Departments"),
-              ),
-              RaisedButton(
-                onPressed: () async {
-                  await ZendeskFlutterPlugin().setDepartment('Card');
-                },
-                child: Text("Set Card Department"),
-              ),
-              RaisedButton(
+               RaisedButton(
                 onPressed: () async {
                   await ZendeskFlutterPlugin().sendMessage('Greeting from Visitor');
                 },
                 child: Text("Send Greeting Message"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await ZendeskFlutterPlugin().sendOfflineMessage('Offline Greeting from Visitor');
+                },
+                child: Text("Send Offline Message"),
               ),
               RaisedButton(
                 onPressed: () async {

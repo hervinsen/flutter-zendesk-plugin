@@ -52,27 +52,14 @@ class ZendeskFlutterPlugin {
     return await _callsChannel.invokeMethod('endChat');
   }
 
-  Future<List<Department>> getDepartments() async {
-    final dynamic json = await _callsChannel.invokeMethod('getDepartments');
-    return Department.parseDepartmentsJson(json);
-  }
-
-  Future<void> setDepartment(String department) async {
-    return await _callsChannel.invokeMethod('setDepartment', <String, dynamic> {
-      'department': department
-    });
-  }
-
   Future<void> sendMessage(String message) async {
     return await _callsChannel.invokeMethod('sendMessage',  <String, dynamic> {
       'message': message
     });
   }
 
-  Future<bool> sendOfflineMessage(String visitorName, String visitorEmail, String message) async {
+  Future<bool> sendOfflineMessage(String message) async {
     return await _callsChannel.invokeMethod('sendOfflineMessage', <String, dynamic> {
-      'visitorName': visitorName,
-      'visitorEmail': visitorEmail,
       'message': message
     });
   }
