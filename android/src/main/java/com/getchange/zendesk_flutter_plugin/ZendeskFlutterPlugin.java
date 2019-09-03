@@ -2,7 +2,6 @@ package com.getchange.zendesk_flutter_plugin;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -26,6 +25,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.PluginRegistry;
+import io.flutter.app.FlutterFragmentActivity;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -74,7 +74,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   }
 
   public static void registerWith(PluginRegistry.Registrar registrar) {
-    if (!(registrar.activity() instanceof FragmentActivity)) {
+    if (!(registrar.activity() instanceof FlutterFragmentActivity)) {
       throw new IllegalArgumentException("FRAGMENT_ACTIVITY_REQUIRED. Add dependency \"implementation 'com.android.support:support-v4:28.0.0'\" in build.gradle and extend your MainActivity from FlutterFragmentActivity");
     }
     final MethodChannel callsChannel = new MethodChannel(registrar.messenger(), "plugins.flutter.zendesk_chat_api/calls");
@@ -142,7 +142,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
             sessionConfig.tags(tags.split(","));
           }
 
-          chatApi = sessionConfig.build((FragmentActivity)registrar.activity());
+          chatApi = sessionConfig.build((FlutterFragmentActivity)registrar.activity());
           bindChatListeners();
 
           Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName());
