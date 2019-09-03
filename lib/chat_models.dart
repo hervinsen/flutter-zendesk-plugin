@@ -122,7 +122,7 @@ class Agent extends AbstractModel {
 }
 
 class Attachment extends AbstractModel {
-  Attachment(Map attributes) : super("", attributes);
+  Attachment(Map attributes) : super('', attributes);
 
   String get mimeType { return attribute('mime_type'); }
   String get name { return attribute('name'); }
@@ -133,7 +133,7 @@ class Attachment extends AbstractModel {
 }
 
 class ChatOption extends AbstractModel {
-  ChatOption(Map attributes) : super("", attributes);
+  ChatOption(Map attributes) : super('', attributes);
 
   String get label { return attribute('label'); }
   bool get selected { return attribute('selected'); }
@@ -170,14 +170,40 @@ class ChatItem extends AbstractModel {
 
   bool get failed => attribute('failed');
 
-  String get options => attribute('options');
-
-  List<ChatOption> get convertedOptions {
-    List<dynamic> raw = attribute('converted_options');
-    if (raw == null || raw.isEmpty) {
+  String get options {
+    var raw = attribute('options');
+    if (Platform.isAndroid) {
+      return raw;
+    } else if (Platform.isIOS && raw != null) {
+      return raw.join("/");
+    } else {
       return null;
     }
-    return raw.map((optionAttrs) => ChatOption(optionAttrs)).toList();
+  }
+
+  List<ChatOption> get convertedOptions {
+    if (Platform.isAndroid) {
+      List<dynamic> raw = attribute('converted_options');
+      if (raw == null || raw.isEmpty) {
+        return null;
+      }
+      return raw.map((optionAttrs) => ChatOption(optionAttrs)).toList();
+    } else if (Platform.isIOS) {
+      List<ChatOption> out = List();
+      var labels = attribute('options');
+      if (labels != null) {
+        int selectedOptionIndex = attribute('selectedOptionIndex') ?? -1;
+        for (var i = 0; i < labels.length; i++) {
+          Map optionAttrs = Map<String, dynamic>();
+          optionAttrs['label'] = labels[i];
+          optionAttrs['selected'] = (i == selectedOptionIndex);
+          out.add(ChatOption(optionAttrs));
+        }
+      }
+      return out;
+    } else {
+      return null;
+    }
   }
 
   int get uploadProgress { return attribute('upload_progress');}

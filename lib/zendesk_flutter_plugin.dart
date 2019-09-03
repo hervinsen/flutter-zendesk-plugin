@@ -100,6 +100,8 @@ class ZendeskFlutterPlugin {
               return ChatItem.parseChatItemsJsonForAndroid(event);
             } else if (Platform.isIOS) {
               return ChatItem.parseChatItemsJsonForIOS(event);
+            } else {
+              return List<ChatItem>();
             }
           });
     }
