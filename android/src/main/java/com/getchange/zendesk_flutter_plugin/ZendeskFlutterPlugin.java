@@ -192,12 +192,18 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
       case "sendOfflineMessage":
         if (chatApi == null) {
           result.error("CHAT_NOT_STARTED", null, null);
-        } else {
-          Log.d(TAG, "sendOfflineMessage: xxx");
-          result.success(chatApi.sendOfflineMessage(call.argument("visitorName"),
-              call.argument("visitorEmail"),
-              call.argument("message")));
+          return;
         }
+        VisitorInfo visitorInfo = chatApi.getConfig().getVisitorInfo();
+        if (TextUtils.isEmpty(visitorInfo.getEmail())) {
+          result.error("VISITOR_EMAIL_MUST_BE PROVIDED", null, null);
+          return;
+        }
+        Log.d(TAG, "sendOfflineMessage: xxx");
+        result.success(chatApi.sendOfflineMessage(visitorInfo.getName(),
+            visitorInfo.getEmail(),
+            call.argument("message")));
+
         break;
       default:
         result.notImplemented();
