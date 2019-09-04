@@ -160,25 +160,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.success(null);
         }
         break;
-      case "getDepartments":
-        if (chatApi == null) {
-          result.error("CHAT_NOT_STARTED", null, null);
-        } else {
-          Map<String, Department> departments = ZopimChatApi.getDataSource().getDepartments();
-          Log.d(TAG, "getDepartments");
-          result.success(toJson(departments));
-        }
-        break;
-      case "setDepartment":
-        if (chatApi == null) {
-          result.error("CHAT_NOT_STARTED", null, null);
-        } else {
-          String department = call.argument("department");
-          chatApi.setDepartment(department);
-          Log.d(TAG, "setDepartment: "+department);
-          result.success(null);
-        }
-        break;
       case "sendMessage":
         if (chatApi == null) {
           result.error("CHAT_NOT_STARTED", null, null);

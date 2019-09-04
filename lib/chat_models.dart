@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'dart:convert';
 import 'dart:io' show Platform;
 
@@ -79,23 +80,29 @@ ChatItemType toChatItemType(String value) {
 class AbstractModel {
   final String _id;
   final Map<String, dynamic> _attributes;
+  final String _os;
 
-  AbstractModel(this._id, this._attributes);
+  AbstractModel(this._id, this._attributes, [@visibleForTesting this._os]);
 
   String get id { return _id;}
 
   dynamic attribute(String attrname) {
     return _attributes != null ? _attributes[attrname] : null;
   }
+
+  @visibleForTesting
+  String os() {
+    return this._os ?? Platform.operatingSystem;
+  }
 }
 
 class Agent extends AbstractModel {
-  Agent(String id, Map attributes) : super(id, attributes);
+  Agent(String id, Map attributes, [@visibleForTesting String os]) : super(id, attributes, os);
 
   String get displayName {
-    if (Platform.isAndroid) {
+    if (os() == 'android') {
       return attribute('display_name');
-    } else if (Platform.isIOS) {
+    } else if (os() == 'ios') {
       return attribute('displayName');
     } else {
       return null;
@@ -104,25 +111,27 @@ class Agent extends AbstractModel {
   bool get isTyping {return attribute('typing'); }
 
   String get avatarUri {
-    if (Platform.isAndroid) {
+    if (os() == 'android') {
       return attribute('avatar_path');
-    } else if (Platform.isIOS) {
+    } else if (os() == 'ios') {
       return attribute('avatarURL');
+    } else {
+      return null;
     }
   }
 
-  static List<Agent> parseAgentsJson(String json) {
+  static List<Agent> parseAgentsJson(String json, [@visibleForTesting String os]) {
     var out = List<Agent>();
     print('parseAgentsJson: \'$json\'');
     jsonDecode(json).forEach((key, value) {
-      out.add(Agent(key, value));
+      out.add(Agent(key, value, os));
     });
     return out;
   }
 }
 
 class Attachment extends AbstractModel {
-  Attachment(Map attributes) : super('', attributes);
+  Attachment(Map attributes, [@visibleForTesting String os]) : super('', attributes, os);
 
   String get mimeType { return attribute('mime_type'); }
   String get name { return attribute('name'); }
@@ -140,7 +149,7 @@ class ChatOption extends AbstractModel {
 }
 
 class ChatItem extends AbstractModel {
-  ChatItem(String id, Map attrs) : super(id, attrs);
+  ChatItem(String id, Map attrs, [@visibleForTesting String os]) : super(id, attrs, os);
 
   DateTime get timestamp => DateTime.fromMillisecondsSinceEpoch(attribute('timestamp'), isUtc: false);
 
@@ -158,9 +167,9 @@ class ChatItem extends AbstractModel {
   }
 
   bool get unverified {
-    if (Platform.isAndroid) {
+    if (os() == 'android') {
       return attribute('unverified');
-    } else if (Platform.isIOS) {
+    } else if (os() == 'ios') {
       bool verified = attribute('verified');
       return verified != null ? !verified : null;
     } else {
@@ -172,9 +181,9 @@ class ChatItem extends AbstractModel {
 
   String get options {
     var raw = attribute('options');
-    if (Platform.isAndroid) {
+    if (os() == 'android') {
       return raw;
-    } else if (Platform.isIOS && raw != null) {
+    } else if (os() == 'ios' && raw != null) {
       return raw.join("/");
     } else {
       return null;
@@ -182,13 +191,13 @@ class ChatItem extends AbstractModel {
   }
 
   List<ChatOption> get convertedOptions {
-    if (Platform.isAndroid) {
+    if (os() == 'android') {
       List<dynamic> raw = attribute('converted_options');
       if (raw == null || raw.isEmpty) {
         return null;
       }
       return raw.map((optionAttrs) => ChatOption(optionAttrs)).toList();
-    } else if (Platform.isIOS) {
+    } else if (os() == 'ios') {
       List<ChatOption> out = List();
       var labels = attribute('options');
       if (labels != null) {
@@ -208,20 +217,20 @@ class ChatItem extends AbstractModel {
 
   int get uploadProgress { return attribute('upload_progress');}
 
-  static List<ChatItem> parseChatItemsJsonForAndroid(String json) {
+  static List<ChatItem> parseChatItemsJsonForAndroid(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
     print('parseChatItemsJson: \'$json\'');
     jsonDecode(json).forEach((key, value) {
-      out.add(ChatItem(key, value));
+      out.add(ChatItem(key, value, os));
     });
     return out;
   }
 
-  static List<ChatItem> parseChatItemsJsonForIOS(String json) {
+  static List<ChatItem> parseChatItemsJsonForIOS(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
     print('parseChatItemsJson: \'$json\'');
     jsonDecode(json).forEach((value) {
-      out.add(ChatItem(value['id'], value));
+      out.add(ChatItem(value['id'], value, os));
     });
     return out;
   }
