@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  String _zendeskAccountkey = '2a4ijImfXbSkhZAUaUowwsKJZ7248PpL';
+  String _zendeskAccountkey = '';
 
   final ZendeskFlutterPlugin _chatApi = ZendeskFlutterPlugin();
 
