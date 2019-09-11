@@ -145,7 +145,8 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           }
 
           if (!TextUtils.isEmpty(applicationId)) {
-            sessionConfig.visitorPathOne(applicationId);
+            sessionConfig.visitorPathTwo(applicationId);
+            sessionConfig.visitorPathOne("Mobile Chat connected");
           }
 
           chatApi = sessionConfig.build((FlutterFragmentActivity)registrar.activity());
