@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'dart:io' show Platform;
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
+import 'package:package_info/package_info.dart';
 import 'chat_models.dart';
 
 class ZendeskFlutterPlugin {
@@ -32,9 +34,15 @@ class ZendeskFlutterPlugin {
     return version;
   }
 
-  Future<void> init(String accountKey) async {
+  Future<void> init(String accountKey, {String applicationId}) async {
+    if (applicationId == null || applicationId.isEmpty) {
+      PackageInfo pi = await PackageInfo.fromPlatform();
+      applicationId = '${pi.appName}, v${pi.version}(${pi.buildNumber})';
+    }
+    debugPrint('Init with applicationId="$applicationId"');
     await _callsChannel.invokeMethod('init', <String, dynamic> {
-      'accountKey': accountKey
+      'accountKey': accountKey,
+      'applicationId': applicationId,
     });
   }
 

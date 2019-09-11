@@ -41,6 +41,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   private ZopimChatApi.DefaultConfig config = null;
   private ChatApi chatApi = null;
   private DataSource datasource = null;
+  private String applicationId = null;
 
   private ZendeskFlutterPlugin.EventChannelStreamHandler connectionStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
   private ZendeskFlutterPlugin.EventChannelStreamHandler accountStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
@@ -105,6 +106,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         break;
       case "init":
         if (config == null) {
+          applicationId = call.argument("applicationId");
           final String accountKey = call.argument("accountKey");
           try {
             config = ZopimChatApi.init(accountKey);
@@ -140,6 +142,10 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           }
           if (!TextUtils.isEmpty(tags)) {
             sessionConfig.tags(tags.split(","));
+          }
+
+          if (!TextUtils.isEmpty(applicationId)) {
+            sessionConfig.visitorPathOne(applicationId);
           }
 
           chatApi = sessionConfig.build((FlutterFragmentActivity)registrar.activity());
