@@ -154,7 +154,7 @@
   [self.chatApi.agents enumerateKeysAndObjectsUsingBlock:^(NSString *key, ZDCChatAgent *agent, BOOL *stop) {
     NSMutableDictionary *agentDict = [[NSMutableDictionary alloc] init];
     [agentDict setValue:agent.displayName forKey:@"displayName"];
-    [agentDict setValue:agent.avatarURL forKey:@"avaratURL"];
+    [agentDict setValue:agent.avatarURL forKey:@"avatarURL"];
     [agentDict setValue:@(agent.typing) forKey:@"typing"];
     [agentDict setValue:agent.title forKey:@"title"];
     [out setObject:agentDict forKey:key];
