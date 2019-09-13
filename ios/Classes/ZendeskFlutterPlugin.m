@@ -76,19 +76,19 @@
     self.chatApi = [ZDCChatAPI instance];
     
     self.chatApi.visitorInfo.shouldPersist = NO;
-    self.chatApi.visitorInfo.name = call.arguments[@"visitorName"];
-    self.chatApi.visitorInfo.email = call.arguments[@"visitorEmail"];
-    self.chatApi.visitorInfo.phone = call.arguments[@"visitorPhone"];
+    self.chatApi.visitorInfo.name = [self argumentAsString:call forName:@"visitorName"];
+    self.chatApi.visitorInfo.email = [self argumentAsString:call forName:@"visitorEmail"];
+    self.chatApi.visitorInfo.phone = [self argumentAsString:call forName:@"visitorPhone"];
     
     ZDCAPIConfig *chatConfig = [[ZDCAPIConfig alloc] init];
-    chatConfig.department = call.arguments[@"department"];
-    NSString *tags = call.arguments[@"tags"];
-    if ([tags isKindOfClass:[NSString class]] && [tags length] != 0) {
+    chatConfig.department = [self argumentAsString:call forName:@"department"];
+    NSString *tags = [self argumentAsString:call forName:@"tags"];
+    if ([tags length] != 0) {
       chatConfig.tags = [tags componentsSeparatedByString:@","];
     }
     
-    [self.chatApi startChatWithAccountKey:self.accountKey config: chatConfig];
     [self bindChatListeners];
+    [self.chatApi startChatWithAccountKey:self.accountKey config: chatConfig];
     result(nil);
   } else if ([@"endChat" isEqualToString:call.method]) {
     if (self.chatApi != nil) {
@@ -115,6 +115,12 @@
     result(FlutterMethodNotImplemented);
   }
 }
+
+- (NSString*) argumentAsString:(FlutterMethodCall*)call forName:(NSString*)argName {
+  NSString* value = call.arguments[argName];
+  return [value isKindOfClass:[NSString class]] ? value : nil;
+}
+
 
 - (void) bindChatListeners {
   [self unbindChatListeners];

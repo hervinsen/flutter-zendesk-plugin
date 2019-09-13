@@ -51,6 +51,8 @@ void main() {
       expect(toChatItemType('chat.memberjoin'), ChatItemType.MEMBER_JOIN);
       expect(toChatItemType('chat.memberleave'), ChatItemType.MEMBER_LEAVE);
       expect(toChatItemType('chat.msg'), ChatItemType.MESSAGE);
+      expect(toChatItemType('chat.systemmsg'), ChatItemType.MESSAGE);
+      expect(toChatItemType('chat.triggermsg'), ChatItemType.MESSAGE);
       expect(toChatItemType('chat.request.rating'), ChatItemType.REQUEST_RATING);
       expect(toChatItemType('other_type'), ChatItemType.UNKNOWN);
       expect(toChatItemType(null), ChatItemType.UNKNOWN);

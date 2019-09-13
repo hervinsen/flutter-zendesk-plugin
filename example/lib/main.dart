@@ -107,8 +107,6 @@ class _MyAppState extends State<MyApp> {
               RaisedButton(
                 onPressed: () async {
                   await ZendeskFlutterPlugin().startChat('Test Visitor Name',
-                      visitorEmail:'visitor@blah.blah.com',
-                      visitorPhone:'987654321',
                       department:'Card');
                 },
                 child: Text("Start Chat"),

@@ -1,5 +1,7 @@
 PODS:
   - Flutter (1.0.0)
+  - package_info (0.0.1):
+    - Flutter
   - ZDCChat (1.3.7.1):
     - ZDCChat/API (= 1.3.7.1)
     - ZDCChat/Localization (= 1.3.7.1)
@@ -14,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
   - zendesk_flutter_plugin (from `.symlinks/plugins/zendesk_flutter_plugin/ios`)
 
 SPEC REPOS:
@@ -23,11 +26,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: ".symlinks/flutter/ios"
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
   zendesk_flutter_plugin:
     :path: ".symlinks/plugins/zendesk_flutter_plugin/ios"
 
 SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  package_info: 78cabb3c322943c55d39676f4a5bfc748c01d055
   ZDCChat: 022351259c723b713bc701f71a244e4416a92257
   zendesk_flutter_plugin: c3cb14b6a1ccb1b84e471ae864be4a2d47d5e205
 

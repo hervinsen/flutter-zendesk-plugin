@@ -69,6 +69,8 @@ ChatItemType toChatItemType(String value) {
     case 'chat.memberleave':
       return ChatItemType.MEMBER_LEAVE;
     case 'chat.msg':
+    case 'chat.systemmsg':
+    case 'chat.triggermsg':
       return ChatItemType.MESSAGE;
     case 'chat.request.rating':
       return ChatItemType.REQUEST_RATING;
