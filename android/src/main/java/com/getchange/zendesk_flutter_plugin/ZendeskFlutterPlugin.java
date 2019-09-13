@@ -119,7 +119,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
             result.error("UNABLE_TO_INITIALIZE_CHAT_API", e.getMessage(), e);
             break;
           }
-          Log.d(TAG, "Init: accountKey=" +accountKey);
         }
         result.success(null);
         break;
@@ -156,9 +155,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
 
           chatApi = sessionConfig.build((FlutterFragmentActivity)registrar.activity());
           bindChatListeners();
-
-          Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName() + " email=" +visitorInfo.getName() +
-              " phone=" + visitorInfo.getPhoneNumber() + " department=" + department );
           result.success(null);
         }
         break;
@@ -169,7 +165,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           unbindChatListeners();
           chatApi.endChat();
           chatApi = null;
-          Log.d(TAG, "endChat");
           result.success(null);
         }
         break;
@@ -179,7 +174,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         } else {
           String message = call.argument("message");
           chatApi.send(message);
-          Log.d(TAG, "sendMessage: xxx");
           result.success(null);
         }
         break;
@@ -193,7 +187,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.error("VISITOR_EMAIL_MUST_BE PROVIDED", null, null);
           return;
         }
-        Log.d(TAG, "sendOfflineMessage: xxx");
         result.success(chatApi.sendOfflineMessage(visitorInfo.getName(),
             visitorInfo.getEmail(),
             call.argument("message")));
@@ -213,7 +206,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
       @Override
       protected void update(Connection connection) {
         mainHandler.post(() -> {
-          //Log.d(TAG, "Connection status=" + connection.getStatus());
           connectionStreamHandler.success(connection.getStatus().name());
         });
       }
@@ -224,7 +216,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
       @Override
       public void update(Account account) {
         mainHandler.post(() -> {
-          //Log.d(TAG, "Account status=" + account.getStatus());
           accountStreamHandler.success(account.getStatus() != null ? account.getStatus().getValue() : Account.Status.UNKNOWN.getValue());
         });
       }
@@ -236,7 +227,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
       protected void update(Map<String, Agent> agents) {
         mainHandler.post(() -> {
           String json = toJson(agents);
-          //Log.d(TAG, "Agents: " + json);
           agentsStreamHandler.success(json);
         });
       }
@@ -248,7 +238,6 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
       protected void update(LinkedHashMap<String, ChatLog> items) {
         mainHandler.post(() -> {
           String json = toJson(items);
-          //Log.d(TAG, "ChatLog: " + json);
           chatItemsStreamHandler.success(json);
         });
       }
