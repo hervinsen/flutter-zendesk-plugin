@@ -2,6 +2,7 @@ package com.getchange.zendesk_flutter_plugin;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -40,8 +41,12 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   private PluginRegistry.Registrar registrar;
   private ZopimChatApi.DefaultConfig config = null;
   private ChatApi chatApi = null;
-  private DataSource datasource = null;
   private String applicationId = null;
+
+  private ConnectionObserver connectionObserver = null;
+  private AccountObserver accountObserver = null;
+  private AgentsObserver agentsObserver = null;
+  private ChatLogObserver chatLogObserver = null;
 
   private ZendeskFlutterPlugin.EventChannelStreamHandler connectionStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
   private ZendeskFlutterPlugin.EventChannelStreamHandler accountStreamHandler = new ZendeskFlutterPlugin.EventChannelStreamHandler();
@@ -99,7 +104,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   }
 
   @Override
-  public void onMethodCall(MethodCall call, MethodChannel.Result result) {
+  public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
     switch(call.method) {
       case "getPlatformVersion":
         result.success("Android " + android.os.Build.VERSION.RELEASE);
@@ -109,7 +114,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           applicationId = call.argument("applicationId");
           final String accountKey = call.argument("accountKey");
           try {
-            config = ZopimChatApi.init(accountKey);
+            config = ZopimChatApi.init(accountKey).disableVisitorInfoStorage();
           } catch (Exception e) {
             result.error("UNABLE_TO_INITIALIZE_CHAT_API", e.getMessage(), e);
             break;
@@ -152,7 +157,8 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           chatApi = sessionConfig.build((FlutterFragmentActivity)registrar.activity());
           bindChatListeners();
 
-          Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName());
+          Log.d(TAG, "StartChat: visitorName=" + visitorInfo.getName() + " email=" +visitorInfo.getName() +
+              " phone=" + visitorInfo.getPhoneNumber() + " department=" + department );
           result.success(null);
         }
         break;
@@ -201,8 +207,9 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   private void bindChatListeners() {
     unbindChatListeners();
 
-    datasource = ZopimChatApi.getDataSource();
-    datasource.addConnectionObserver(new ConnectionObserver() {
+    DataSource datasource = ZopimChatApi.getDataSource();
+
+    connectionObserver = new ConnectionObserver() {
       @Override
       protected void update(Connection connection) {
         mainHandler.post(() -> {
@@ -210,9 +217,10 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           connectionStreamHandler.success(connection.getStatus().name());
         });
       }
-    }).trigger();
+    };
+    datasource.addConnectionObserver(connectionObserver).trigger();
 
-    datasource.addAccountObserver(new AccountObserver() {
+    accountObserver = new AccountObserver() {
       @Override
       public void update(Account account) {
         mainHandler.post(() -> {
@@ -220,9 +228,10 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           accountStreamHandler.success(account.getStatus() != null ? account.getStatus().getValue() : Account.Status.UNKNOWN.getValue());
         });
       }
-    }).trigger();
+    };
+    datasource.addAccountObserver(accountObserver).trigger();
 
-    datasource.addAgentsObserver(new AgentsObserver() {
+    agentsObserver = new AgentsObserver() {
       @Override
       protected void update(Map<String, Agent> agents) {
         mainHandler.post(() -> {
@@ -231,9 +240,10 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           agentsStreamHandler.success(json);
         });
       }
-    }).trigger();
+    };
+    datasource.addAgentsObserver(agentsObserver).trigger();
 
-    datasource.addChatLogObserver(new ChatLogObserver() {
+    chatLogObserver = new ChatLogObserver() {
       @Override
       protected void update(LinkedHashMap<String, ChatLog> items) {
         mainHandler.post(() -> {
@@ -242,13 +252,28 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           chatItemsStreamHandler.success(json);
         });
       }
-    }).trigger();
+    };
+    datasource.addChatLogObserver(chatLogObserver).trigger();
   }
 
   private void unbindChatListeners() {
-    if (datasource != null) {
-      datasource.deleteObservers();
-      datasource = null;
+    DataSource datasource = ZopimChatApi.getDataSource();
+
+    if (connectionObserver != null) {
+      datasource.deleteConnectionObserver(connectionObserver);
+      connectionObserver = null;
+    }
+    if (accountObserver != null) {
+      datasource.deleteAccountObserver(accountObserver);
+      accountObserver = null;
+    }
+    if (agentsObserver != null) {
+      datasource.deleteAgentsObserver(agentsObserver);
+      agentsObserver = null;
+    }
+    if (chatLogObserver != null) {
+      datasource.deleteChatLogObserver(chatLogObserver);
+      chatLogObserver = null;
     }
   }
 
