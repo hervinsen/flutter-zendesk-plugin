@@ -2,9 +2,7 @@ package com.getchange.zendesk_flutter_plugin;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.google.gson.GsonBuilder;
 import com.zopim.android.sdk.api.ChatApi;
@@ -18,7 +16,6 @@ import com.zopim.android.sdk.model.Account;
 import com.zopim.android.sdk.model.Agent;
 import com.zopim.android.sdk.model.ChatLog;
 import com.zopim.android.sdk.model.Connection;
-import com.zopim.android.sdk.model.Department;
 import com.zopim.android.sdk.model.VisitorInfo;
 
 import io.flutter.plugin.common.EventChannel;
@@ -35,7 +32,6 @@ import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES;
 
 
 public class ZendeskFlutterPlugin implements MethodCallHandler {
-  private static final String TAG = "ZendeskFlutterPlugin";
 
   private Handler mainHandler = new Handler(Looper.getMainLooper());
   private PluginRegistry.Registrar registrar;
@@ -104,7 +100,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
   }
 
   @Override
-  public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+  public void onMethodCall(MethodCall call, MethodChannel.Result result) {
     switch(call.method) {
       case "getPlatformVersion":
         result.success("Android " + android.os.Build.VERSION.RELEASE);
