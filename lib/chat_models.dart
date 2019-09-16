@@ -96,6 +96,8 @@ class AbstractModel {
   String os() {
     return this._os ?? Platform.operatingSystem;
   }
+
+  String toString() => 'id=$_id ${JsonEncoder().convert(_attributes)}';
 }
 
 class Agent extends AbstractModel {

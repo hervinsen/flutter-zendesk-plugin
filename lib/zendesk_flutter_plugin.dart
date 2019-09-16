@@ -66,6 +66,12 @@ class ZendeskFlutterPlugin {
     });
   }
 
+  Future<void> sendAttachment(String patname) async {
+    return await _callsChannel.invokeMethod('sendAttachment',  <String, dynamic> {
+      'pathname': patname
+    });
+  }
+
   Future<bool> sendOfflineMessage(String message) async {
     return await _callsChannel.invokeMethod('sendOfflineMessage', <String, dynamic> {
       'message': message
