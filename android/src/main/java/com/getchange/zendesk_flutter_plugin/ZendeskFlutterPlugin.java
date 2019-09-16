@@ -16,6 +16,7 @@ import com.zopim.android.sdk.model.Account;
 import com.zopim.android.sdk.model.Agent;
 import com.zopim.android.sdk.model.ChatLog;
 import com.zopim.android.sdk.model.Connection;
+import com.zopim.android.sdk.model.FileSending;
 import com.zopim.android.sdk.model.VisitorInfo;
 
 import io.flutter.plugin.common.EventChannel;
@@ -25,7 +26,10 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.app.FlutterFragmentActivity;
 
+import java.io.File;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES;
@@ -170,6 +174,38 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         } else {
           String message = call.argument("message");
           chatApi.send(message);
+          result.success(null);
+        }
+        break;
+      case "sendAttachment":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
+        } else {
+          FileSending policy = ZopimChatApi.getDataSource().getFileSending();
+          if (policy == null || !policy.isEnabled() || policy.getExtensions() == null) {
+            result.error("ATTACHMENT_SEND_DISABLED", null, null);
+            return;
+          }
+          String pathname = call.argument("pathname");
+          if (TextUtils.isEmpty(pathname)) {
+            result.error("ATTACHMENT_EMPTY_PATHNAME", null, null);
+            return;
+          }
+          File file = new File(pathname);
+          if (!file.isFile()) {
+            result.error("ATTACHMENT_NOT_FILE", null, null);
+            return;
+          }
+          String ext = "";
+          int i = file.getName().lastIndexOf(".");
+          if (i >= 0) {
+            ext = file.getName().substring(i+1);
+          }
+          if (!Arrays.asList(policy.getExtensions()).contains(ext)) {
+            result.error("ATTACHMENT_DISALLOWED_EXTENSION", null, null);
+            return;
+          }
+          chatApi.send(file);
           result.success(null);
         }
         break;

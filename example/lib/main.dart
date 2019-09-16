@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  String _zendeskAccountkey = '';
+  String _zendeskAccountkey = '2a4ijImfXbSkhZAUaUowwsKJZ7248PpL';
 
   final ZendeskFlutterPlugin _chatApi = ZendeskFlutterPlugin();
 
@@ -83,11 +84,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _chatAgentsUpdated(List<Agent> agents) {
-    print('chatAgentsUpdated: $agents');
+    print('chatAgentsUpdated:');
+    agents.forEach((e) => debugPrint(e.toString()));
   }
 
   void _chatItemsUpdated(List<ChatItem> chatLog) {
-    print('chatItemsUpdated: $chatLog');
+    print('chatItemsUpdated:');
+    chatLog.forEach((e) => debugPrint(e.toString()));
   }
 
   @override
@@ -106,26 +109,37 @@ class _MyAppState extends State<MyApp> {
               Text('Chat status: $_chatStatus'),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin().startChat('Test Visitor Name',
+                  await _chatApi.startChat('Test Visitor Name',
                       department:'Card');
                 },
                 child: Text("Start Chat"),
               ),
                RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin().sendMessage('Greeting from Visitor');
+                  await _chatApi.sendMessage('Greeting from Visitor');
                 },
                 child: Text("Send Greeting Message"),
               ),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin().sendOfflineMessage('Offline Greeting from Visitor');
+                  try {
+                    final pathname = await FilePicker.getFilePath(type: FileType.ANY, fileExtension: 'jpg');
+                    await _chatApi.sendAttachment(pathname);
+                  } on PlatformException catch(e) {
+                    debugPrint('An error occured: ${e.code}');
+                  }
+                },
+                child: Text("Send Attachment"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await _chatApi.sendOfflineMessage('Offline Greeting from Visitor');
                 },
                 child: Text("Send Offline Message"),
               ),
               RaisedButton(
                 onPressed: () async {
-                  await ZendeskFlutterPlugin().endChat();
+                  await _chatApi.endChat();
                 },
                 child: Text("EndChat"),
               ),
