@@ -104,6 +104,23 @@
     }
     [self.chatApi sendChatMessage:call.arguments[@"message"]];
     result(nil);
+  } else if ([@"sendAttachment" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    if (!self.chatApi.fileSendingEnabled) {
+      result([FlutterError errorWithCode:@"ATTACHMENT_SEND_DISABLED" message:nil details:nil]);
+      return;
+    }
+    NSString* pathname = [self argumentAsString:call forName:@"pathname"];
+    if ([pathname length] == 0) {
+      result([FlutterError errorWithCode:@"ATTACHMENT_EMPTY_PATHNAME" message:nil details:nil]);
+      return;
+    }
+    NSString* filename = [pathname lastPathComponent];
+    [self.chatApi uploadFileWithPath:pathname name:filename];
+    result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
       result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
