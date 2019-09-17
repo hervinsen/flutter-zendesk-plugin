@@ -96,6 +96,8 @@ class AbstractModel {
   String os() {
     return this._os ?? Platform.operatingSystem;
   }
+
+  String toString() => 'id=$_id ${JsonEncoder().convert(_attributes)}';
 }
 
 class Agent extends AbstractModel {
@@ -221,7 +223,6 @@ class ChatItem extends AbstractModel {
 
   static List<ChatItem> parseChatItemsJsonForAndroid(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
-    print('parseChatItemsJson: \'$json\'');
     jsonDecode(json).forEach((key, value) {
       out.add(ChatItem(key, value, os));
     });
@@ -230,7 +231,6 @@ class ChatItem extends AbstractModel {
 
   static List<ChatItem> parseChatItemsJsonForIOS(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
-    print('parseChatItemsJson: \'$json\'');
     jsonDecode(json).forEach((value) {
       out.add(ChatItem(value['id'], value, os));
     });

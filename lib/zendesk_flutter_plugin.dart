@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'dart:io' show Platform;
+import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:package_info/package_info.dart';
@@ -63,6 +63,12 @@ class ZendeskFlutterPlugin {
   Future<void> sendMessage(String message) async {
     return await _callsChannel.invokeMethod('sendMessage',  <String, dynamic> {
       'message': message
+    });
+  }
+
+  Future<void> sendAttachment(String pathname) async {
+    return await _callsChannel.invokeMethod('sendAttachment',  <String, dynamic> {
+      'pathname': pathname,
     });
   }
 

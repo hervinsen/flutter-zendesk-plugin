@@ -104,6 +104,28 @@
     }
     [self.chatApi sendChatMessage:call.arguments[@"message"]];
     result(nil);
+  } else if ([@"sendAttachment" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    if (!self.chatApi.fileSendingEnabled) {
+      result([FlutterError errorWithCode:@"ATTACHMENT_SEND_DISABLED" message:nil details:nil]);
+      return;
+    }
+    NSString* pathname = [self argumentAsString:call forName:@"pathname"];
+    if ([pathname length] == 0) {
+      result([FlutterError errorWithCode:@"ATTACHMENT_EMPTY_PATHNAME" message:nil details:nil]);
+      return;
+    }
+    NSString* filename = [pathname lastPathComponent];
+    NSFileManager* filemgr = [NSFileManager defaultManager];
+    if (![filemgr fileExistsAtPath:pathname]) {
+      result([FlutterError errorWithCode:@"ATTACHMENT_FILE_MISSING" message:nil details:nil]);
+      return;
+    }
+    [self.chatApi uploadFileWithData:[filemgr contentsAtPath:pathname] name:filename];
+    result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
       result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
@@ -117,10 +139,23 @@
 }
 
 - (NSString*) argumentAsString:(FlutterMethodCall*)call forName:(NSString*)argName {
+  if ([call.arguments isKindOfClass:[NSNull class]]) {
+    return nil;
+  }
   NSString* value = call.arguments[argName];
   return [value isKindOfClass:[NSString class]] ? value : nil;
 }
 
+- (NSData*) argumentAsBinary:(FlutterMethodCall*)call forName:(NSString*)argName {
+  if ([call.arguments isKindOfClass:[NSNull class]]) {
+    return nil;
+  }
+  NSObject* value = call.arguments[argName];
+  if (![value isKindOfClass:[FlutterStandardTypedData class]]) {
+    return nil;
+  }
+  return ((FlutterStandardTypedData*)value).data;
+}
 
 - (void) bindChatListeners {
   [self unbindChatListeners];
@@ -216,6 +251,8 @@
       return @"chat.triggermsg";
     case ZDCChatEventTypeAgentMessage:
     case ZDCChatEventTypeVisitorMessage:
+    case ZDCChatEventTypeVisitorUpload:
+    case ZDCChatEventTypeAgentUpload:
       return @"chat.msg";
     case ZDCChatEventTypeRating:
       return @"chat.request.rating";
