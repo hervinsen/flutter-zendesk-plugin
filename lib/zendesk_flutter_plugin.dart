@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'dart:io' show Platform;
+import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:package_info/package_info.dart';
@@ -66,9 +66,9 @@ class ZendeskFlutterPlugin {
     });
   }
 
-  Future<void> sendAttachment(String patname) async {
+  Future<void> sendAttachment(String pathname) async {
     return await _callsChannel.invokeMethod('sendAttachment',  <String, dynamic> {
-      'pathname': patname
+      'pathname': pathname,
     });
   }
 

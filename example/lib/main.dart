@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-//import 'package:file_picker/file_picker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
@@ -123,13 +122,14 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () async {
-                  try {
-                    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-                    //final pathname = await FilePicker.getFilePath(type: FileType.ANY, fileExtension: 'jpg');
-                    await _chatApi.sendAttachment(image.path);
-                  } on PlatformException catch(e) {
-                    debugPrint('An error occured: ${e.code}');
-                  }
+                  final file = await ImagePicker.pickImage(source: ImageSource.gallery);
+                  if (file != null) {
+                    try {
+                      await _chatApi.sendAttachment(file.path);
+                    } on PlatformException catch(e) {
+                      debugPrint('An error occurred: ${e.code}');
+                    }
+                  };
                 },
                 child: Text("Send Attachment"),
               ),

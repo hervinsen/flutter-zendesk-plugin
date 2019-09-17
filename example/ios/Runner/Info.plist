@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Take photos for chat attachments</string>
+	<string>Take attachment for chat</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -48,5 +48,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take attachment for chat</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Take attachment for chat</string>
 </dict>
 </plist>
