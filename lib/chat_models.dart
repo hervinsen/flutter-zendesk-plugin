@@ -25,6 +25,14 @@ enum ChatItemType {
   SYSTEM_MESSAGE,
   TRIGGER_MESSAGE,
   REQUEST_RATING,
+  RATING,
+}
+
+enum ChatRating {
+  GOOD,
+  BAD,
+  UNRATED,
+  UNKNOWN,
 }
 
 ConnectionStatus toConnectionStatus(String value) {
@@ -74,8 +82,23 @@ ChatItemType toChatItemType(String value) {
       return ChatItemType.MESSAGE;
     case 'chat.request.rating':
       return ChatItemType.REQUEST_RATING;
+    case 'chat.rating':
+      return ChatItemType.RATING;
     default:
       return ChatItemType.UNKNOWN;
+  }
+}
+
+ChatRating toChatRating(String value) {
+  switch (value) {
+    case 'good':
+      return ChatRating.GOOD;
+    case 'bad':
+      return ChatRating.BAD;
+    case 'unrated':
+      return ChatRating.UNRATED;
+    default:
+      return ChatRating.UNKNOWN;
   }
 }
 
@@ -126,7 +149,6 @@ class Agent extends AbstractModel {
 
   static List<Agent> parseAgentsJson(String json, [@visibleForTesting String os]) {
     var out = List<Agent>();
-    print('parseAgentsJson: \'$json\'');
     jsonDecode(json).forEach((key, value) {
       out.add(Agent(key, value, os));
     });
@@ -142,7 +164,7 @@ class Attachment extends AbstractModel {
   int get size { return attribute('size'); }
   String get type { return attribute('type'); }
   String get url { return attribute('url');}
-  String get thumbnailUrl { return attribute('thumbnail_url'); }
+  String get thumbnailUrl { return attribute('thumbnail') ?? attribute('thumbnail_url'); }
 }
 
 class ChatOption extends AbstractModel {
@@ -219,7 +241,11 @@ class ChatItem extends AbstractModel {
     }
   }
 
-  int get uploadProgress { return attribute('upload_progress');}
+  int get uploadProgress => attribute('upload_progress');
+
+  ChatRating get rating => toChatRating(attribute('rating'));
+
+  ChatRating get newRating => toChatRating(attribute('new_rating'));
 
   static List<ChatItem> parseChatItemsJsonForAndroid(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
