@@ -228,7 +228,7 @@
     [chatItem setValue:event.message forKey:@"msg"];
     [chatItem setValue:[self chatEventTypeToString:event.type] forKey:@"type"];
     [chatItem setValue:@(event.verified) forKey:@"verified"];
-    [chatItem setValue:[self chatLogRatingToString:event.rating]) forKey:@"new_rating"];
+    [chatItem setValue:[self chatLogRatingToString:event.rating] forKey:@"new_rating"];
     if ([event.options count] > 0) {
       [chatItem setValue:event.options forKey:@"options"];
       [chatItem setValue:[[NSNumber alloc] initWithLong:event.selectedOptionIndex] forKey:@"selectedOptionIndex"];
