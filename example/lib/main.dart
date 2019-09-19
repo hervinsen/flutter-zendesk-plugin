@@ -135,6 +135,18 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () async {
+                  await _chatApi.sendChatRating(ChatRating.GOOD);
+                },
+                child: Text("Send GOOD Rating"),
+              ),
+              RaisedButton(
+                onPressed: () async {
+                  await _chatApi.sendChatRating(ChatRating.BAD);
+                },
+                child: Text("Send BAD Rating"),
+              ),
+              RaisedButton(
+                onPressed: () async {
                   await _chatApi.sendOfflineMessage('Offline Greeting from Visitor');
                 },
                 child: Text("Send Offline Message"),

@@ -72,6 +72,12 @@ class ZendeskFlutterPlugin {
     });
   }
 
+  Future<void> sendChatRating(ChatRating chatRating) async {
+    return await _callsChannel.invokeMethod('sendChatRating',  <String, dynamic> {
+      'rating': chatRating.toString(),
+    });
+  }
+
   Future<bool> sendOfflineMessage(String message) async {
     return await _callsChannel.invokeMethod('sendOfflineMessage', <String, dynamic> {
       'message': message

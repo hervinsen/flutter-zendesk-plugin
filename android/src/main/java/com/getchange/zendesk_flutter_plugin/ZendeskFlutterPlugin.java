@@ -209,6 +209,19 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           result.success(null);
         }
         break;
+      case "sendChatRating":
+        if (chatApi == null) {
+          result.error("CHAT_NOT_STARTED", null, null);
+          return;
+        }
+        ChatLog.Rating chatLogRating = ChatLog.Rating.UNKNOWN;
+        String rating = call.argument("rating");
+        if (!TextUtils.isEmpty(rating)) {
+          chatLogRating = toChatLogRating(rating);
+        }
+        chatApi.sendChatRating(chatLogRating);
+        result.success(null);
+        break;
       case "sendOfflineMessage":
         if (chatApi == null) {
           result.error("CHAT_NOT_STARTED", null, null);
@@ -304,5 +317,18 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         .create()
         .toJson(object)
         .replaceAll("\\$.+?\":", "\":");
+  }
+
+  private ChatLog.Rating toChatLogRating(String rating) {
+    switch (rating) {
+      case "ChatRating.GOOD":
+        return ChatLog.Rating.GOOD;
+      case "ChatRating.BAD":
+        return ChatLog.Rating.BAD;
+      case "ChatRating.UNRATED":
+        return ChatLog.Rating.UNRATED;
+      default:
+        return ChatLog.Rating.UNKNOWN;
+    }
   }
 }
