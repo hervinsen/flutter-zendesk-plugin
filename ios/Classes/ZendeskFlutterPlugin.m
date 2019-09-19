@@ -126,6 +126,14 @@
     }
     [self.chatApi uploadFileWithData:[filemgr contentsAtPath:pathname] name:filename];
     result(nil);
+  } else if ([@"sendChatRating" isEqualToString:call.method]) {
+    if (self.chatApi == nil) {
+      result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
+      return;
+    }
+    NSString* rating = [self argumentAsString:call forName:@"rating"];
+    [self.chatApi sendChatRating:[self toChatLogRating:rating]];
+    result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
       result([FlutterError errorWithCode:@"CHAT_NOT_STARTED" message:nil details:nil]);
@@ -220,6 +228,7 @@
     [chatItem setValue:event.message forKey:@"msg"];
     [chatItem setValue:[self chatEventTypeToString:event.type] forKey:@"type"];
     [chatItem setValue:@(event.verified) forKey:@"verified"];
+    [chatItem setValue:[self chatLogRatingToString:event.rating]) forKey:@"new_rating"];
     if ([event.options count] > 0) {
       [chatItem setValue:event.options forKey:@"options"];
       [chatItem setValue:[[NSNumber alloc] initWithLong:event.selectedOptionIndex] forKey:@"selectedOptionIndex"];
@@ -255,7 +264,7 @@
     case ZDCChatEventTypeAgentUpload:
       return @"chat.msg";
     case ZDCChatEventTypeRating:
-      return @"chat.request.rating";
+      return @"chat.rating";
     default:
       return @"UNKNOWN";
   }
@@ -284,6 +293,31 @@
     return nil;
   } else {
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+  }
+}
+
+- (ZDCChatRating) toChatLogRating:(NSString*) rating {
+  if ([@"ChatRating.GOOD" isEqualToString:rating]) {
+    return ZDCChatRatingGood ;
+  } else if ([@"ChatRating.BAD" isEqualToString:rating]) {
+    return ZDCChatRatingBad;
+  } else if ([@"ChatRating.UNRATED" isEqualToString:rating]) {
+    return ZDCChatRatingUnrated;
+  } else {
+    return ZDCChatRatingNone;
+  }
+}
+
+- (NSString*) chatLogRatingToString:(ZDCChatRating)rating {
+  switch (rating) {
+    case ZDCChatRatingGood:
+      return @"good";
+    case ZDCChatRatingBad:
+      return @"bad";
+    case ZDCChatRatingUnrated:
+      return @"unrated";
+    default:
+      return @"unknown";
   }
 }
 
