@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
-  String _zendeskAccountkey = '';
+  String _zendeskAccountkey = '2a4ijImfXbSkhZAUaUowwsKJZ7248PpL';
 
   final ZendeskFlutterPlugin _chatApi = ZendeskFlutterPlugin();
 
@@ -135,13 +135,13 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () async {
-                  await _chatApi.sendChatRating(ChatRating.GOOD);
+                  await _chatApi.sendChatRating(ChatRating.GOOD, comment: 'Good service');
                 },
                 child: Text("Send GOOD Rating"),
               ),
               RaisedButton(
                 onPressed: () async {
-                  await _chatApi.sendChatRating(ChatRating.BAD);
+                  await _chatApi.sendChatRating(ChatRating.BAD, comment: 'Bad service');
                 },
                 child: Text("Send BAD Rating"),
               ),

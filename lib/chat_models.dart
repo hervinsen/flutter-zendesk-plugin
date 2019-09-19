@@ -83,6 +83,7 @@ ChatItemType toChatItemType(String value) {
     case 'chat.request.rating':
       return ChatItemType.REQUEST_RATING;
     case 'chat.rating':
+    case 'chat.comment':
       return ChatItemType.RATING;
     default:
       return ChatItemType.UNKNOWN;
@@ -246,6 +247,8 @@ class ChatItem extends AbstractModel {
   ChatRating get rating => toChatRating(attribute('rating'));
 
   ChatRating get newRating => toChatRating(attribute('new_rating'));
+
+  String get newComment => attribute('new_comment');
 
   static List<ChatItem> parseChatItemsJsonForAndroid(String json, [@visibleForTesting String os]) {
     var out = List<ChatItem>();
