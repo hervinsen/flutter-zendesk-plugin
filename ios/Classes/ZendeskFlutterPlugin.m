@@ -135,7 +135,7 @@
     [self.chatApi sendChatRating:[self toChatLogRating:rating]];
     NSString* comment = [self argumentAsString:call forName:@"comment"];
     if (comment != nil) {
-      [self.chatApi sendChatRatingComment:comment;
+      [self.chatApi sendChatRatingComment:comment];
     }
     result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
