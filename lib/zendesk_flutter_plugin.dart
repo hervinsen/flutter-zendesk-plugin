@@ -72,9 +72,10 @@ class ZendeskFlutterPlugin {
     });
   }
 
-  Future<void> sendChatRating(ChatRating chatRating) async {
+  Future<void> sendChatRating(ChatRating chatRating, {String comment}) async {
     return await _callsChannel.invokeMethod('sendChatRating',  <String, dynamic> {
       'rating': chatRating.toString(),
+      'comment': comment
     });
   }
 

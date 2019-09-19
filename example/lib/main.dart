@@ -135,13 +135,13 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 onPressed: () async {
-                  await _chatApi.sendChatRating(ChatRating.GOOD);
+                  await _chatApi.sendChatRating(ChatRating.GOOD, comment: 'Good service');
                 },
                 child: Text("Send GOOD Rating"),
               ),
               RaisedButton(
                 onPressed: () async {
-                  await _chatApi.sendChatRating(ChatRating.BAD);
+                  await _chatApi.sendChatRating(ChatRating.BAD, comment: 'Bad service');
                 },
                 child: Text("Send BAD Rating"),
               ),

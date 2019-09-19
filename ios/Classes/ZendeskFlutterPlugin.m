@@ -133,6 +133,10 @@
     }
     NSString* rating = [self argumentAsString:call forName:@"rating"];
     [self.chatApi sendChatRating:[self toChatLogRating:rating]];
+    NSString* comment = [self argumentAsString:call forName:@"comment"];
+    if (comment != nil) {
+      [self.chatApi sendChatRatingComment:comment];
+    }
     result(nil);
   } else if ([@"sendOfflineMessage" isEqualToString:call.method]) {
     if (self.chatApi == nil) {
@@ -229,6 +233,7 @@
     [chatItem setValue:[self chatEventTypeToString:event.type] forKey:@"type"];
     [chatItem setValue:@(event.verified) forKey:@"verified"];
     [chatItem setValue:[self chatLogRatingToString:event.rating] forKey:@"new_rating"];
+    [chatItem setValue:event.ratingComment forKey:@"new_comment"];
     if ([event.options count] > 0) {
       [chatItem setValue:event.options forKey:@"options"];
       [chatItem setValue:[[NSNumber alloc] initWithLong:event.selectedOptionIndex] forKey:@"selectedOptionIndex"];
@@ -265,6 +270,8 @@
       return @"chat.msg";
     case ZDCChatEventTypeRating:
       return @"chat.rating";
+    case ZDCChatEventTypeRatingComment:
+      return @"chat.comment";
     default:
       return @"UNKNOWN";
   }

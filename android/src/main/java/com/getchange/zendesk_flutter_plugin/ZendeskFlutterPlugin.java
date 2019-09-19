@@ -220,6 +220,11 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
           chatLogRating = toChatLogRating(rating);
         }
         chatApi.sendChatRating(chatLogRating);
+
+        String comment = call.argument("comment");
+        if (!TextUtils.isEmpty(comment)) {
+          chatApi.sendChatComment(comment);
+        }
         result.success(null);
         break;
       case "sendOfflineMessage":

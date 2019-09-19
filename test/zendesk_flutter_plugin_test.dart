@@ -55,6 +55,7 @@ void main() {
       expect(toChatItemType('chat.triggermsg'), ChatItemType.MESSAGE);
       expect(toChatItemType('chat.request.rating'), ChatItemType.REQUEST_RATING);
       expect(toChatItemType('chat.rating'), ChatItemType.RATING);
+      expect(toChatItemType('chat.comment'), ChatItemType.RATING);
       expect(toChatItemType('other_type'), ChatItemType.UNKNOWN);
       expect(toChatItemType(null), ChatItemType.UNKNOWN);
       expect(toChatItemType(''), ChatItemType.UNKNOWN);
@@ -135,7 +136,7 @@ void main() {
       DateTime now = DateTime.now();
       List<ChatItem> items = ChatItem.parseChatItemsJsonForAndroid('{"1":{"timestamp":${now.millisecondsSinceEpoch}, "type":"chat.msg", "display_name":"aaa", "msg":"bbb", "nick":"ccc", '
           '"attachment":{"mime_type":"ddd", "name":"eee", "size":1, "type":"fff", "url":"ggg", "thumbnail":"hhh"}, "unverified":true, "failed": false, "options":"yes/no",'
-          '"converted_options":[{"label":"yes", "selected":false},{"label":"no", "selected":true}], "upload_progress":0, "rating":"bad", "new_rating":"good"}}',
+          '"converted_options":[{"label":"yes", "selected":false},{"label":"no", "selected":true}], "upload_progress":0, "rating":"bad", "new_rating":"good", "new_comment":"comment line"}}',
         'android'
       );
 
@@ -153,6 +154,7 @@ void main() {
       expect(items[0].uploadProgress, 0);
       expect(items[0].rating, ChatRating.BAD);
       expect(items[0].newRating, ChatRating.GOOD);
+      expect(items[0].newComment, 'comment line');
 
       Attachment attachment = items[0].attachment;
       expect(attachment != null, true);
@@ -175,7 +177,7 @@ void main() {
       DateTime now = DateTime.now();
       List<ChatItem> items = ChatItem.parseChatItemsJsonForIOS('[{"id":"1", "timestamp":${now.millisecondsSinceEpoch}, "type":"chat.msg", "display_name":"aaa", "msg":"bbb", "nick":"ccc", '
           '"attachment":{"mime_type":"ddd", "name":"eee", "size":1, "type":"fff", "url":"ggg", "thumbnail_url":"hhh"}, "verified":false, "failed": false, "options":["yes","no"],'
-          '"selectedOptionIndex":1, "upload_progress":0, "rating":"bad", "new_rating":"good"}]',
+          '"selectedOptionIndex":1, "upload_progress":0, "rating":"bad", "new_rating":"good", "new_comment":"comment line"}]',
         'ios'
       );
 
@@ -193,6 +195,7 @@ void main() {
       expect(items[0].uploadProgress, 0);
       expect(items[0].rating, ChatRating.BAD);
       expect(items[0].newRating, ChatRating.GOOD);
+      expect(items[0].newComment, 'comment line');
 
       Attachment attachment = items[0].attachment;
       expect(attachment != null, true);
