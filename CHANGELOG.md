@@ -1,3 +1,9 @@
-## 0.0.1
+## 1.0.0 (2019-10-11)
 
-* TODO: Describe initial release.
+##### Documentation Changes
+
+* **release:** Initial release to pub dart, adding author, changelog and license
+
+##### New Features
+
+##### Bug Fixes
