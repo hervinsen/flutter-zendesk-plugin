@@ -1,8 +1,8 @@
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
 
