@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Gå til startsiden"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Gå opp"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Flere alternativer"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Ferdig"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Se alle"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Velg en app"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"AV"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"PÅ"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Funksjon+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"mellomrom"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Meny+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Søk …"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Slett søket"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Søkeord"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Søk"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Utfør søket"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Talesøk"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Del med"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Del med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Skjul"</string>
+    <string name="articles_list_fragment_error_message">Får ikke tak i artikler</string>
+    <string name="articles_list_fragment_no_articles_found">Finner ingen artikler</string>
+    <string name="ask_request_list_failed_request_message">Meldingen kunne ikke sendes</string>
+    <string name="attachment_download_failed_message">Kunne ikke laste ned. Trykk for å prøve igjen.</string>
+    <string name="attachment_open_error_message">Kan ikke åpne vedlegget</string>
+    <string name="attachment_upload_access_error_message">Feil ved henting av filen</string>
+    <string name="attachment_upload_size_limit_error_message">Filstørrelsen er for stor</string>
+    <string name="attachment_upload_source_camera_button">Ta bilde</string>
+    <string name="attachment_upload_source_gallery_button">Legg ved bilde</string>
+    <string name="attachment_upload_type_error_message">Filtypen er ikke tillatt</string>
+    <string name="belvedere_dialog_camera">Kamera</string>
+    <string name="belvedere_dialog_gallery">Galleri</string>
+    <string name="belvedere_fam_desc_collapse_fam">Skjul flytende handlingsmeny</string>
+    <string name="belvedere_fam_desc_expand_fam">Vis flytende handlingsmeny</string>
+    <string name="belvedere_fam_desc_open_gallery">Importer fil fra galleriet</string>
+    <string name="belvedere_fam_desc_open_google_photos">Importer bilde fra Google Foto</string>
+    <string name="belvedere_image_stream_file_too_large">Filen er for stor</string>
+    <string name="belvedere_image_stream_title">Bildebibliotek</string>
+    <string name="belvedere_image_stream_unknown_app">Ukjent</string>
+    <string name="belvedere_permissions_denied">Har ikke tillatelse</string>
+    <string name="belvedere_stream_item_camera_tile_desc">Importer bilde fra kamera</string>
+    <string name="belvedere_stream_item_select_file_desc">Merk filen %s</string>
+    <string name="belvedere_stream_item_select_image_desc">Merk bildet %s</string>
+    <string name="belvedere_stream_item_unselect_file_desc">Opphev merking av filen %s</string>
+    <string name="belvedere_stream_item_unselect_image_desc">Opphev merking av bildet %s</string>
+    <string name="belvedere_toolbar_desc_collapse">Lukk bildevelger</string>
+    <string name="categories_list_fragment_error_message">Får ikke tak i kategorier</string>
+    <string name="chat_account_offline_message">Ingen kundekonsulenter er pålogget akkurat nå.</string>
+    <string name="chat_activity_title">Chat</string>
+    <string name="chat_agent_joined_message">%1$s chatter nå</string>
+    <string name="chat_agent_left_message">%1$s chatter ikke lenger</string>
+    <string name="chat_end_dialog_cancel_button">Avbryt</string>
+    <string name="chat_end_dialog_confirm_button">Avslutt</string>
+    <string name="chat_end_dialog_message">Chatteøkten vil bli avsluttet</string>
+    <string name="chat_end_dialog_title">Vil du avslutte denne chatten?</string>
+    <string name="chat_ended_message">Chatten ble avsluttet</string>
+    <string name="chat_loading_message">Starter chatten ...</string>
+    <string name="chat_menu_end_button">Avslutt chatten</string>
+    <string name="chat_notification_content_text">%s har startet en chat</string>
+    <string name="chat_notification_notification_channel">Varslinger om bakgrunnstjeneste for Zopim Chat-SDK</string>
+    <string name="chat_push_chat_ended_body">Chatten med %1$s er avsluttet</string>
+    <string name="chat_push_chat_ended_title">Chatten ble avsluttet</string>
+    <string name="chat_session_timeout_message">Vi har ikke hørt fra deg på en stund, så denne chatteøkten er blitt avsluttet. Du kan gjerne starte en ny chat hvis du fremdeles lurer på noe.</string>
+    <string name="chat_visitor_queue_message">Vent på en kundekonsulent. Det er i øyeblikket %1$s besøkende som venter på å bli betjent.</string>
+    <string name="contact_fragment_title">Ta kontakt med oss</string>
+    <string name="could_not_connect_error_message">Vi beklager at vi ikke kan koble deg til i øyeblikket. Prøv på nytt senere.</string>
+    <string name="could_not_connect_error_title">Kunne ikke koble til</string>
+    <string name="email_transcript_cancel_button">Ikke send</string>
+    <string name="email_transcript_confirm_button">Send</string>
+    <string name="email_transcript_email_cancel_button">Avbryt</string>
+    <string name="email_transcript_email_confirm_button">OK</string>
+    <string name="email_transcript_email_hint">e-post@adresse.com</string>
+    <string name="email_transcript_email_message">Skriv inn e-postadressen din</string>
+    <string name="email_transcript_message">Send transkripsjon av denne chatten til e-postadressen din</string>
+    <string name="email_transcript_title">Vil du sende e-post med transkripsjon?</string>
+    <string name="error_msg_invalid_email">Skriv inn en gyldig e-postadresse</string>
+    <string name="error_msg_invalid_message">Skriv en melding</string>
+    <string name="error_msg_invalid_name">Legg inn fornavn og etternavn</string>
+    <string name="help_search_no_results_label">Ingen resultater for</string>
+    <string name="help_see_all_articles_label">Vis alle artikler</string>
+    <string name="help_see_all_n_articles_label">Vis alle %d artikler</string>
+    <string name="input_field_hint">Melding</string>
+    <string name="message_failed_tap_to_retry">Kunne ikke sende. Trykk for å prøve igjen.</string>
+    <string name="network_activity_no_connectivity">Ingen forbindelse</string>
+    <string name="no_agents_message">Beklager, ingen kundekonsulenter er tilgjengelig for chatting. Prøv på nytt senere, eller legg igjen beskjed.</string>
+    <string name="no_agents_title">Ingen tilgjengelige kundekonsulenter</string>
+    <string name="no_connection_error_message">Du er ikke koblet til Internett akkurat nå. Prøv på nytt når du har koblet til</string>
+    <string name="no_connection_error_title">Ingen forbindelse</string>
+    <string name="no_connectivity_toast_message">Ingen forbindelse</string>
+    <string name="offline_email_error_hint">Skriv inn e-postadressen din</string>
+    <string name="offline_email_error_message">E-postadressen er obligatorisk</string>
+    <string name="offline_email_hint">E-postadresse</string>
+    <string name="offline_menu_send_button">Send</string>
+    <string name="offline_message_button">Legg igjen beskjed</string>
+    <string name="offline_message_cancel_button">Avbryt</string>
+    <string name="offline_message_error_hint">Skriv inn beskjeden</string>
+    <string name="offline_message_error_message">Beskjeden er obligatorisk</string>
+    <string name="offline_message_hint">Melding</string>
+    <string name="offline_message_retry_button">Prøv på nytt</string>
+    <string name="offline_message_send_failed">Kan ikke sende meldingen</string>
+    <string name="offline_name_error_hint">Skriv inn navnet ditt</string>
+    <string name="offline_name_error_message">Navnet er obligatorisk</string>
+    <string name="offline_name_hint">Navn</string>
+    <string name="offline_sent_confirmation_message">Beskjeden ble ikke sendt</string>
+    <string name="offline_validation_error_message">Rett opp feilene ovenfor</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">Avbryt</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">Melding</string>
+    <string name="pre_chat_account_offline_dialog_message">Det er for øyeblikket ikke noen kundekonsulenter som er pålogget. Vil du sende en melding?</string>
+    <string name="pre_chat_departments_error_hint">Velg avdeling</string>
+    <string name="pre_chat_departments_error_message">Avdelingen er obligatorisk</string>
+    <string name="pre_chat_departments_hint">Velg avdeling</string>
+    <string name="pre_chat_email_error_message">E-postadressen er obligatorisk</string>
+    <string name="pre_chat_email_hint">E-postadresse</string>
+    <string name="pre_chat_email_validation_message">Skriv inn en gyldig e-postadresse</string>
+    <string name="pre_chat_menu_next_button">Neste</string>
+    <string name="pre_chat_message_error_message">Meldingen er obligatorisk</string>
+    <string name="pre_chat_message_hint">Melding</string>
+    <string name="pre_chat_name_error_message">Navnet er obligatorisk</string>
+    <string name="pre_chat_name_hint">Navn</string>
+    <string name="pre_chat_phone_error_message">Telefonnummeret er obligatorisk</string>
+    <string name="pre_chat_phone_hint">Telefonnummer</string>
+    <string name="pre_chat_phone_validation_message">Skriv inn et gyldig telefonnummer</string>
+    <string name="pre_chat_validation_error_message">Fyll ut de obligatoriske feltene</string>
+    <string name="rate_this_chat_comment_label">Kommentar</string>
+    <string name="rate_this_chat_edit_comment_button">Rediger kommentar…</string>
+    <string name="rate_this_chat_leave_a_comment_button">Legg igjen en kommentar…</string>
+    <string name="rate_this_chat_leave_a_comment_title">Legg igjen en kommentar</string>
+    <string name="rate_this_chat_menu_item_send">Send</string>
+    <string name="rate_this_chat_title">Vurder denne chatten</string>
+    <string name="reconnect_timeout_cancel_button">Nei</string>
+    <string name="reconnect_timeout_confirm_button">Ja</string>
+    <string name="reconnect_timeout_message">Kan ikke koble til. Vil du gjøre flere forsøk?</string>
+    <string name="reconnect_timeout_title">Mistet forbindelsen</string>
+    <string name="reconnecting_toast_message">Kobler til igjen ...</string>
+    <string name="request_attachment_generic_unknown_app">Ukjent</string>
+    <string name="request_dialog_body_unsaved_changes">Hvis du går tilbake, blir meldingen slettet. Er du sikker på at du vil slette den?</string>
+    <string name="request_dialog_button_label_cancel">Avbryt</string>
+    <string name="request_dialog_button_label_delete">Slett</string>
+    <string name="request_dialog_title_unsaved_changes">Meldingen ble ikke sendt</string>
+    <string name="request_email_entry_hint">E-postadresse</string>
+    <string name="request_error_create_request">Kan ikke opprette forespørsel</string>
+    <string name="request_error_load_comments">Kan ikke laste inn kommentarer</string>
+    <string name="request_file_attachment_download_in_progress">Filnedlasting pågår</string>
+    <string name="request_list_activity_title">Mine saker</string>
+    <string name="request_list_empty_start_conversation">START EN SAMTALE</string>
+    <string name="request_list_empty_text">Samtaler som startes i denne appen, vil være synlige her.</string>
+    <string name="request_list_fragment_error_message">Får ikke tak i saker</string>
+    <string name="request_list_me">Meg</string>
+    <string name="request_list_re">Ang.: %s</string>
+    <string name="request_list_ticket_closed">Saken er avsluttet</string>
+    <string name="request_menu_button_label_add_attachments">Legg til vedlegg</string>
+    <string name="request_menu_button_label_send">Send</string>
+    <string name="request_message_date_today">I DAG</string>
+    <string name="request_message_date_yesterday">I GÅR</string>
+    <string name="request_message_entry_hint">Melding</string>
+    <string name="request_message_status_delivered">Levert</string>
+    <string name="request_messages_status_error">Meldingen kunne ikke sendes. Trykk for å prøve igjen</string>
+    <string name="request_name_entry_hint">Navn</string>
+    <string name="request_retry_dialog_delete_message">Slett melding</string>
+    <string name="request_retry_dialog_retry">Prøv å sende på nytt</string>
+    <string name="request_system_message_closed_ticket">Denne samtalen er avsluttet.</string>
+    <string name="request_toolbar_last_reply">Siste svar %s</string>
+    <string name="request_write_a_message">Skriv en melding</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">Prøv på nytt</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Søk"</string>
+    <string name="sections_list_fragment_error_message">Får ikke tak i seksjoner</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">Kundeservice</string>
+    <string name="support_conversations_menu">Samtaler</string>
+    <string name="view_article_attachments_error">Får ikke tak i vedlegg</string>
+    <string name="view_article_vote_prompt">Var denne artikkelen nyttig?</string>
+    <string name="zs_general_contact_us_button_label_accessibility">Ta kontakt med oss</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">Kundesenter ble lastet inn</string>
+    <string name="zs_help_center_search_loaded_accessibility">Søkeresultater ble lastet inn</string>
+    <string name="zs_request_announce_comment_created_accessibility">Kommentar med teksten %s ble sendt.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">Kan ikke opprette kommentar med teksten %s.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">Kommentarer ble lastet inn.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">La ved fil med navnet %s.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">Fjern vedlegg med navnet %s.</string>
+    <string name="zs_request_attachment_indicator_accessibility">Velg et vedlegg.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">Du har valgt %d vedlegg.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">Du har ikke valgt noen vedlegg.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">Du har valgt ett vedlegg.</string>
+    <string name="zs_request_contact_option_leave_a_message">Legg igjen beskjed</string>
+    <string name="zs_request_list_content_load_failed_accessibility">Kundeservicesaker kunne ikke lastes inn</string>
+    <string name="zs_request_list_content_loaded_accessibility">Kundeservicesaker ble lastet inn</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">Ingen kundeservicesaker</string>
+    <string name="zs_request_list_content_loading_accessibility">Laster inn kundeservicesaker</string>
+    <string name="zs_request_message_agent_file_accessibility">Filvedlegg fra kundekonsulent med navnet %s.</string>
+    <string name="zs_request_message_agent_image_accessibility">Bildevedlegg fra kundekonsulent med navnet %s.</string>
+    <string name="zs_request_message_agent_sent_accessibility">Sendt av %1$s %2$s.</string>
+    <string name="zs_request_message_agent_text_accessibility">Kundekonsulentmelding %s.</string>
+    <string name="zs_request_message_user_error_accessibility">Kunne ikke sende. Trykk for å få alternativer.</string>
+    <string name="zs_request_message_user_file_accessibility">Fil med navnet %s.</string>
+    <string name="zs_request_message_user_image_accessibility">Bilde med navnet %s.</string>
+    <string name="zs_request_message_user_sent_accessibility">Sendt av deg %s</string>
+    <string name="zs_request_message_user_text_accessibility">Melding %s.</string>
+    <string name="zs_request_toolbar_accessibility">Siste svar fra %1$s %2$s.</string>
+    <string name="zs_view_article_error">Får ikke tak i artikkelen</string>
+    <string name="zs_view_article_loaded_accessibility">Artikkelen %s ble lastet inn</string>
+    <string name="zs_view_article_vote_no_accessibility">Nei-stemme</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">Fjern ja-stemme</string>
+    <string name="zs_view_article_vote_yes_accessibility">Ja-stemme</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">Fjern nei-stemme</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">Avstemmingen mislyktes</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">Stemte nei</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">Stemte ja</string>
+    <string name="zui_attachment_indicator_accessibility">Velg et vedlegg</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">Du har valgt %d vedlegg</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">Du har ikke valgt noen vedlegg</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">Du har valgt ett vedlegg</string>
+    <string name="zui_bot_label">BOT</string>
+    <string name="zui_button_label_no">Nei</string>
+    <string name="zui_button_label_yes">Ja</string>
+    <string name="zui_cell_text_suggested_article_header">Her har du en artikkel som kan være til hjelp:</string>
+    <string name="zui_cell_text_suggested_articles_header">Her har du noen artikler som kan være til hjelp:</string>
+    <string name="zui_failed_message_copy">Kopier</string>
+    <string name="zui_failed_message_delete">Slett</string>
+    <string name="zui_failed_message_retry">Prøv på nytt</string>
+    <string name="zui_hint_type_message">Skriv en beskjed…</string>
+    <string name="zui_hint_write_a_message">Skriv en melding</string>
+    <string name="zui_label_dialog_delete_btn">Slett melding</string>
+    <string name="zui_label_dialog_retry_btn">Prøv å sende på nytt</string>
+    <string name="zui_label_failed">Mislyktes</string>
+    <string name="zui_label_send">Send</string>
+    <string name="zui_label_sent">Sendt</string>
+    <string name="zui_label_tap_retry">Trykk for å prøve igjen</string>
+    <string name="zui_retry_button_label">Prøv på nytt</string>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Ana ekrana git"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Yukarı git"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Diğer seçenekler"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Bitti"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Tümünü göster"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Bir uygulama seçin"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"KAPAT"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"AÇ"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"sil"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"İşlev+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Üst Karakter+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"boşluk"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menü+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Ara…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Sorguyu temizle"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Arama sorgusu"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Ara"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Sorguyu gönder"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Sesli arama"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Şununla paylaş"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> ile paylaş"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Daralt"</string>
+    <string name="articles_list_fragment_error_message">Makaleler alınamadı</string>
+    <string name="articles_list_fragment_no_articles_found">Makale bulunamadı</string>
+    <string name="ask_request_list_failed_request_message">Mesaj iletilemedi</string>
+    <string name="attachment_download_failed_message">İndirilemedi. Yeniden denemek için buraya dokunun.</string>
+    <string name="attachment_open_error_message">Ek açılamıyor</string>
+    <string name="attachment_upload_access_error_message">Dosyaya erişilirken hata oldu</string>
+    <string name="attachment_upload_size_limit_error_message">Dosya boyutu çok büyük</string>
+    <string name="attachment_upload_source_camera_button">Fotoğraf çek</string>
+    <string name="attachment_upload_source_gallery_button">Fotoğraf ekle</string>
+    <string name="attachment_upload_type_error_message">Dosya türüne izin verilmiyor</string>
+    <string name="belvedere_dialog_camera">Fotoğraf makinesi</string>
+    <string name="belvedere_dialog_gallery">Galeri</string>
+    <string name="belvedere_fam_desc_collapse_fam">Hareketli Eylem Menüsünü Daralt</string>
+    <string name="belvedere_fam_desc_expand_fam">Hareketli Eylem Menüsünü Genişlet</string>
+    <string name="belvedere_fam_desc_open_gallery">Galeriden içe dosya aktarın</string>
+    <string name="belvedere_fam_desc_open_google_photos">Google Fotoğraflar\'dan içe resim aktarın</string>
+    <string name="belvedere_image_stream_file_too_large">Dosya çok büyük</string>
+    <string name="belvedere_image_stream_title">Fotoğraf kitaplığı</string>
+    <string name="belvedere_image_stream_unknown_app">Bilinmiyor</string>
+    <string name="belvedere_permissions_denied">İzinler reddedildi</string>
+    <string name="belvedere_stream_item_camera_tile_desc">Fotoğraf makinesinden içe resim aktarın</string>
+    <string name="belvedere_stream_item_select_file_desc">%s adlı dosyayı seçin</string>
+    <string name="belvedere_stream_item_select_image_desc">%s adlı resmi seçin</string>
+    <string name="belvedere_stream_item_unselect_file_desc">%s adlı dosyanın seçimini kaldırın</string>
+    <string name="belvedere_stream_item_unselect_image_desc">%s adlı resmin seçimini kaldırın</string>
+    <string name="belvedere_toolbar_desc_collapse">Resim seçiciyi kapatın</string>
+    <string name="categories_list_fragment_error_message">Kategoriler alınamadı</string>
+    <string name="chat_account_offline_message">Şu anda hiçbir temsilci çevrimiçi değil.</string>
+    <string name="chat_activity_title">Sohbet</string>
+    <string name="chat_agent_joined_message">%1$s sohbete katıldı</string>
+    <string name="chat_agent_left_message">%1$s sohbetten ayrıldı</string>
+    <string name="chat_end_dialog_cancel_button">İptal</string>
+    <string name="chat_end_dialog_confirm_button">Bitiş</string>
+    <string name="chat_end_dialog_message">Sohbet oturumunuz kapatılacak</string>
+    <string name="chat_end_dialog_title">Bu sohbet sonlandırılsın mı?</string>
+    <string name="chat_ended_message">Sohbet sonlandırıldı</string>
+    <string name="chat_loading_message">Sohbet başlatılıyor…</string>
+    <string name="chat_menu_end_button">Sohbeti sonlandır</string>
+    <string name="chat_notification_content_text">%s bir sohbet başlattı</string>
+    <string name="chat_notification_notification_channel">Zopim Chat SDK arka plan hizmet bildirimleri</string>
+    <string name="chat_push_chat_ended_body">%1$s ile sohbetiniz sona erdi</string>
+    <string name="chat_push_chat_ended_title">Sohbet sona erdi</string>
+    <string name="chat_session_timeout_message">Uzun süre bir şey yazmadığınız için bu sohbet oturumu kapatıldı. Hala sorularınız varsa lütfen yeni bir sohbet başlatın.</string>
+    <string name="chat_visitor_queue_message">Lütfen bir temsilcinin yanıt vermesini bekleyin. Şu anda yanıt bekleyen %1$s ziyaretçi var.</string>
+    <string name="contact_fragment_title">Bizimle iletişime geçin</string>
+    <string name="could_not_connect_error_message">Üzgünüz, şu anda sizi bağlayamıyoruz. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="could_not_connect_error_title">Bağlantı kurulamadı</string>
+    <string name="email_transcript_cancel_button">Gönderme</string>
+    <string name="email_transcript_confirm_button">Gönder</string>
+    <string name="email_transcript_email_cancel_button">İptal</string>
+    <string name="email_transcript_email_confirm_button">Tamam</string>
+    <string name="email_transcript_email_hint">eposta@adres.com</string>
+    <string name="email_transcript_email_message">Lütfen e-posta adresinizi girin</string>
+    <string name="email_transcript_message">Bu sohbetin yazılı dökümünü e-posta adresinize gönderin</string>
+    <string name="email_transcript_title">Yazılı döküm e-postayla gönderilsin mi?</string>
+    <string name="error_msg_invalid_email">Geçerli bir e-posta adresi girin</string>
+    <string name="error_msg_invalid_message">Mesajınızı girin</string>
+    <string name="error_msg_invalid_name">Tam adınızı girin</string>
+    <string name="help_search_no_results_label">Şunun için sonuç bulunamadı:</string>
+    <string name="help_see_all_articles_label">Tüm makaleleri görüntüle</string>
+    <string name="help_see_all_n_articles_label">%d makalenin tümünü görüntüle</string>
+    <string name="input_field_hint">Mesaj</string>
+    <string name="message_failed_tap_to_retry">Gönderilemedi. Yeniden denemek için dokunun.</string>
+    <string name="network_activity_no_connectivity">Bağlantı yok</string>
+    <string name="no_agents_message">Üzgünüz, şu anda hiçbir temsilci sohbet etmek için müsait değil. Lütfen daha sonra yeniden deneyin ya da bize bir mesaj bırakın.</string>
+    <string name="no_agents_title">Müsait temsilci yok</string>
+    <string name="no_connection_error_message">Şu anda Internet bağlantınız yok. Lütfen bağlıyken yeniden deneyin</string>
+    <string name="no_connection_error_title">Bağlantı yok</string>
+    <string name="no_connectivity_toast_message">Bağlantı yok</string>
+    <string name="offline_email_error_hint">Lütfen e-posta adresinizi girin</string>
+    <string name="offline_email_error_message">E-posta adresi zorunludur</string>
+    <string name="offline_email_hint">E-posta adresi</string>
+    <string name="offline_menu_send_button">Gönder</string>
+    <string name="offline_message_button">Mesaj bırakın</string>
+    <string name="offline_message_cancel_button">İptal</string>
+    <string name="offline_message_error_hint">Lütfen mesaj girin</string>
+    <string name="offline_message_error_message">Mesaj zorunludur</string>
+    <string name="offline_message_hint">Mesaj</string>
+    <string name="offline_message_retry_button">Yeniden dene</string>
+    <string name="offline_message_send_failed">Mesaj gönderilemiyor</string>
+    <string name="offline_name_error_hint">Lütfen adınızı girin</string>
+    <string name="offline_name_error_message">Ad zorunludur</string>
+    <string name="offline_name_hint">Ad</string>
+    <string name="offline_sent_confirmation_message">Mesajınız gönderildi</string>
+    <string name="offline_validation_error_message">Lütfen yukarıdaki hataları düzeltin</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">İptal</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">Mesaj</string>
+    <string name="pre_chat_account_offline_dialog_message">Şu anda hiçbir temsilci çevrimiçi değil. Bir mesaj göndermek ister misiniz?</string>
+    <string name="pre_chat_departments_error_hint">Lütfen bir departman seçin</string>
+    <string name="pre_chat_departments_error_message">Departman zorunludur</string>
+    <string name="pre_chat_departments_hint">Bir departman seçin</string>
+    <string name="pre_chat_email_error_message">E-posta adresi zorunludur</string>
+    <string name="pre_chat_email_hint">E-posta adresi</string>
+    <string name="pre_chat_email_validation_message">Lütfen geçerli bir e-posta adresi girin</string>
+    <string name="pre_chat_menu_next_button">İleri</string>
+    <string name="pre_chat_message_error_message">Mesaj zorunludur</string>
+    <string name="pre_chat_message_hint">Mesaj</string>
+    <string name="pre_chat_name_error_message">Ad zorunludur</string>
+    <string name="pre_chat_name_hint">Ad</string>
+    <string name="pre_chat_phone_error_message">Telefon numarası zorunludur</string>
+    <string name="pre_chat_phone_hint">Telefon numarası</string>
+    <string name="pre_chat_phone_validation_message">Lütfen geçerli bir telefon numarası girin</string>
+    <string name="pre_chat_validation_error_message">Lütfen zorunlu alanları doldurun</string>
+    <string name="rate_this_chat_comment_label">Yorum</string>
+    <string name="rate_this_chat_edit_comment_button">Yorumu düzenleyin…</string>
+    <string name="rate_this_chat_leave_a_comment_button">Yorum yazın…</string>
+    <string name="rate_this_chat_leave_a_comment_title">Yorum yazın</string>
+    <string name="rate_this_chat_menu_item_send">Gönder</string>
+    <string name="rate_this_chat_title">Bu sohbeti değerlendirin</string>
+    <string name="reconnect_timeout_cancel_button">Hayır</string>
+    <string name="reconnect_timeout_confirm_button">Evet</string>
+    <string name="reconnect_timeout_message">Yeniden bağlantı kurulamıyor. Denemeye devam etmek ister misiniz?</string>
+    <string name="reconnect_timeout_title">Bağlantı kesildi</string>
+    <string name="reconnecting_toast_message">Yeniden bağlanıyor…</string>
+    <string name="request_attachment_generic_unknown_app">Bilinmiyor</string>
+    <string name="request_dialog_body_unsaved_changes">Geriye giderseniz mesajınız silinecek. Silmek istediğinizden emin misiniz?</string>
+    <string name="request_dialog_button_label_cancel">İptal</string>
+    <string name="request_dialog_button_label_delete">Sil</string>
+    <string name="request_dialog_title_unsaved_changes">Mesaj gönderilmedi</string>
+    <string name="request_email_entry_hint">E-posta</string>
+    <string name="request_error_create_request">Talep oluşturulamadı</string>
+    <string name="request_error_load_comments">Yorumlar yüklenemedi</string>
+    <string name="request_file_attachment_download_in_progress">Dosya indirme işlemi devam ediyor</string>
+    <string name="request_list_activity_title">Kayıtlarım</string>
+    <string name="request_list_empty_start_conversation">SOHBET BAŞLATIN</string>
+    <string name="request_list_empty_text">Bu uygulamadan başlatılan görüşmeler burada görünecek.</string>
+    <string name="request_list_fragment_error_message">Kayıtlar alınamadı</string>
+    <string name="request_list_me">Ben</string>
+    <string name="request_list_re">Yanıt: %s</string>
+    <string name="request_list_ticket_closed">Kayıt Kapalı</string>
+    <string name="request_menu_button_label_add_attachments">Ek iliştir</string>
+    <string name="request_menu_button_label_send">Gönder</string>
+    <string name="request_message_date_today">BUGÜN</string>
+    <string name="request_message_date_yesterday">DÜN</string>
+    <string name="request_message_entry_hint">Mesaj</string>
+    <string name="request_message_status_delivered">Teslim edildi</string>
+    <string name="request_messages_status_error">Mesaj iletilemedi. Yeniden denemek için dokunun</string>
+    <string name="request_name_entry_hint">Ad</string>
+    <string name="request_retry_dialog_delete_message">Mesajı sil</string>
+    <string name="request_retry_dialog_retry">Yeniden göndermeyi dene</string>
+    <string name="request_system_message_closed_ticket">Bu görüşme kapatıldı.</string>
+    <string name="request_toolbar_last_reply">Son yanıt %s</string>
+    <string name="request_write_a_message">Mesaj yazın</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">Yeniden dene</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Ara"</string>
+    <string name="sections_list_fragment_error_message">Bölümler alınamadı</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">Destek</string>
+    <string name="support_conversations_menu">Görüşmeler</string>
+    <string name="view_article_attachments_error">Ekler alınamadı</string>
+    <string name="view_article_vote_prompt">Bu makale yardımcı oldu mu?</string>
+    <string name="zs_general_contact_us_button_label_accessibility">Bizimle iletişime geçin</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">Yardım Merkezi yüklendi</string>
+    <string name="zs_help_center_search_loaded_accessibility">Arama sonuçları yüklendi</string>
+    <string name="zs_request_announce_comment_created_accessibility">%s metnini içeren yorum gönderildi.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">%s metnini içeren yorum oluşturulamıyor.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">Yorumlar yüklendi.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">%s adlı iliştirilmiş dosya.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">%s adlı eki kaldırın.</string>
+    <string name="zs_request_attachment_indicator_accessibility">Ek seçin.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">%d ek seçildi.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">Ek seçilmedi.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">Bir ek seçildi.</string>
+    <string name="zs_request_contact_option_leave_a_message">Mesaj yazın</string>
+    <string name="zs_request_list_content_load_failed_accessibility">Destek kayıtları yüklenemedi</string>
+    <string name="zs_request_list_content_loaded_accessibility">Destek kayıtları yüklendi</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">Destek kaydı yok</string>
+    <string name="zs_request_list_content_loading_accessibility">Destek kayıtları yükleniyor</string>
+    <string name="zs_request_message_agent_file_accessibility">Temsilcinin %s adlı dosya eki.</string>
+    <string name="zs_request_message_agent_image_accessibility">Temsilcinin %s adlı resim eki.</string>
+    <string name="zs_request_message_agent_sent_accessibility">%1$s tarafından şu saatte gönderildi: %2$s.</string>
+    <string name="zs_request_message_agent_text_accessibility">Temsilci mesajı %s.</string>
+    <string name="zs_request_message_user_error_accessibility">Gönderilemedi. Seçenekler için dokunun.</string>
+    <string name="zs_request_message_user_file_accessibility">%s adlı dosya.</string>
+    <string name="zs_request_message_user_image_accessibility">%s adlı resim.</string>
+    <string name="zs_request_message_user_sent_accessibility">Sizin tarafınızdan şu saatte gönderildi: %s.</string>
+    <string name="zs_request_message_user_text_accessibility">Mesaj %s.</string>
+    <string name="zs_request_toolbar_accessibility">Son yanıtlayan: %1$s, saat: %2$s.</string>
+    <string name="zs_view_article_error">Makale alınamadı</string>
+    <string name="zs_view_article_loaded_accessibility">%s adlı makale yüklendi</string>
+    <string name="zs_view_article_vote_no_accessibility">Oy yok</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">Evet oyunu kaldır</string>
+    <string name="zs_view_article_vote_yes_accessibility">Evet oyu</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">Hayır oyunu kaldır</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">Oylanamadı</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">Hayır oyu verildi</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">Evet oyu verildi</string>
+    <string name="zui_attachment_indicator_accessibility">Bir ek seçin</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">%d ek seçildi</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">Ek seçilmedi</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">Bir ek seçildi</string>
+    <string name="zui_bot_label">BOT</string>
+    <string name="zui_button_label_no">Hayır</string>
+    <string name="zui_button_label_yes">Evet</string>
+    <string name="zui_cell_text_suggested_article_header">Yardımcı olabilecek bir makale:</string>
+    <string name="zui_cell_text_suggested_articles_header">Yardımcı olabilecek bazı makaleler:</string>
+    <string name="zui_failed_message_copy">Kopyala</string>
+    <string name="zui_failed_message_delete">Sil</string>
+    <string name="zui_failed_message_retry">Yeniden dene</string>
+    <string name="zui_hint_type_message">Mesaj yazın…</string>
+    <string name="zui_hint_write_a_message">Mesaj yazın</string>
+    <string name="zui_label_dialog_delete_btn">Mesajı sil</string>
+    <string name="zui_label_dialog_retry_btn">Yeniden göndermeyi dene</string>
+    <string name="zui_label_failed">Başarısız</string>
+    <string name="zui_label_send">Gönder</string>
+    <string name="zui_label_sent">Gönderildi</string>
+    <string name="zui_label_tap_retry">Yeniden denemek için dokunun</string>
+    <string name="zui_retry_button_label">Yeniden dene</string>
+</resources>

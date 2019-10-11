@@ -1,0 +1,4 @@
+#Mon Aug 26 12:30:49 EEST 2019
+base.0=/Users/gabrielferraz/change/zendesk-flutter-plugin/example/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

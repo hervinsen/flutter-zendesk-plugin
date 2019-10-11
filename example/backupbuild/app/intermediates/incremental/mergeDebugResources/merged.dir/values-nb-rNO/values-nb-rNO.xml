@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attachment_upload_size_limit_error_message">Filstørrelsen er for stor</string>
+    <string name="attachment_upload_type_error_message">Filtypen er ikke tillatt</string>
+    <string name="chat_account_offline_message">Det er for øyeblikket ikke noen kundekonsulenter som er pålogget.</string>
+    <string name="chat_agent_joined_message">%1$s chatter nå</string>
+    <string name="chat_agent_left_message">%1$s chatter ikke lenger</string>
+    <string name="chat_session_timeout_message">Vi har ikke hørt fra deg på en stund, så denne chatteøkten er blitt avsluttet. Du kan gjerne starte en ny chat hvis du fremdeles lurer på noe.</string>
+    <string name="chat_visitor_queue_message">Vent på en kundekonsulent. Det er i øyeblikket %1$s besøkende som venter på å bli betjent.</string>
+</resources>

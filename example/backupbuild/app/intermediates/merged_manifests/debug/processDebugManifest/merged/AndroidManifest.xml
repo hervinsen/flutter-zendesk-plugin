@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.getchange.zendesk_flutter_plugin_example"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28" />
+    <!--
+         Flutter needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Listen to connection state in ConnectionPath. We don't need it for CONNECTIVITY_ACTION, as only disconnect event is being broadcast even without this permission. It is needed for reading active network info. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- For starting a foreground service on API 28 and above -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!--
+ io.flutter.app.FlutterApplication is an android.app.Application that
+         calls FlutterMain.startInitialization(this); in its onCreate method.
+         In most cases you can leave this as-is, but you if you want to provide
+         additional functionality it is fine to subclass or reimplement
+         FlutterApplication and put your custom class here.
+    -->
+    <application
+        android:name="io.flutter.app.FlutterApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="zendesk_flutter_plugin_example"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.getchange.zendesk_flutter_plugin_example.MainActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustResize" >
+
+            <!--
+                 This keeps the window background of the activity showing
+                 until Flutter renders its first frame. It can be removed if
+                 there is no splash screen (such as the default splash screen
+                 defined in @style/LaunchTheme).
+            -->
+            <meta-data
+                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.zopim.android.sdk.widget.ChatWidgetService"
+            android:exported="false"
+            android:stopWithTask="true" /> <!-- Activities -->
+        <activity
+            android:name="com.zopim.android.sdk.prechat.ZopimChatActivity"
+            android:label="@string/chat_activity_title"
+            android:theme="@style/ZopimChatTheme"
+            android:windowSoftInputMode="stateUnchanged|adjustResize" >
+            <intent-filter android:priority="-1000" >
+                <action android:name="zopim.action.RESUME_CHAT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zopim.android.sdk.chatlog.ZopimCommentActivity"
+            android:label="@string/rate_this_chat_leave_a_comment_title"
+            android:theme="@style/ZopimChatTheme"
+            android:windowSoftInputMode="stateUnspecified|adjustResize" />
+        <activity
+            android:name="zendesk.support.request.RequestActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="zendesk.support.guide.ViewArticleActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/zs_view_article_loading_title" />
+        <activity
+            android:name="zendesk.support.guide.HelpCenterActivity"
+            android:label="@string/support_activity_title"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="zendesk.support.requestlist.RequestListActivity"
+            android:label="@string/request_list_activity_title" />
+
+        <receiver
+            android:name="zendesk.support.DeepLinkingBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="zendesk.support" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="zendesk.support.SupportSdkStartupProvider"
+            android:authorities="com.getchange.zendesk_flutter_plugin_example.zendesk.support.SupportSdkStartupProvider"
+            android:enabled="true"
+            android:exported="false" /> <!-- Restrict service only to the host app. Will not allow apps outside of the one that implements the Chat SDK to start and bind to the service -->
+        <service
+            android:name="com.zopim.android.sdk.api.ChatService"
+            android:exported="false" />
+
+        <provider
+            android:name="com.zendesk.belvedere.BelvedereFileProvider"
+            android:authorities="com.getchange.zendesk_flutter_plugin_example.belvedere.attachments"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/belvedere_attachment_storage" />
+        </provider>
+        <provider
+            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.getchange.zendesk_flutter_plugin_example.lifecycle-trojan"
+            android:exported="false"
+            android:multiprocess="true" />
+        <provider
+            android:name="zendesk.belvedere.BelvedereFileProvider"
+            android:authorities="com.getchange.zendesk_flutter_plugin_example.belvedere2.attachments"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:readPermission="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/belvedere_attachment_storage_v2" />
+        </provider>
+    </application>
+
+</manifest>

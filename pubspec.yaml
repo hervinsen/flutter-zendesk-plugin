@@ -1,7 +1,7 @@
 name: zendesk_flutter_plugin
-description: A new flutter plugin project.
+description: A Zendesk Chat SDK Plugin that enables message and files streaming.
 version: 1.0.0
-author:
+author: ChangeFinance <gabriel@getchanbe.com>
 homepage: https://github.com/ChangeFinance/zendesk-flutter-plugin
 
 environment:
@@ -16,7 +16,6 @@ dev_dependencies:
   test: ^1.4.0
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

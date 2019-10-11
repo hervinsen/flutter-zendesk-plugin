@@ -1,0 +1,417 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+MERGED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+MERGED from [:zendesk_flutter_plugin] /Users/gabrielferraz/change/zendesk-flutter-plugin/example/build/zendesk_flutter_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:8:1-47:12
+MERGED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:8:1-56:12
+MERGED from [com.zendesk:common-ui:1.0.4] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/common-ui-1.0.4.aar/ee1c9acf9f5304e617e6467ebd5fa4ab/AndroidManifest.xml:2:1-11:12
+MERGED from [com.zendesk.belvedere2:belvedere:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-2.2.3.aar/7ffc160aa9a733c5ea43b36fc981f9a5/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:design:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1a0715c9d087db854ad4d4cbffb2ba43/AndroidManifest.xml:17:1-24:12
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:8:1-32:12
+MERGED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/31030624d64bca81956e4cd0109685cd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/4f2ccfc6cbf8f356155043b7883b400e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:17:1-30:12
+MERGED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/f4e0be078a44d9bf49e5f14a125a8fae/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/215e9fbbf2edaa3bf4353271c23d5f87/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/99c9af4b30ef4a1ead4078e19b1a0d86/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/973abc655f7e2507993ac50ec9378963/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/9450404e43cdfd5300d5e2938ff620d5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/be59221c08e70822a77dea0d2dba399e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/ef38c90269a58f38a84bf0f9daf03a00/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/31f6f77a8dda0292fed43f08af5ee592/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dafc3c3e2ef3bf642ff34fe9c543e435/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/b8b218bb9d0a86a36bae47f1c7ac4396/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/66fe9cf6fa3b58e5c8591f0b2e21a9e9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/244f1ec7ae1da4a8d0311ec2c8b94d7f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/d310b5170ffe6037ad8814b41590a608/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/9b7beb785fe998994cab96284e0b177c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/5e14f4e463867102fe2ff3f2f644c569/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/e7c3df2b65a56cd2f67382a5bb4d26c3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/81ca57bfb619818b653fcc6db50fa9e3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.sebchlan.picassocompat:picassocompat:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-1.2.1.aar/790fb124272388bbe4c392cfb77d544a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.zendesk:support-providers:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-providers-3.0.1.aar/9c12f73f3e3578b74d5b7abc1d7ddc4f/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.dagger:dagger-android:2.23.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/dagger-android-2.23.2.aar/6e26b82670d9fa37cb18c3d3dec753b4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c2d98568bca01af6d96b4141e1562e99/AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d465d8d367f82f7186f377ea24900e2f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/498fb15c5a320efb7981469a9ed8bb42/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/49d1cfc02ab30d4456fed69ba1b790fe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/3ffa6b22ae8fa1a4344d063231e773b3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/436eabe1a59ffaa4419fca111e2f8984/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/636dc2e2749a35a328d042f19a27fc12/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ecad8fb076bd6fddf5ea9f8ed6e019d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:2:1-18:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/198f7212efe91b4144bfbb7436bdddc8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/23e955b5ac0b4dfc1d9d694166006681/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/9f68237e5c1d893f252892fb20cde2e8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.sebchlan.picassocompat:picassocompat-252:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-252-1.2.1.aar/83f242425b526731c07c8db52202517e/AndroidManifest.xml:2:1-11:12
+MERGED from [com.sebchlan.picassocompat:picassocompat-271828:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-271828-1.2.1.aar/3472e82ec68e3652fb6c7cae6aee9795/AndroidManifest.xml:2:1-11:12
+MERGED from [com.sebchlan.picassocompat:picassocompat-parent:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-parent-1.2.1.aar/c31658b63e4734c04766b724c32401f8/AndroidManifest.xml:2:1-11:12
+MERGED from [com.crashlytics.sdk.android:answers-shim:0.0.6] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/answers-shim-0.0.6.aar/87ce9f7effaa9409b820786b6e1271ad/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:2:5-59
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:1-38:12
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:9:5-37:19
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:22:5-45:19
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:22:5-45:19
+MERGED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:25:5-54:19
+MERGED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:25:5-54:19
+MERGED from [com.android.support:design:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1a0715c9d087db854ad4d4cbffb2ba43/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1a0715c9d087db854ad4d4cbffb2ba43/AndroidManifest.xml:22:5-20
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:24:5-30:19
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:24:5-30:19
+MERGED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:11:5-21:19
+MERGED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:11:5-21:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:22:5-28:19
+MERGED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:11:5-22:19
+MERGED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:11:5-22:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c2d98568bca01af6d96b4141e1562e99/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c2d98568bca01af6d96b4141e1562e99/AndroidManifest.xml:22:5-23:19
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:15:5-16:19
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:15:5-16:19
+MERGED from [com.crashlytics.sdk.android:answers-shim:0.0.6] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/answers-shim-0.0.6.aar/87ce9f7effaa9409b820786b6e1271ad/AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:answers-shim:0.0.6] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/answers-shim-0.0.6.aar/87ce9f7effaa9409b820786b6e1271ad/AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:11:9-55
+	tools:ignore
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:25:18-48
+	android:icon
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:15:9-43
+	android:allowBackup
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:14:9-40
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:10:9-57
+activity#com.getchange.zendesk_flutter_plugin_example.MainActivity
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:16:9-35:20
+	android:launchMode
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:18:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:21:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:22:13-55
+	android:configChanges
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:20:13-144
+	android:theme
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:19:13-47
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:17:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:28:13-30:40
+	android:value
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:30:17-37
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:29:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:31:13-34:29
+action#android.intent.action.MAIN
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:32:17-68
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:33:17-76
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml:33:27-74
+uses-sdk
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+MERGED from [:zendesk_flutter_plugin] /Users/gabrielferraz/change/zendesk-flutter-plugin/example/build/zendesk_flutter_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:zendesk_flutter_plugin] /Users/gabrielferraz/change/zendesk-flutter-plugin/example/build/zendesk_flutter_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:13:5-15:41
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:13:5-15:41
+MERGED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:14:5-16:41
+MERGED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:14:5-16:41
+MERGED from [com.zendesk:common-ui:1.0.4] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/common-ui-1.0.4.aar/ee1c9acf9f5304e617e6467ebd5fa4ab/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk:common-ui:1.0.4] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/common-ui-1.0.4.aar/ee1c9acf9f5304e617e6467ebd5fa4ab/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk.belvedere2:belvedere:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-2.2.3.aar/7ffc160aa9a733c5ea43b36fc981f9a5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk.belvedere2:belvedere:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-2.2.3.aar/7ffc160aa9a733c5ea43b36fc981f9a5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1a0715c9d087db854ad4d4cbffb2ba43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/1a0715c9d087db854ad4d4cbffb2ba43/AndroidManifest.xml:20:5-44
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:13:5-15:41
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:13:5-15:41
+MERGED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/31030624d64bca81956e4cd0109685cd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/31030624d64bca81956e4cd0109685cd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/4f2ccfc6cbf8f356155043b7883b400e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/4f2ccfc6cbf8f356155043b7883b400e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:20:5-44
+MERGED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/f4e0be078a44d9bf49e5f14a125a8fae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/f4e0be078a44d9bf49e5f14a125a8fae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/215e9fbbf2edaa3bf4353271c23d5f87/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/215e9fbbf2edaa3bf4353271c23d5f87/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/99c9af4b30ef4a1ead4078e19b1a0d86/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/99c9af4b30ef4a1ead4078e19b1a0d86/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/973abc655f7e2507993ac50ec9378963/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/973abc655f7e2507993ac50ec9378963/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/9450404e43cdfd5300d5e2938ff620d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/9450404e43cdfd5300d5e2938ff620d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/be59221c08e70822a77dea0d2dba399e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/be59221c08e70822a77dea0d2dba399e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/ef38c90269a58f38a84bf0f9daf03a00/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/ef38c90269a58f38a84bf0f9daf03a00/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/31f6f77a8dda0292fed43f08af5ee592/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/31f6f77a8dda0292fed43f08af5ee592/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dafc3c3e2ef3bf642ff34fe9c543e435/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dafc3c3e2ef3bf642ff34fe9c543e435/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/b8b218bb9d0a86a36bae47f1c7ac4396/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/b8b218bb9d0a86a36bae47f1c7ac4396/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/66fe9cf6fa3b58e5c8591f0b2e21a9e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/66fe9cf6fa3b58e5c8591f0b2e21a9e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/244f1ec7ae1da4a8d0311ec2c8b94d7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/244f1ec7ae1da4a8d0311ec2c8b94d7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/d310b5170ffe6037ad8814b41590a608/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/d310b5170ffe6037ad8814b41590a608/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/9b7beb785fe998994cab96284e0b177c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/9b7beb785fe998994cab96284e0b177c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/5e14f4e463867102fe2ff3f2f644c569/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/5e14f4e463867102fe2ff3f2f644c569/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/e7c3df2b65a56cd2f67382a5bb4d26c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/e7c3df2b65a56cd2f67382a5bb4d26c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f47b3f1177de20d47ff6a02fa4879582/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/81ca57bfb619818b653fcc6db50fa9e3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/81ca57bfb619818b653fcc6db50fa9e3/AndroidManifest.xml:20:5-44
+MERGED from [com.sebchlan.picassocompat:picassocompat:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-1.2.1.aar/790fb124272388bbe4c392cfb77d544a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-1.2.1.aar/790fb124272388bbe4c392cfb77d544a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk:support-providers:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-providers-3.0.1.aar/9c12f73f3e3578b74d5b7abc1d7ddc4f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk:support-providers:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-providers-3.0.1.aar/9c12f73f3e3578b74d5b7abc1d7ddc4f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.dagger:dagger-android:2.23.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/dagger-android-2.23.2.aar/6e26b82670d9fa37cb18c3d3dec753b4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-android:2.23.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/dagger-android-2.23.2.aar/6e26b82670d9fa37cb18c3d3dec753b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c2d98568bca01af6d96b4141e1562e99/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c2d98568bca01af6d96b4141e1562e99/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d465d8d367f82f7186f377ea24900e2f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d465d8d367f82f7186f377ea24900e2f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/498fb15c5a320efb7981469a9ed8bb42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/498fb15c5a320efb7981469a9ed8bb42/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/49d1cfc02ab30d4456fed69ba1b790fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/49d1cfc02ab30d4456fed69ba1b790fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/3ffa6b22ae8fa1a4344d063231e773b3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/3ffa6b22ae8fa1a4344d063231e773b3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/436eabe1a59ffaa4419fca111e2f8984/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/436eabe1a59ffaa4419fca111e2f8984/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/636dc2e2749a35a328d042f19a27fc12/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/636dc2e2749a35a328d042f19a27fc12/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ecad8fb076bd6fddf5ea9f8ed6e019d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ecad8fb076bd6fddf5ea9f8ed6e019d/AndroidManifest.xml:20:5-44
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/198f7212efe91b4144bfbb7436bdddc8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/198f7212efe91b4144bfbb7436bdddc8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/23e955b5ac0b4dfc1d9d694166006681/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/23e955b5ac0b4dfc1d9d694166006681/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/9f68237e5c1d893f252892fb20cde2e8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/9f68237e5c1d893f252892fb20cde2e8/AndroidManifest.xml:20:5-44
+MERGED from [com.sebchlan.picassocompat:picassocompat-252:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-252-1.2.1.aar/83f242425b526731c07c8db52202517e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat-252:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-252-1.2.1.aar/83f242425b526731c07c8db52202517e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat-271828:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-271828-1.2.1.aar/3472e82ec68e3652fb6c7cae6aee9795/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat-271828:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-271828-1.2.1.aar/3472e82ec68e3652fb6c7cae6aee9795/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat-parent:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-parent-1.2.1.aar/c31658b63e4734c04766b724c32401f8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.sebchlan.picassocompat:picassocompat-parent:1.2.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/picassocompat-parent-1.2.1.aar/c31658b63e4734c04766b724c32401f8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.crashlytics.sdk.android:answers-shim:0.0.6] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/answers-shim-0.0.6.aar/87ce9f7effaa9409b820786b6e1271ad/AndroidManifest.xml:7:5-9:41
+MERGED from [com.crashlytics.sdk.android:answers-shim:0.0.6] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/answers-shim-0.0.6.aar/87ce9f7effaa9409b820786b6e1271ad/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml:6:5-66
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:17:5-67
+MERGED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:17:5-67
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:17:5-67
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:17:5-67
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:12:5-67
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /Users/gabrielferraz/change/zendesk-flutter-plugin/example/android/app/src/debug/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:19:5-79
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:19:5-79
+MERGED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:19:5-79
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:13:5-79
+MERGED from [com.zendesk:core:3.0.2] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/core-3.0.2.aar/9d135ef2b40e181018691e8fda17d846/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:19:22-76
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:20:22-75
+service#com.zopim.android.sdk.widget.ChatWidgetService
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:23:9-26:43
+	android:exported
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:25:13-37
+	android:stopWithTask
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:26:13-40
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:24:13-74
+activity#com.zopim.android.sdk.prechat.ZopimChatActivity
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:29:9-39:20
+	android:label
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:31:13-56
+	android:windowSoftInputMode
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:33:13-70
+	android:theme
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:32:13-50
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:30:13-75
+intent-filter#action:name:zopim.action.RESUME_CHAT+category:name:android.intent.category.DEFAULT
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:34:13-38:29
+	android:priority
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:34:28-52
+action#zopim.action.RESUME_CHAT
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:35:17-67
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:35:25-64
+category#android.intent.category.DEFAULT
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:37:17-76
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:37:27-73
+activity#com.zopim.android.sdk.chatlog.ZopimCommentActivity
+ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:40:9-44:75
+	android:label
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:42:13-73
+	android:windowSoftInputMode
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:44:13-72
+	android:theme
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:43:13-50
+	android:name
+		ADDED from [com.zopim.android:sdk:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-1.4.5.aar/e3c22f855326233742ab3cc6c16e1b21/AndroidManifest.xml:41:13-78
+activity#zendesk.support.request.RequestActivity
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:26:9-28:58
+	android:windowSoftInputMode
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:28:13-55
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:27:13-67
+activity#zendesk.support.guide.ViewArticleActivity
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:29:9-32:69
+	android:label
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:32:13-66
+	android:configChanges
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:31:13-59
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:30:13-69
+activity#zendesk.support.guide.HelpCenterActivity
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:33:9-36:58
+	android:label
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:35:13-59
+	android:windowSoftInputMode
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:36:13-55
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:34:13-68
+activity#zendesk.support.requestlist.RequestListActivity
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:37:9-39:67
+	android:label
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:39:13-64
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:38:13-75
+receiver#zendesk.support.DeepLinkingBroadcastReceiver
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:41:9-47:20
+	android:exported
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:42:13-72
+intent-filter#action:name:zendesk.support
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:44:13-46:29
+action#zendesk.support
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:45:17-58
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:45:25-55
+provider#zendesk.support.SupportSdkStartupProvider
+ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:49:9-53:40
+	android:enabled
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:52:13-35
+	android:authorities
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:51:13-93
+	android:exported
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from [com.zendesk:support:3.0.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/AndroidManifest.xml:50:13-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [com.zendesk.belvedere2:belvedere:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-2.2.3.aar/7ffc160aa9a733c5ea43b36fc981f9a5/AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from [com.zendesk.belvedere2:belvedere:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-2.2.3.aar/7ffc160aa9a733c5ea43b36fc981f9a5/AndroidManifest.xml:11:22-77
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:22:5-77
+	android:name
+		ADDED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:22:22-74
+service#com.zopim.android.sdk.api.ChatService
+ADDED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:27:9-29:40
+	android:exported
+		ADDED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [com.zopim.android:sdk-api:1.4.5] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/sdk-api-1.4.5.aar/0fcc48d06f0bc8d9508f2da80fc683bc/AndroidManifest.xml:28:13-65
+provider#com.zendesk.belvedere.BelvedereFileProvider
+ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:14:13-73
+	android:exported
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:13:13-71
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:17:13-19:72
+	android:resource
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from [com.zendesk:belvedere:1.1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-1.1.1.1.aar/47169f3d89717f33eaad5df2f1fe6ea8/AndroidManifest.xml:18:17-67
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/extensions-1.1.1.aar/348f2f8f3c5e19f8b301fa244dd336b0/AndroidManifest.xml:24:13-83
+provider#zendesk.belvedere.BelvedereFileProvider
+ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:12:9-21:20
+	android:readPermission
+		ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:17:13-42
+	android:grantUriPermissions
+		ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:14:13-74
+	android:exported
+		ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [com.zendesk.belvedere2:belvedere-core:2.2.3] /Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/belvedere-core-2.2.3.aar/7a7359b7d535714e6a40953aec5acdd7/AndroidManifest.xml:13:13-67

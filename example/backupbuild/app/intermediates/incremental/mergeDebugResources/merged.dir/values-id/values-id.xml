@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attachment_upload_size_limit_error_message">Ukuran file terlalu besar</string>
+    <string name="attachment_upload_type_error_message">Jenis file tidak diperbolehkan</string>
+    <string name="chat_account_offline_message">Saat ini tidak ada agen online.</string>
+    <string name="chat_agent_joined_message">%1$s bergabung dalam chat</string>
+    <string name="chat_agent_left_message">%1$s keluar dari chat</string>
+    <string name="chat_notification_content_text">%s has started a chat</string>
+    <string name="chat_notification_notification_channel">Zopim Chat SDK background service notifications</string>
+    <string name="chat_session_timeout_message">Kami tidak mendapat kabar dari Anda selama beberapa waktu, jadi sesi chat ini sudah ditutup. Mulai chat baru jika masih ada pertanyaan.</string>
+    <string name="chat_visitor_queue_message">Harap tunggu agen. Saat ini ada %1$s pengunjung yang menunggu dilayani.</string>
+</resources>

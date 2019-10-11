@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"홈 탐색"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"위로 탐색"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"옵션 더보기"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"완료"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"전체 보기"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"앱 선택"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"사용 안함"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"사용"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"삭제"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"입력"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"스페이스바"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"검색..."</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"검색어 삭제"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"검색어"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"검색"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"검색어 보내기"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"음성 검색"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"공유 대상"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>와(과) 공유"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"접기"</string>
+    <string name="articles_list_fragment_error_message">문서를 가져오지 못했습니다.</string>
+    <string name="articles_list_fragment_no_articles_found">문서를 찾지 못했습니다.</string>
+    <string name="ask_request_list_failed_request_message">메시지를 전송하지 못했습니다.</string>
+    <string name="attachment_download_failed_message">다운로드하지 못했습니다. 다시 시도하려면 탭하세요.</string>
+    <string name="attachment_open_error_message">첨부 파일을 열 수 없습니다.</string>
+    <string name="attachment_upload_access_error_message">파일 액세스 중 오류</string>
+    <string name="attachment_upload_size_limit_error_message">파일 크기가 너무 큽니다.</string>
+    <string name="attachment_upload_source_camera_button">사진 찍기</string>
+    <string name="attachment_upload_source_gallery_button">사진 첨부</string>
+    <string name="attachment_upload_type_error_message">허용되지 않는 파일 유형입니다.</string>
+    <string name="belvedere_dialog_camera">카메라</string>
+    <string name="belvedere_dialog_gallery">갤러리</string>
+    <string name="belvedere_fam_desc_collapse_fam">부동 작업 메뉴 축소</string>
+    <string name="belvedere_fam_desc_expand_fam">부동 작업 메뉴 확대</string>
+    <string name="belvedere_fam_desc_open_gallery">갤러리에서 파일 가져오기</string>
+    <string name="belvedere_fam_desc_open_google_photos">Google 포토에서 이미지 가져오기</string>
+    <string name="belvedere_image_stream_file_too_large">파일이 너무 큽니다.</string>
+    <string name="belvedere_image_stream_title">사진 라이브러리</string>
+    <string name="belvedere_image_stream_unknown_app">알 수 없음</string>
+    <string name="belvedere_permissions_denied">권한이 거부되었습니다.</string>
+    <string name="belvedere_stream_item_camera_tile_desc">카메라에서 이미지 가져오기</string>
+    <string name="belvedere_stream_item_select_file_desc">%s 파일 선택</string>
+    <string name="belvedere_stream_item_select_image_desc">%s 이미지 선택</string>
+    <string name="belvedere_stream_item_unselect_file_desc">%s 파일 선택 취소</string>
+    <string name="belvedere_stream_item_unselect_image_desc">%s 이미지 선택 취소</string>
+    <string name="belvedere_toolbar_desc_collapse">이미지 선택기 닫기</string>
+    <string name="categories_list_fragment_error_message">카테고리를 가져오지 못했습니다.</string>
+    <string name="chat_account_offline_message">현재 온라인 상태인 상담원이 없습니다.</string>
+    <string name="chat_activity_title">채팅</string>
+    <string name="chat_agent_joined_message">%1$s님이 채팅에 입장했습니다</string>
+    <string name="chat_agent_left_message">%1$s님이 채팅에서 퇴장했습니다</string>
+    <string name="chat_end_dialog_cancel_button">취소</string>
+    <string name="chat_end_dialog_confirm_button">종료</string>
+    <string name="chat_end_dialog_message">채팅 세션을 닫습니다.</string>
+    <string name="chat_end_dialog_title">이 채팅을 종료할까요?</string>
+    <string name="chat_ended_message">채팅 종료됨</string>
+    <string name="chat_loading_message">채팅 시작 중…</string>
+    <string name="chat_menu_end_button">채팅 종료</string>
+    <string name="chat_notification_content_text">%s에서 채팅을 시작했습니다.</string>
+    <string name="chat_notification_notification_channel">Zopim Chat SDK 백그라운드 서비스 알림</string>
+    <string name="chat_push_chat_ended_body">%1$s님과의 채팅이 종료되었습니다.</string>
+    <string name="chat_push_chat_ended_title">채팅 종료됨</string>
+    <string name="chat_session_timeout_message">한참 동안 아무 말씀도 안 하셔서 이 채팅 세션을 닫았습니다. 질문이 더 있으시면 새 채팅을 시작하세요.</string>
+    <string name="chat_visitor_queue_message">상담원이 응답할 때까지 기다려 주세요. 현재 %1$s명의 방문자가 상담원의 응답을 기다리고 있습니다.</string>
+    <string name="contact_fragment_title">문의하기</string>
+    <string name="could_not_connect_error_message">지금은 채팅에 연결할 수 없습니다. 나중에 다시 시도하세요.</string>
+    <string name="could_not_connect_error_title">연결할 수 없음</string>
+    <string name="email_transcript_cancel_button">보내지 않기</string>
+    <string name="email_transcript_confirm_button">보내기</string>
+    <string name="email_transcript_email_cancel_button">취소</string>
+    <string name="email_transcript_email_confirm_button">확인</string>
+    <string name="email_transcript_email_hint">email@address.com</string>
+    <string name="email_transcript_email_message">이메일 주소를 입력하세요</string>
+    <string name="email_transcript_message">이 채팅의 대화 내용을 이메일로 보내세요</string>
+    <string name="email_transcript_title">대화 내용을 이메일로 보낼까요?</string>
+    <string name="error_msg_invalid_email">올바른 이메일 주소를 입력하세요.</string>
+    <string name="error_msg_invalid_message">메시지를 입력하세요.</string>
+    <string name="error_msg_invalid_name">성과 이름을 입력하세요.</string>
+    <string name="help_search_no_results_label">다음에 대한 검색 결과 없음:</string>
+    <string name="help_see_all_articles_label">모든 문서 보기</string>
+    <string name="help_see_all_n_articles_label">문서 %d개 모두 보기</string>
+    <string name="input_field_hint">메시지</string>
+    <string name="message_failed_tap_to_retry">보내지 못했습니다. 다시 시도하려면 탭하세요.</string>
+    <string name="network_activity_no_connectivity">연결되지 않았습니다.</string>
+    <string name="no_agents_message">채팅 가능한 상담원이 없습니다. 나중에 다시 시도하거나 메시지를 남겨주세요.</string>
+    <string name="no_agents_title">채팅 가능한 상담원 없음</string>
+    <string name="no_connection_error_message">현재 인터넷에 연결되어 있지 않습니다. 연결되면 다시 시도하세요.</string>
+    <string name="no_connection_error_title">연결되지 않았습니다.</string>
+    <string name="no_connectivity_toast_message">연결되지 않았습니다.</string>
+    <string name="offline_email_error_hint">이메일 주소를 입력하세요</string>
+    <string name="offline_email_error_message">이메일은 반드시 입력해야 합니다.</string>
+    <string name="offline_email_hint">이메일 주소</string>
+    <string name="offline_menu_send_button">보내기</string>
+    <string name="offline_message_button">메시지 남기기</string>
+    <string name="offline_message_cancel_button">취소</string>
+    <string name="offline_message_error_hint">메시지를 입력하세요</string>
+    <string name="offline_message_error_message">메시지는 반드시 입력해야 합니다.</string>
+    <string name="offline_message_hint">메시지</string>
+    <string name="offline_message_retry_button">다시 시도</string>
+    <string name="offline_message_send_failed">메시지를 보낼 수 없습니다.</string>
+    <string name="offline_name_error_hint">이름을 입력하세요</string>
+    <string name="offline_name_error_message">이름은 반드시 입력해야 합니다.</string>
+    <string name="offline_name_hint">이름</string>
+    <string name="offline_sent_confirmation_message">메시지를 보냈습니다.</string>
+    <string name="offline_validation_error_message">위의 오류를 수정하세요</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">취소</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">메시지</string>
+    <string name="pre_chat_account_offline_dialog_message">현재 온라인 상태인 상담원이 없습니다. 메시지를 보내시겠어요?</string>
+    <string name="pre_chat_departments_error_hint">부서를 선택하세요</string>
+    <string name="pre_chat_departments_error_message">부서는 반드시 입력해야 합니다.</string>
+    <string name="pre_chat_departments_hint">부서를 선택하세요</string>
+    <string name="pre_chat_email_error_message">이메일은 반드시 입력해야 합니다.</string>
+    <string name="pre_chat_email_hint">이메일 주소</string>
+    <string name="pre_chat_email_validation_message">올바른 이메일 주소를 입력하세요.</string>
+    <string name="pre_chat_menu_next_button">다음</string>
+    <string name="pre_chat_message_error_message">메시지는 반드시 입력해야 합니다.</string>
+    <string name="pre_chat_message_hint">메시지</string>
+    <string name="pre_chat_name_error_message">이름은 반드시 입력해야 합니다.</string>
+    <string name="pre_chat_name_hint">이름</string>
+    <string name="pre_chat_phone_error_message">전화번호는 반드시 입력해야 합니다.</string>
+    <string name="pre_chat_phone_hint">전화번호</string>
+    <string name="pre_chat_phone_validation_message">올바른 전화번호를 입력하세요.</string>
+    <string name="pre_chat_validation_error_message">필수 필드를 입력하세요</string>
+    <string name="rate_this_chat_comment_label">댓글</string>
+    <string name="rate_this_chat_edit_comment_button">댓글 편집…</string>
+    <string name="rate_this_chat_leave_a_comment_button">댓글 남기기…</string>
+    <string name="rate_this_chat_leave_a_comment_title">댓글 남기기</string>
+    <string name="rate_this_chat_menu_item_send">보내기</string>
+    <string name="rate_this_chat_title">이 채팅 평가</string>
+    <string name="reconnect_timeout_cancel_button">아니요</string>
+    <string name="reconnect_timeout_confirm_button">예</string>
+    <string name="reconnect_timeout_message">연결할 수 없습니다. 다시 연결을 시도하시겠어요?</string>
+    <string name="reconnect_timeout_title">연결 끊김</string>
+    <string name="reconnecting_toast_message">다시 연결 중…</string>
+    <string name="request_attachment_generic_unknown_app">알 수 없음</string>
+    <string name="request_dialog_body_unsaved_changes">뒤로 돌아가면 메시지가 삭제됩니다. 메시지를 삭제하시겠습니까?</string>
+    <string name="request_dialog_button_label_cancel">취소</string>
+    <string name="request_dialog_button_label_delete">삭제</string>
+    <string name="request_dialog_title_unsaved_changes">메시지를 보내지 못했습니다.</string>
+    <string name="request_email_entry_hint">이메일</string>
+    <string name="request_error_create_request">요청을 작성하지 못했습니다.</string>
+    <string name="request_error_load_comments">댓글을 로드하지 못했습니다.</string>
+    <string name="request_file_attachment_download_in_progress">파일 다운로드 진행 중</string>
+    <string name="request_list_activity_title">내 티켓</string>
+    <string name="request_list_empty_start_conversation">대화 시작</string>
+    <string name="request_list_empty_text">이 앱에서 시작된 대화가 여기에 표시됩니다.</string>
+    <string name="request_list_fragment_error_message">티켓을 가져오지 못했습니다.</string>
+    <string name="request_list_me">나</string>
+    <string name="request_list_re">답장: %s</string>
+    <string name="request_list_ticket_closed">티켓 종료됨</string>
+    <string name="request_menu_button_label_add_attachments">첨부 파일 추가</string>
+    <string name="request_menu_button_label_send">보내기</string>
+    <string name="request_message_date_today">오늘</string>
+    <string name="request_message_date_yesterday">어제</string>
+    <string name="request_message_entry_hint">메시지</string>
+    <string name="request_message_status_delivered">전송됨</string>
+    <string name="request_messages_status_error">메시지를 전송하지 못했습니다. 다시 시도하려면 탭하세요.</string>
+    <string name="request_name_entry_hint">이름</string>
+    <string name="request_retry_dialog_delete_message">메시지 삭제</string>
+    <string name="request_retry_dialog_retry">보내기 다시 시도</string>
+    <string name="request_system_message_closed_ticket">이 대화가 종료되었습니다.</string>
+    <string name="request_toolbar_last_reply">마지막 답장: %s</string>
+    <string name="request_write_a_message">메시지 쓰기</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">다시 시도</string>
+    <string msgid="146198913615257606" name="search_menu_title">"검색"</string>
+    <string name="sections_list_fragment_error_message">섹션을 가져오지 못했습니다.</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">지원</string>
+    <string name="support_conversations_menu">대화</string>
+    <string name="view_article_attachments_error">첨부 파일을 가져오지 못했습니다.</string>
+    <string name="view_article_vote_prompt">도움이 되었습니까?</string>
+    <string name="zs_general_contact_us_button_label_accessibility">문의하기</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">헬프 센터를 로드했습니다.</string>
+    <string name="zs_help_center_search_loaded_accessibility">검색 결과를 로드했습니다.</string>
+    <string name="zs_request_announce_comment_created_accessibility">%s 내용의 댓글을 보냈습니다.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">%s 내용의 댓글을 보내지 못했습니다.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">댓글을 로드했습니다.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">이름이 %s인 파일을 첨부했습니다.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">이름이 %s인 첨부 파일을 제거하세요.</string>
+    <string name="zs_request_attachment_indicator_accessibility">첨부 파일을 선택하세요.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">%d개의 첨부 파일을 선택했습니다.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">선택한 첨부 파일이 없습니다.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">1개의 첨부 파일을 선택했습니다.</string>
+    <string name="zs_request_contact_option_leave_a_message">메시지 남기기</string>
+    <string name="zs_request_list_content_load_failed_accessibility">지원 티켓을 로드하지 못했습니다.</string>
+    <string name="zs_request_list_content_loaded_accessibility">지원 티켓을 로드했습니다.</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">지원 티켓이 없습니다.</string>
+    <string name="zs_request_list_content_loading_accessibility">지원 티켓을 로드 중입니다.</string>
+    <string name="zs_request_message_agent_file_accessibility">상담원이 첨부한 파일 이름이 %s입니다.</string>
+    <string name="zs_request_message_agent_image_accessibility">상담원이 첨부한 이미지 이름이 %s입니다.</string>
+    <string name="zs_request_message_agent_sent_accessibility">%1$s님이 %2$s에 보냈습니다.</string>
+    <string name="zs_request_message_agent_text_accessibility">상담원이 쓴 메시지 %s입니다.</string>
+    <string name="zs_request_message_user_error_accessibility">보내지 못했습니다. 옵션을 보려면 탭하세요.</string>
+    <string name="zs_request_message_user_file_accessibility">파일 이름이 %s입니다.</string>
+    <string name="zs_request_message_user_image_accessibility">이미지 이름이 %s입니다.</string>
+    <string name="zs_request_message_user_sent_accessibility">고객님이 %s에 보내셨습니다.</string>
+    <string name="zs_request_message_user_text_accessibility">메시지 %s입니다.</string>
+    <string name="zs_request_toolbar_accessibility">%1$s님이 %2$s에 마지막 답장을 하셨습니다.</string>
+    <string name="zs_view_article_error">문서를 가져오지 못했습니다.</string>
+    <string name="zs_view_article_loaded_accessibility">%s개 문서를 로드했습니다.</string>
+    <string name="zs_view_article_vote_no_accessibility">반대 표</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">찬성 표 취소</string>
+    <string name="zs_view_article_vote_yes_accessibility">찬성 표</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">반대 표 취소</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">투표하지 못했습니다.</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">반대 투표했습니다.</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">찬성 투표했습니다.</string>
+    <string name="zui_attachment_indicator_accessibility">첨부 파일 선택</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">%d개의 첨부 파일을 선택했습니다.</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">선택한 첨부 파일이 없습니다.</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">1개의 첨부 파일을 선택했습니다.</string>
+    <string name="zui_bot_label">봇</string>
+    <string name="zui_button_label_no">아니요</string>
+    <string name="zui_button_label_yes">예</string>
+    <string name="zui_cell_text_suggested_article_header">다음은 도움이 될 만한 문서입니다.</string>
+    <string name="zui_cell_text_suggested_articles_header">다음은 도움이 될 만한 몇 가지 문서입니다.</string>
+    <string name="zui_failed_message_copy">복사</string>
+    <string name="zui_failed_message_delete">삭제</string>
+    <string name="zui_failed_message_retry">다시 시도</string>
+    <string name="zui_hint_type_message">메시지 입력…</string>
+    <string name="zui_hint_write_a_message">메시지 쓰기</string>
+    <string name="zui_label_dialog_delete_btn">메시지 삭제</string>
+    <string name="zui_label_dialog_retry_btn">보내기 다시 시도</string>
+    <string name="zui_label_failed">실패</string>
+    <string name="zui_label_send">보내기</string>
+    <string name="zui_label_sent">보냄</string>
+    <string name="zui_label_tap_retry">다시 시도하려면 탭하세요.</string>
+    <string name="zui_retry_button_label">다시 시도</string>
+</resources>

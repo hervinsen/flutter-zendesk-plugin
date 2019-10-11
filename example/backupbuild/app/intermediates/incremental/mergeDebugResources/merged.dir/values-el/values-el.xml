@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Πλοήγηση στην αρχική σελίδα"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Πλοήγηση προς τα επάνω"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Περισσότερες επιλογές"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Τέλος"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Προβολή όλων"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Επιλέξτε κάποια εφαρμογή"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ΕΝΕΡΓΟΠΟΙΗΣΗ"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"διάστημα"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Αναζήτηση…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Διαγραφή ερωτήματος"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Ερώτημα αναζήτησης"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Αναζήτηση"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Υποβολή ερωτήματος"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Φωνητική αναζήτηση"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Κοινή χρήση με"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Κοινή χρήση με <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Σύμπτυξη"</string>
+    <string name="articles_list_fragment_error_message">Αποτυχία λήψης άρθρων</string>
+    <string name="articles_list_fragment_no_articles_found">Δεν βρέθηκαν άρθρα</string>
+    <string name="ask_request_list_failed_request_message">Το μήνυμα απέτυχε</string>
+    <string name="attachment_download_failed_message">Η λήψη απέτυχε. Πατήστε για να προσπαθήσετε ξανά.</string>
+    <string name="attachment_open_error_message">Το συνημμένο δεν ανοίγει</string>
+    <string name="attachment_upload_access_error_message">Σφάλμα πρόσβασης στο αρχείο</string>
+    <string name="attachment_upload_size_limit_error_message">Το αρχείο είναι πολύ μεγάλο</string>
+    <string name="attachment_upload_source_camera_button">Λήψη φωτογραφίας</string>
+    <string name="attachment_upload_source_gallery_button">Επισύναψη φωτογραφίας</string>
+    <string name="attachment_upload_type_error_message">Δεν επιτρέπεται αυτός ο τύπος αρχείου</string>
+    <string name="belvedere_dialog_camera">Κάμερα</string>
+    <string name="belvedere_dialog_gallery">Συλλογή εικόνων</string>
+    <string name="belvedere_fam_desc_collapse_fam">Σύμπτυξη κινούμενου μενού ενεργειών</string>
+    <string name="belvedere_fam_desc_expand_fam">Επέκταση κινούμενου μενού ενεργειών</string>
+    <string name="belvedere_fam_desc_open_gallery">Εισαγωγή αρχείου από τη συλλογή εικόνων</string>
+    <string name="belvedere_fam_desc_open_google_photos">Εισαγωγή εικόνας από τις Φωτογραφίες Google</string>
+    <string name="belvedere_image_stream_file_too_large">Το αρχείο είναι πολύ μεγάλο</string>
+    <string name="belvedere_image_stream_title">Βιβλιοθήκη φωτογραφιών</string>
+    <string name="belvedere_image_stream_unknown_app">Άγνωστος</string>
+    <string name="belvedere_permissions_denied">Δεν έχει δοθεί άδεια</string>
+    <string name="belvedere_stream_item_camera_tile_desc">Εισαγωγή εικόνας από την κάμερα</string>
+    <string name="belvedere_stream_item_select_file_desc">Επιλογή αρχείου %s</string>
+    <string name="belvedere_stream_item_select_image_desc">Επιλογή εικόνας %s</string>
+    <string name="belvedere_stream_item_unselect_file_desc">Κατάργηση επιλογής αρχείου %s</string>
+    <string name="belvedere_stream_item_unselect_image_desc">Κατάργηση επιλογής εικόνας%s</string>
+    <string name="belvedere_toolbar_desc_collapse">Κλείσιμο εργαλείου επιλογής εικόνας</string>
+    <string name="categories_list_fragment_error_message">Αποτυχία λήψης κατηγοριών</string>
+    <string name="chat_account_offline_message">Δεν υπάρχουν εκπρόσωποι σε σύνδεση επί του παρόντος.</string>
+    <string name="chat_activity_title">Συνομιλία</string>
+    <string name="chat_agent_joined_message">Ο/Η %1$s συμμετέχει τώρα στη συνομιλία</string>
+    <string name="chat_agent_left_message">Ο/Η %1$s αποχώρησε από τη συνομιλία</string>
+    <string name="chat_end_dialog_cancel_button">Ακύρωση</string>
+    <string name="chat_end_dialog_confirm_button">Λήξη</string>
+    <string name="chat_end_dialog_message">Η συνομιλία σας θα κλείσει</string>
+    <string name="chat_end_dialog_title">Λήξη αυτής της συνομιλίας;</string>
+    <string name="chat_ended_message">Η συνομιλία έληξε</string>
+    <string name="chat_loading_message">Η συνομιλία ξεκινά...</string>
+    <string name="chat_menu_end_button">Λήξη συνομιλίας</string>
+    <string name="chat_notification_content_text">Ο χρήστης %s ξεκίνησε μια συνομιλία</string>
+    <string name="chat_notification_notification_channel">Ειδοποιήσεις υπηρεσίας παρασκηνίου Zopim Chat SDK</string>
+    <string name="chat_push_chat_ended_body">Η συνομιλία σας με τον/την %1$s έληξε</string>
+    <string name="chat_push_chat_ended_title">Η συνομιλία έληξε</string>
+    <string name="chat_session_timeout_message">Δεν έχει υπάρξει δραστηριότητα από εσάς εδώ και αρκετή ώρα, οπότε αυτή η συνομιλία έκλεισε. Ξεκινήστε μια νέα συνομιλία, αν έχετε ακόμα ερωτήσεις.</string>
+    <string name="chat_visitor_queue_message">Περιμένετε να συνδεθείτε με εκπρόσωπο. Αριθμός επισκεπτών που περιμένουν να εξυπηρετηθούν: %1$s.</string>
+    <string name="contact_fragment_title">Επικοινωνία</string>
+    <string name="could_not_connect_error_message">Λυπούμαστε, δεν μπορούμε να σας συνδέσουμε αυτήν τη στιγμή. Προσπαθήστε ξανά αργότερα.</string>
+    <string name="could_not_connect_error_title">Δεν ήταν δυνατή η σύνδεση</string>
+    <string name="email_transcript_cancel_button">Να μη σταλεί</string>
+    <string name="email_transcript_confirm_button">Αποστολή</string>
+    <string name="email_transcript_email_cancel_button">Ακύρωση</string>
+    <string name="email_transcript_email_confirm_button">OK</string>
+    <string name="email_transcript_email_hint">email@address.com</string>
+    <string name="email_transcript_email_message">Πληκτρολογήστε τη διεύθυνση email σας</string>
+    <string name="email_transcript_message">Στείλτε ένα αντίγραφο αυτής της συνομιλίας στη διεύθυνση email σας</string>
+    <string name="email_transcript_title">Να σταλεί αντίγραφο μέσω email;</string>
+    <string name="error_msg_invalid_email">Παρέχετε μια έγκυρη διεύθυνση email</string>
+    <string name="error_msg_invalid_message">Πληκτρολογήστε το μήνυμά σας</string>
+    <string name="error_msg_invalid_name">Γράψτε το ονοματεπώνυμό σας</string>
+    <string name="help_search_no_results_label">Δεν βρέθηκαν αποτελέσματα για την αναζήτηση</string>
+    <string name="help_see_all_articles_label">Δείτε όλα τα άρθρα</string>
+    <string name="help_see_all_n_articles_label">Δείτε και τα %d άρθρα</string>
+    <string name="input_field_hint">Μήνυμα</string>
+    <string name="message_failed_tap_to_retry">Αποτυχία αποστολής. Πατήστε για να προσπαθήσετε ξανά.</string>
+    <string name="network_activity_no_connectivity">Δεν υπάρχει σύνδεση</string>
+    <string name="no_agents_message">Λυπούμαστε, δεν υπάρχουν διαθέσιμοι εκπρόσωποι για συνομιλία. Προσπαθήστε ξανά αργότερα ή αφήστε μας μήνυμα.</string>
+    <string name="no_agents_title">Δεν υπάρχουν διαθέσιμοι εκπρόσωποι</string>
+    <string name="no_connection_error_message">Δεν έχετε σύνδεση στο διαδίκτυο αυτήν τη στιγμή. Προσπαθήστε ξανά όταν συνδεθείτε</string>
+    <string name="no_connection_error_title">Δεν υπάρχει σύνδεση</string>
+    <string name="no_connectivity_toast_message">Δεν υπάρχει σύνδεση</string>
+    <string name="offline_email_error_hint">Πληκτρολογήστε τη διεύθυνση email σας</string>
+    <string name="offline_email_error_message">Απαιτείται διεύθυνση email</string>
+    <string name="offline_email_hint">Διεύθυνση email</string>
+    <string name="offline_menu_send_button">Αποστολή</string>
+    <string name="offline_message_button">Αφήστε ένα μήνυμα</string>
+    <string name="offline_message_cancel_button">Ακύρωση</string>
+    <string name="offline_message_error_hint">Γράψτε ένα μήνυμα</string>
+    <string name="offline_message_error_message">Απαιτείται μήνυμα</string>
+    <string name="offline_message_hint">Μήνυμα</string>
+    <string name="offline_message_retry_button">Επανάληψη</string>
+    <string name="offline_message_send_failed">Δεν ήταν δυνατή η αποστολή μηνύματος</string>
+    <string name="offline_name_error_hint">Πληκτρολογήστε το όνομά σας</string>
+    <string name="offline_name_error_message">Απαιτείται όνομα</string>
+    <string name="offline_name_hint">Όνομα</string>
+    <string name="offline_sent_confirmation_message">Το μήνυμά σας έχει σταλεί</string>
+    <string name="offline_validation_error_message">Διορθώστε τα παραπάνω λάθη</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">Ακύρωση</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">Μήνυμα</string>
+    <string name="pre_chat_account_offline_dialog_message">Δεν υπάρχουν εκπρόσωποι σε σύνδεση επί του παρόντος. Θέλετε να στείλετε ένα μήνυμα;</string>
+    <string name="pre_chat_departments_error_hint">Επιλέξτε ένα τμήμα</string>
+    <string name="pre_chat_departments_error_message">Απαιτείται τμήμα</string>
+    <string name="pre_chat_departments_hint">Επιλέξτε ένα τμήμα</string>
+    <string name="pre_chat_email_error_message">Απαιτείται διεύθυνση email</string>
+    <string name="pre_chat_email_hint">Διεύθυνση email</string>
+    <string name="pre_chat_email_validation_message">Πληκτρολογήστε μια έγκυρη διεύθυνση email</string>
+    <string name="pre_chat_menu_next_button">Επόμενο</string>
+    <string name="pre_chat_message_error_message">Απαιτείται μήνυμα</string>
+    <string name="pre_chat_message_hint">Μήνυμα</string>
+    <string name="pre_chat_name_error_message">Απαιτείται όνομα</string>
+    <string name="pre_chat_name_hint">Όνομα</string>
+    <string name="pre_chat_phone_error_message">Απαιτείται αριθμός τηλεφώνου</string>
+    <string name="pre_chat_phone_hint">Αριθμός τηλεφώνου</string>
+    <string name="pre_chat_phone_validation_message">Παράσχετε έναν έγκυρο αριθμό τηλεφώνου</string>
+    <string name="pre_chat_validation_error_message">Συμπληρώστε τα απαιτούμενα πεδία</string>
+    <string name="rate_this_chat_comment_label">Σχόλιο</string>
+    <string name="rate_this_chat_edit_comment_button">Επεξεργασία σχολίου...</string>
+    <string name="rate_this_chat_leave_a_comment_button">Αφήστε ένα σχόλιο...</string>
+    <string name="rate_this_chat_leave_a_comment_title">Αφήστε ένα σχόλιο</string>
+    <string name="rate_this_chat_menu_item_send">Αποστολή</string>
+    <string name="rate_this_chat_title">Αξιολογήστε αυτήν τη συνομιλία</string>
+    <string name="reconnect_timeout_cancel_button">Όχι</string>
+    <string name="reconnect_timeout_confirm_button">Ναι</string>
+    <string name="reconnect_timeout_message">Δεν ήταν δυνατή η επανασύνδεση. Θέλετε να συνεχίσετε να προσπαθείτε;</string>
+    <string name="reconnect_timeout_title">Η σύνδεση χάθηκε</string>
+    <string name="reconnecting_toast_message">Επανασύνδεση....</string>
+    <string name="request_attachment_generic_unknown_app">Άγνωστο</string>
+    <string name="request_dialog_body_unsaved_changes">Αν επιστρέψετε πίσω θα διαγραφεί το μήνυμά σας. Θέλετε σίγουρα να το διαγράψετε;</string>
+    <string name="request_dialog_button_label_cancel">Ακύρωση</string>
+    <string name="request_dialog_button_label_delete">Διαγραφή</string>
+    <string name="request_dialog_title_unsaved_changes">Το μήνυμα δεν εστάλη</string>
+    <string name="request_email_entry_hint">Email</string>
+    <string name="request_error_create_request">Αποτυχία δημιουργίας αιτήματος</string>
+    <string name="request_error_load_comments">Αποτυχία φόρτωσης σχολίων</string>
+    <string name="request_file_attachment_download_in_progress">Η λήψη του αρχείου είναι σε εξέλιξη</string>
+    <string name="request_list_activity_title">Τα δελτία μου</string>
+    <string name="request_list_empty_start_conversation">ΕΝΑΡΞΗ ΜΙΑΣ ΣΥΖΗΤΗΣΗΣ</string>
+    <string name="request_list_empty_text">Οι συζητήσεις που ξεκίνησαν από αυτήν τη εφαρμογή θα είναι ορατές εδώ.</string>
+    <string name="request_list_fragment_error_message">Αποτυχία λήψης δελτίων</string>
+    <string name="request_list_me">Εγώ</string>
+    <string name="request_list_re">Σχετ.: %s</string>
+    <string name="request_list_ticket_closed">Κλειστό δελτίο</string>
+    <string name="request_menu_button_label_add_attachments">Προσθήκη συνημμένων</string>
+    <string name="request_menu_button_label_send">Αποστολή</string>
+    <string name="request_message_date_today">ΣΗΜΕΡΑ</string>
+    <string name="request_message_date_yesterday">ΕΧΘΕΣ</string>
+    <string name="request_message_entry_hint">Μήνυμα</string>
+    <string name="request_message_status_delivered">Παραδόθηκε</string>
+    <string name="request_messages_status_error">Το μήνυμα απέτυχε. Πατήστε για νέα προσπάθεια</string>
+    <string name="request_name_entry_hint">Όνομα</string>
+    <string name="request_retry_dialog_delete_message">Διαγραφή μηνύματος</string>
+    <string name="request_retry_dialog_retry">Επανάληψη αποστολής</string>
+    <string name="request_system_message_closed_ticket">Αυτή η συζήτηση έχει κλείσει.</string>
+    <string name="request_toolbar_last_reply">Τελευταία απάντηση %s</string>
+    <string name="request_write_a_message">Πληκτρολογήστε ένα μήνυμα</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">Επανάληψη</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Αναζήτηση"</string>
+    <string name="sections_list_fragment_error_message">Αποτυχία λήψης ενοτήτων</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">Υποστήριξη</string>
+    <string name="support_conversations_menu">Συζητήσεις</string>
+    <string name="view_article_attachments_error">Αποτυχία λήψης συνημμένων</string>
+    <string name="view_article_vote_prompt">Ήταν χρήσιμο αυτό το άρθρο;</string>
+    <string name="zs_general_contact_us_button_label_accessibility">Επικοινωνία</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">Το Κέντρο βοήθειας φορτώθηκε</string>
+    <string name="zs_help_center_search_loaded_accessibility">Τα αποτελέσματα αναζήτησης φορτώθηκαν</string>
+    <string name="zs_request_announce_comment_created_accessibility">Εστάλη το σχόλιο με το κείμενο %s.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">Δεν ήταν δυνατή η δημιουργία του σχολίου με το κείμενο %s.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">Τα σχόλια φορτώθηκαν.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">Συνημμένο αρχείο με όνομα %s.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">Αφαίρεση του συνημμένου με όνομα %s.</string>
+    <string name="zs_request_attachment_indicator_accessibility">Επιλέξτε ένα συνημμένο.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">Υπάρχουν %d επιλεγμένα συνημμένα.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">Δεν υπάρχει κανένα επιλεγμένο συνημμένο.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">Υπάρχει ένα επιλεγμένο συνημμένο.</string>
+    <string name="zs_request_contact_option_leave_a_message">Αφήστε ένα μήνυμα</string>
+    <string name="zs_request_list_content_load_failed_accessibility">Απέτυχε η φόρτωση των δελτίων υποστήριξης</string>
+    <string name="zs_request_list_content_loaded_accessibility">Τα δελτία υποστήριξης φορτώθηκαν</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">Δεν υπάρχουν δελτία υποστήριξης</string>
+    <string name="zs_request_list_content_loading_accessibility">Γίνεται φόρτωση δελτίων υποστήριξης</string>
+    <string name="zs_request_message_agent_file_accessibility">Συνημμένο αρχείο εκπροσώπου με όνομα %s.</string>
+    <string name="zs_request_message_agent_image_accessibility">Συνημμένη εικόνα εκπροσώπου με όνομα %s.</string>
+    <string name="zs_request_message_agent_sent_accessibility">Εστάλη από τον/την %1$s στις %2$s.</string>
+    <string name="zs_request_message_agent_text_accessibility">Μήνυμα εκπροσώπου %s.</string>
+    <string name="zs_request_message_user_error_accessibility">Αποτυχία αποστολής. Πατήστε για επιλογές.</string>
+    <string name="zs_request_message_user_file_accessibility">Αρχείο με όνομα %s.</string>
+    <string name="zs_request_message_user_image_accessibility">Εικόνα με όνομα %s.</string>
+    <string name="zs_request_message_user_sent_accessibility">Εστάλη από εσάς στις %s</string>
+    <string name="zs_request_message_user_text_accessibility">Μήνυμα %s.</string>
+    <string name="zs_request_toolbar_accessibility">Τελευταία απάντηση από τον/την %1$s στις %2$s.</string>
+    <string name="zs_view_article_error">Η λήψη του άρθρου απέτυχε</string>
+    <string name="zs_view_article_loaded_accessibility">Το άρθρο %s φορτώθηκε</string>
+    <string name="zs_view_article_vote_no_accessibility">Καμία ψήφος</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">Αφαίρεση θετικής ψήφου</string>
+    <string name="zs_view_article_vote_yes_accessibility">Θετική ψήφος</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">Αφαίρεση αρνητικής ψήφου</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">Αποτυχία ψήφου</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">Ψήφισε όχι</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">Ψήφισε ναι</string>
+    <string name="zui_attachment_indicator_accessibility">Επιλέξτε ένα συνημμένο</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">Υπάρχουν %d επιλεγμένα συνημμένα</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">Δεν υπάρχει κανένα επιλεγμένο συνημμένο</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">Υπάρχει ένα επιλεγμένο συνημμένο</string>
+    <string name="zui_bot_label">ΡΟΜΠΟΤ</string>
+    <string name="zui_button_label_no">Όχι</string>
+    <string name="zui_button_label_yes">Ναι</string>
+    <string name="zui_cell_text_suggested_article_header">Ακολουθεί ένα άρθρο που μπορεί να σας φανεί χρήσιμο:</string>
+    <string name="zui_cell_text_suggested_articles_header">Ακολουθούν κάποια άρθρα που μπορεί να σας φανούν χρήσιμα:</string>
+    <string name="zui_failed_message_copy">Αντιγραφή</string>
+    <string name="zui_failed_message_delete">Διαγραφή</string>
+    <string name="zui_failed_message_retry">Επανάληψη</string>
+    <string name="zui_hint_type_message">Πληκτρολογήστε ένα μήνυμα…</string>
+    <string name="zui_hint_write_a_message">Πληκτρολογήστε ένα μήνυμα</string>
+    <string name="zui_label_dialog_delete_btn">Διαγραφή μηνύματος</string>
+    <string name="zui_label_dialog_retry_btn">Επανάληψη αποστολής</string>
+    <string name="zui_label_failed">Απέτυχε</string>
+    <string name="zui_label_send">Αποστολή</string>
+    <string name="zui_label_sent">Εστάλη</string>
+    <string name="zui_label_tap_retry">Πατήστε για επανάληψη</string>
+    <string name="zui_retry_button_label">Επανάληψη</string>
+</resources>

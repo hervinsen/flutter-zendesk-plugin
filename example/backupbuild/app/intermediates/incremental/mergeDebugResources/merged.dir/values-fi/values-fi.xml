@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Siirry etusivulle"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Siirry ylös"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Lisää"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Valmis"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Näytä kaikki"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Valitse sovellus"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"POIS KÄYTÖSTÄ"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"KÄYTÖSSÄ"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Fn+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Vaihto+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"välilyönti"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Valikko+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Haku…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Tyhjennä kysely"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Hakulauseke"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Haku"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Lähetä kysely"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Puhehaku"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Jakaminen:"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Jaa sovelluksessa <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Kutista"</string>
+    <string name="articles_list_fragment_error_message">Artikkelien hakeminen epäonnistui</string>
+    <string name="articles_list_fragment_no_articles_found">Artikkeleja ei löytynyt</string>
+    <string name="ask_request_list_failed_request_message">Viesti epäonnistui</string>
+    <string name="attachment_download_failed_message">Lataus epäonnistui. Yritä uudelleen napauttamalla tätä.</string>
+    <string name="attachment_open_error_message">Ei voi avata liitettä</string>
+    <string name="attachment_upload_access_error_message">Virhe avattaessa tiedostoa</string>
+    <string name="attachment_upload_size_limit_error_message">Tiedosto on liian suuri</string>
+    <string name="attachment_upload_source_camera_button">Ota valokuva</string>
+    <string name="attachment_upload_source_gallery_button">Liitä valokuva</string>
+    <string name="attachment_upload_type_error_message">Tiedostotyyppiä ei sallita</string>
+    <string name="belvedere_dialog_camera">Kamera</string>
+    <string name="belvedere_dialog_gallery">Galleria</string>
+    <string name="belvedere_fam_desc_collapse_fam">Sulje irrallinen toimintovalikko</string>
+    <string name="belvedere_fam_desc_expand_fam">Laajenna irrallinen toimintovalikko</string>
+    <string name="belvedere_fam_desc_open_gallery">Tuo tiedosto galleriasta</string>
+    <string name="belvedere_fam_desc_open_google_photos">Tuo kuva Google Photos -sovelluksesta</string>
+    <string name="belvedere_image_stream_file_too_large">Tiedosto on liian suuri</string>
+    <string name="belvedere_image_stream_title">Valokuvakirjasto</string>
+    <string name="belvedere_image_stream_unknown_app">Tuntematon</string>
+    <string name="belvedere_permissions_denied">Käyttöoikeudet estetty</string>
+    <string name="belvedere_stream_item_camera_tile_desc">Tuo kuva kamerasta</string>
+    <string name="belvedere_stream_item_select_file_desc">Valitse tiedosto %s</string>
+    <string name="belvedere_stream_item_select_image_desc">Valitse kuva %s</string>
+    <string name="belvedere_stream_item_unselect_file_desc">Poista valinta tiedostosta %s</string>
+    <string name="belvedere_stream_item_unselect_image_desc">Poista valinta kuvasta %s</string>
+    <string name="belvedere_toolbar_desc_collapse">Sulje kuvan valintatyökalu</string>
+    <string name="categories_list_fragment_error_message">Kategorioiden hakeminen epäonnistui</string>
+    <string name="chat_account_offline_message">Ei tukihenkilöitä online-tilassa tällä hetkellä.</string>
+    <string name="chat_activity_title">Chatti</string>
+    <string name="chat_agent_joined_message">%1$s liittyi chattiin</string>
+    <string name="chat_agent_left_message">%1$s poistui chatista</string>
+    <string name="chat_end_dialog_cancel_button">Peruuta</string>
+    <string name="chat_end_dialog_confirm_button">Lopeta</string>
+    <string name="chat_end_dialog_message">Chatti-istuntosi suljetaan</string>
+    <string name="chat_end_dialog_title">Lopetetaanko tämä chatti?</string>
+    <string name="chat_ended_message">Chatti päättyi</string>
+    <string name="chat_loading_message">Aloitetaan chatti…</string>
+    <string name="chat_menu_end_button">Lopeta chatti</string>
+    <string name="chat_notification_content_text">%s on aloittanut chatin</string>
+    <string name="chat_notification_notification_channel">Zopim Chat SDK -taustapalveluilmoitukset</string>
+    <string name="chat_push_chat_ended_body">Chattisi henkilön %1$s kanssa on päättynyt</string>
+    <string name="chat_push_chat_ended_title">Chatti päättyi</string>
+    <string name="chat_session_timeout_message">Emme ole kuulleet sinusta vähään aikaan, joten tämä chatti-istunto on suljettu. Aloita uusi chatti, jos sinulla on edelleen kysyttävää.</string>
+    <string name="chat_visitor_queue_message">Odota tukihenkilöä. Tällä hetkellä %1$s vierailijaa odottaa vastaamista.</string>
+    <string name="contact_fragment_title">Ota yhteyttä</string>
+    <string name="could_not_connect_error_message">Valitettavasti emme saa yhteyttä sinuun tällä hetkellä. Yritä myöhemmin uudelleen.</string>
+    <string name="could_not_connect_error_title">Ei saanut yhteyttä</string>
+    <string name="email_transcript_cancel_button">Älä lähetä</string>
+    <string name="email_transcript_confirm_button">Lähetä</string>
+    <string name="email_transcript_email_cancel_button">Peruuta</string>
+    <string name="email_transcript_email_confirm_button">OK</string>
+    <string name="email_transcript_email_hint">sähköposti@osoite.com</string>
+    <string name="email_transcript_email_message">Kirjoita sähköpostiosoitteesi</string>
+    <string name="email_transcript_message">Lähetä tallenne tästä chatista sähköpostiosoitteeseesi</string>
+    <string name="email_transcript_title">Lähetetäänkö tallenne sähköpostilla?</string>
+    <string name="error_msg_invalid_email">Anna toimiva sähköpostiosoite</string>
+    <string name="error_msg_invalid_message">Kirjoita viesti</string>
+    <string name="error_msg_invalid_name">Kirjoita koko nimesi</string>
+    <string name="help_search_no_results_label">Ei tuloksia haulle</string>
+    <string name="help_see_all_articles_label">Näytä kaikki artikkelit</string>
+    <string name="help_see_all_n_articles_label">Näytä kaikki %d artikkelia</string>
+    <string name="input_field_hint">Viesti</string>
+    <string name="message_failed_tap_to_retry">Lähettäminen epäonnistui. Yritä uudelleen napauttamalla tätä.</string>
+    <string name="network_activity_no_connectivity">Ei yhteyttä</string>
+    <string name="no_agents_message">Valitettavasti chattiin ei ole käytettävissä tukihenkilöitä. Kokeile uudelleen myöhemmin tai jätä viesti.</string>
+    <string name="no_agents_title">Tukihenkilöitä ei käytettävissä</string>
+    <string name="no_connection_error_message">Sinulla ei ole tällä hetkellä internet-yhteyttä. Yritä uudestaan, kun yhteys pelaa.</string>
+    <string name="no_connection_error_title">Ei yhteyttä</string>
+    <string name="no_connectivity_toast_message">Ei yhteyttä</string>
+    <string name="offline_email_error_hint">Kirjoita sähköpostiosoitteesi</string>
+    <string name="offline_email_error_message">Sähköposti on pakollinen</string>
+    <string name="offline_email_hint">Sähköpostiosoite</string>
+    <string name="offline_menu_send_button">Lähetä</string>
+    <string name="offline_message_button">Jätä viesti</string>
+    <string name="offline_message_cancel_button">Peruuta</string>
+    <string name="offline_message_error_hint">Kirjoita viesti</string>
+    <string name="offline_message_error_message">Viesti on pakollinen</string>
+    <string name="offline_message_hint">Viesti</string>
+    <string name="offline_message_retry_button">Yritä uudelleen</string>
+    <string name="offline_message_send_failed">Viestin lähettäminen epäonnistui</string>
+    <string name="offline_name_error_hint">Kirjoita nimi</string>
+    <string name="offline_name_error_message">Nimi on pakollinen</string>
+    <string name="offline_name_hint">Nimi</string>
+    <string name="offline_sent_confirmation_message">Viestisi on lähetetty</string>
+    <string name="offline_validation_error_message">Korjaa yllä mainitut viestit</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">Peruuta</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">Viesti</string>
+    <string name="pre_chat_account_offline_dialog_message">Ei tukihenkilöitä online-tilassa tällä hetkellä. Haluatko lähettää viestin?</string>
+    <string name="pre_chat_departments_error_hint">Valitse osasto</string>
+    <string name="pre_chat_departments_error_message">Osasto on pakollinen</string>
+    <string name="pre_chat_departments_hint">Valitse osasto</string>
+    <string name="pre_chat_email_error_message">Sähköposti on pakollinen</string>
+    <string name="pre_chat_email_hint">Sähköpostiosoite</string>
+    <string name="pre_chat_email_validation_message">Anna kelvollinen sähköpostiosoite</string>
+    <string name="pre_chat_menu_next_button">Seuraava</string>
+    <string name="pre_chat_message_error_message">Viesti on pakollinen</string>
+    <string name="pre_chat_message_hint">Viesti</string>
+    <string name="pre_chat_name_error_message">Nimi on pakollinen</string>
+    <string name="pre_chat_name_hint">Nimi</string>
+    <string name="pre_chat_phone_error_message">Puhelinnumero on pakollinen</string>
+    <string name="pre_chat_phone_hint">Puhelinnumero</string>
+    <string name="pre_chat_phone_validation_message">Anna kelvollinen puhelinnumero</string>
+    <string name="pre_chat_validation_error_message">Täytä pakolliset kentät</string>
+    <string name="rate_this_chat_comment_label">Kommentti</string>
+    <string name="rate_this_chat_edit_comment_button">Muokkaa kommenttia…</string>
+    <string name="rate_this_chat_leave_a_comment_button">Jätä kommentti…</string>
+    <string name="rate_this_chat_leave_a_comment_title">Jätä kommentti</string>
+    <string name="rate_this_chat_menu_item_send">Lähetä</string>
+    <string name="rate_this_chat_title">Arvioi tämä chatti</string>
+    <string name="reconnect_timeout_cancel_button">Ei</string>
+    <string name="reconnect_timeout_confirm_button">Kyllä</string>
+    <string name="reconnect_timeout_message">Yhteyden luominen uudelleen epäonnistui. Jatketaanko yrittämistä?</string>
+    <string name="reconnect_timeout_title">Yhteys katkennut</string>
+    <string name="reconnecting_toast_message">Yhteyttä luodaan uudelleen…</string>
+    <string name="request_attachment_generic_unknown_app">Tuntematon</string>
+    <string name="request_dialog_body_unsaved_changes">Takaisin siirtyminen poistaa viestisi. Haluatko varmasti poistaa sen?</string>
+    <string name="request_dialog_button_label_cancel">Peruuta</string>
+    <string name="request_dialog_button_label_delete">Poista</string>
+    <string name="request_dialog_title_unsaved_changes">Viestiä ei ole lähetetty</string>
+    <string name="request_email_entry_hint">Sähköposti</string>
+    <string name="request_error_create_request">Pyynnön luominen epäonnistui</string>
+    <string name="request_error_load_comments">Kommenttien lataaminen epäonnistui</string>
+    <string name="request_file_attachment_download_in_progress">Tiedoston lataus meneillään</string>
+    <string name="request_list_activity_title">Omat tiketit</string>
+    <string name="request_list_empty_start_conversation">ALOITA KESKUSTELU</string>
+    <string name="request_list_empty_text">Tästä sovelluksesta aloitetut keskustelut näkyvät tässä.</string>
+    <string name="request_list_fragment_error_message">Tikettien hakeminen epäonnistui</string>
+    <string name="request_list_me">Minä</string>
+    <string name="request_list_re">Asia: %s</string>
+    <string name="request_list_ticket_closed">Tiketti suljettu</string>
+    <string name="request_menu_button_label_add_attachments">Lisää liitteet</string>
+    <string name="request_menu_button_label_send">Lähetä</string>
+    <string name="request_message_date_today">TÄNÄÄN</string>
+    <string name="request_message_date_yesterday">EILEN</string>
+    <string name="request_message_entry_hint">Viesti</string>
+    <string name="request_message_status_delivered">Toimitettu</string>
+    <string name="request_messages_status_error">Viesti epäonnistui. Yritä uudelleen napauttamalla</string>
+    <string name="request_name_entry_hint">Nimi</string>
+    <string name="request_retry_dialog_delete_message">Poista viesti</string>
+    <string name="request_retry_dialog_retry">Yritä lähettää uudelleen</string>
+    <string name="request_system_message_closed_ticket">Tämä keskustelu on suljettu.</string>
+    <string name="request_toolbar_last_reply">Viimeinen vastaus %s</string>
+    <string name="request_write_a_message">Kirjoita viesti</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">Yritä uudelleen</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Haku"</string>
+    <string name="sections_list_fragment_error_message">Osioiden hakeminen epäonnistui</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">Tuki</string>
+    <string name="support_conversations_menu">Keskustelut</string>
+    <string name="view_article_attachments_error">Liitteiden hakeminen epäonnistui</string>
+    <string name="view_article_vote_prompt">Oliko tämä artikkeli hyödyllinen?</string>
+    <string name="zs_general_contact_us_button_label_accessibility">Ota yhteyttä</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">Tukiportaali ladattu</string>
+    <string name="zs_help_center_search_loaded_accessibility">Hakutulokset ladattu</string>
+    <string name="zs_request_announce_comment_created_accessibility">Kommentti, jossa on teksti %s lähetetty.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">Ei voi luoda kommenttia, jossa on teksti %s.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">Kommentit ladattu.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">Lisätty liitetiedosto, jonka nimi on %s.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">Poista liitetiedosto, jonka nimi on %s.</string>
+    <string name="zs_request_attachment_indicator_accessibility">Valitse liitetiedosto.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">%d liitetiedostoa valittu.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">Liitetiedostoja ei ole valittu.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">Yksi liitetiedosto on valittu.</string>
+    <string name="zs_request_contact_option_leave_a_message">Jätä viesti</string>
+    <string name="zs_request_list_content_load_failed_accessibility">Tukitikettien lataaminen epäonnistui</string>
+    <string name="zs_request_list_content_loaded_accessibility">Tukitiketit ladattu</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">Ei tukitikettejä</string>
+    <string name="zs_request_list_content_loading_accessibility">Lataa tukitikettejä</string>
+    <string name="zs_request_message_agent_file_accessibility">Tukihenkilön liitetiedosto, jonka nimi on %s.</string>
+    <string name="zs_request_message_agent_image_accessibility">Tukihenkilön kuvaliite, jonka nimi on %s.</string>
+    <string name="zs_request_message_agent_sent_accessibility">Lähettänyt %1$s klo %2$s.</string>
+    <string name="zs_request_message_agent_text_accessibility">Tukihenkilön viesti .%s</string>
+    <string name="zs_request_message_user_error_accessibility">Lähetys epäonnistui. Näytä asetukset napauttamalla.</string>
+    <string name="zs_request_message_user_file_accessibility">Tiedosto, jonka nimi on %s.</string>
+    <string name="zs_request_message_user_image_accessibility">Kuva, jonka nimi on %s.</string>
+    <string name="zs_request_message_user_sent_accessibility">Sinun lähettämäsi klo %s</string>
+    <string name="zs_request_message_user_text_accessibility">Viesti %s.</string>
+    <string name="zs_request_toolbar_accessibility">Viimeinen vastaus: %1$s, klo %2$s.</string>
+    <string name="zs_view_article_error">Artikkelin noutaminen epäonnistui</string>
+    <string name="zs_view_article_loaded_accessibility">%s artikkeli ladattu</string>
+    <string name="zs_view_article_vote_no_accessibility">Ei-ääni</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">Poista kyllä-ääni</string>
+    <string name="zs_view_article_vote_yes_accessibility">Kyllä-ääni</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">Poista ei-ääni</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">Äänestys epäonnistui</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">Äänesti ei</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">Äänesti kyllä</string>
+    <string name="zui_attachment_indicator_accessibility">Valitse liitetiedosto</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">%d liitetiedostoa valittu</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">Yhtään liitetiedostoa ei ole valittu</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">Yksi liitetiedosto on valittu</string>
+    <string name="zui_bot_label">BOTTI</string>
+    <string name="zui_button_label_no">Ei</string>
+    <string name="zui_button_label_yes">Kyllä</string>
+    <string name="zui_cell_text_suggested_article_header">Tässä on artikkeli, josta voi olla apua:</string>
+    <string name="zui_cell_text_suggested_articles_header">Tässä on joitakin artikkeleja, joista voi olla apua:</string>
+    <string name="zui_failed_message_copy">Kopioi</string>
+    <string name="zui_failed_message_delete">Poista</string>
+    <string name="zui_failed_message_retry">Yritä uudelleen</string>
+    <string name="zui_hint_type_message">Kirjoita viesti…</string>
+    <string name="zui_hint_write_a_message">Kirjoita viesti</string>
+    <string name="zui_label_dialog_delete_btn">Poista viesti</string>
+    <string name="zui_label_dialog_retry_btn">Yritä lähettää uudelleen</string>
+    <string name="zui_label_failed">Epäonnistui</string>
+    <string name="zui_label_send">Lähetä</string>
+    <string name="zui_label_sent">Lähetetty</string>
+    <string name="zui_label_tap_retry">Yritä uudelleen napauttamalla</string>
+    <string name="zui_retry_button_label">Yritä uudelleen</string>
+</resources>

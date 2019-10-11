@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/gabrielferraz/change/zendesk-flutter-plugin/example/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "/Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/common-ui-1.0.4.aar/ee1c9acf9f5304e617e6467ebd5fa4ab/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "56",
+                        "endOffsets": "107"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "119",
+                        "endColumns": "56",
+                        "endOffsets": "171"
+                    }
+                },
+                {
+                    "source": "/Users/gabrielferraz/.gradle/caches/transforms-1/files-1.1/support-3.0.1.aar/2961683d50848272d9fa7aadafd4d641/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    }
+                }
+            ]
+        }
+    ]
+}

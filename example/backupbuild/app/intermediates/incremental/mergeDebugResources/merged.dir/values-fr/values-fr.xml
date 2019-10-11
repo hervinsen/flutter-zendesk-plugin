@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Revenir à l\'accueil"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Revenir en haut de la page"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Plus d\'options"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"OK"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Tout afficher"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Sélectionner une application"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"DÉSACTIVÉ"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ACTIVÉ"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"supprimer"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"entrée"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Fonction+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Méta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Maj+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"espace"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Rechercher…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Effacer la requête"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Requête de recherche"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Rechercher"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Envoyer la requête"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Recherche vocale"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Partager avec"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="articles_list_fragment_error_message">Échec de la récupération des articles</string>
+    <string name="articles_list_fragment_no_articles_found">Aucun article trouvé</string>
+    <string name="ask_request_list_failed_request_message">Échec du message</string>
+    <string name="attachment_download_failed_message">Échec du téléchargement. Appuyez pour réessayer.</string>
+    <string name="attachment_open_error_message">Échec d’ouverture de la pièce jointe</string>
+    <string name="attachment_upload_access_error_message">Erreur d’accès au fichier</string>
+    <string name="attachment_upload_size_limit_error_message">Fichier trop volumineux.</string>
+    <string name="attachment_upload_source_camera_button">Prendre une photo</string>
+    <string name="attachment_upload_source_gallery_button">Joindre une photo</string>
+    <string name="attachment_upload_type_error_message">Type de fichier non autorisé</string>
+    <string name="belvedere_dialog_camera">Appareil photo</string>
+    <string name="belvedere_dialog_gallery">Galerie</string>
+    <string name="belvedere_fam_desc_collapse_fam">Réduire le menu Actions flottant</string>
+    <string name="belvedere_fam_desc_expand_fam">Développer le menu Actions flottant</string>
+    <string name="belvedere_fam_desc_open_gallery">Importer le fichier à partir de la galerie</string>
+    <string name="belvedere_fam_desc_open_google_photos">Importer l’image à partir de Google Photos</string>
+    <string name="belvedere_image_stream_file_too_large">Fichier trop volumineux</string>
+    <string name="belvedere_image_stream_title">Bibliothèque de photos</string>
+    <string name="belvedere_image_stream_unknown_app">Inconnu</string>
+    <string name="belvedere_permissions_denied">Permissions refusées</string>
+    <string name="belvedere_stream_item_camera_tile_desc">Importer l’image à partir de l’appareil photo</string>
+    <string name="belvedere_stream_item_select_file_desc">Sélectionner le fichier %s</string>
+    <string name="belvedere_stream_item_select_image_desc">Sélectionner l’image %s</string>
+    <string name="belvedere_stream_item_unselect_file_desc">Désélectionner le fichier %s</string>
+    <string name="belvedere_stream_item_unselect_image_desc">Désélectionner l’image %s</string>
+    <string name="belvedere_toolbar_desc_collapse">Fermer le sélecteur d’image</string>
+    <string name="categories_list_fragment_error_message">Échec de la récupération des catégories</string>
+    <string name="chat_account_offline_message">Il n’y a aucun agent en ligne actuellement.</string>
+    <string name="chat_activity_title">Chat</string>
+    <string name="chat_agent_joined_message">%1$s a rejoint le chat</string>
+    <string name="chat_agent_left_message">%1$s a quitté le chat</string>
+    <string name="chat_end_dialog_cancel_button">Annuler</string>
+    <string name="chat_end_dialog_confirm_button">Mettre fin</string>
+    <string name="chat_end_dialog_message">Votre session de chat sera fermée.</string>
+    <string name="chat_end_dialog_title">Mettre fin à ce chat ?</string>
+    <string name="chat_ended_message">Chat terminé</string>
+    <string name="chat_loading_message">Chat en train de commencer…</string>
+    <string name="chat_menu_end_button">Mettre fin au chat</string>
+    <string name="chat_notification_content_text">%s a commencé un chat</string>
+    <string name="chat_notification_notification_channel">Notifications de service d’arrière-plan SDK Zopim Chat</string>
+    <string name="chat_push_chat_ended_body">Votre chat avec %1$s est terminé</string>
+    <string name="chat_push_chat_ended_title">Chat terminé</string>
+    <string name="chat_session_timeout_message">Vous êtes inactif depuis un moment, cette session de chat a donc été fermée. Veuillez commencer un nouveau chat si vous avez encore des questions.</string>
+    <string name="chat_visitor_queue_message">Veuillez attendre qu’un agent soit disponible. Il y a actuellement %1$s visiteur(s) en attente de service.</string>
+    <string name="contact_fragment_title">Contactez-nous</string>
+    <string name="could_not_connect_error_message">Désolés, connexion impossible actuellement. Réessayez ultérieurement.</string>
+    <string name="could_not_connect_error_title">Connexion impossible</string>
+    <string name="email_transcript_cancel_button">Ne pas envoyer</string>
+    <string name="email_transcript_confirm_button">Envoyer</string>
+    <string name="email_transcript_email_cancel_button">Annuler</string>
+    <string name="email_transcript_email_confirm_button">OK</string>
+    <string name="email_transcript_email_hint">e-mail@adresse.com</string>
+    <string name="email_transcript_email_message">Saisissez votre adresse e-mail.</string>
+    <string name="email_transcript_message">Envoyer la transcription de ce chat à votre adresse e-mail</string>
+    <string name="email_transcript_title">Envoyer une transcription par e-mail ?</string>
+    <string name="error_msg_invalid_email">Saisissez une adresse e-mail valide</string>
+    <string name="error_msg_invalid_message">Saisissez votre message</string>
+    <string name="error_msg_invalid_name">Saisissez votre nom complet</string>
+    <string name="help_search_no_results_label">Pas de résultats trouvés pour</string>
+    <string name="help_see_all_articles_label">Afficher tous les articles</string>
+    <string name="help_see_all_n_articles_label">Afficher les %d articles</string>
+    <string name="input_field_hint">Message</string>
+    <string name="message_failed_tap_to_retry">Échec de l’envoi. Appuyez pour réessayer.</string>
+    <string name="network_activity_no_connectivity">Pas de connexion</string>
+    <string name="no_agents_message">Désolés, il n’y a pas d’agent disponible pour le chat. Réessayez plus tard ou laissez-nous un message.</string>
+    <string name="no_agents_title">Aucun agent disponible</string>
+    <string name="no_connection_error_message">Vous n’avez pas de connexion Internet actuellement. Veuillez réessayer quand vous serez connecté.</string>
+    <string name="no_connection_error_title">Pas de connexion</string>
+    <string name="no_connectivity_toast_message">Pas de connexion</string>
+    <string name="offline_email_error_hint">Saisissez votre adresse e-mail.</string>
+    <string name="offline_email_error_message">E-mail obligatoire</string>
+    <string name="offline_email_hint">Adresse e-mail</string>
+    <string name="offline_menu_send_button">Envoyer</string>
+    <string name="offline_message_button">Laisser un message</string>
+    <string name="offline_message_cancel_button">Annuler</string>
+    <string name="offline_message_error_hint">Veuillez saisir un message.</string>
+    <string name="offline_message_error_message">Message obligatoire</string>
+    <string name="offline_message_hint">Message</string>
+    <string name="offline_message_retry_button">Réessayer</string>
+    <string name="offline_message_send_failed">Échec de l’envoi du message</string>
+    <string name="offline_name_error_hint">Veuillez saisir votre nom.</string>
+    <string name="offline_name_error_message">Nom obligatoire</string>
+    <string name="offline_name_hint">Nom</string>
+    <string name="offline_sent_confirmation_message">Votre message a été envoyé.</string>
+    <string name="offline_validation_error_message">Veuillez corriger les erreurs ci-dessus.</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">Annuler</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">Message</string>
+    <string name="pre_chat_account_offline_dialog_message">Il n’y a aucun agent en ligne actuellement. Voulez-vous envoyer un message ?</string>
+    <string name="pre_chat_departments_error_hint">Veuillez saisir un service.</string>
+    <string name="pre_chat_departments_error_message">Service obligatoire</string>
+    <string name="pre_chat_departments_hint">Sélectionnez un service.</string>
+    <string name="pre_chat_email_error_message">E-mail obligatoire</string>
+    <string name="pre_chat_email_hint">Adresse e-mail</string>
+    <string name="pre_chat_email_validation_message">Saisissez une adresse e-mail valide.</string>
+    <string name="pre_chat_menu_next_button">Suiv.</string>
+    <string name="pre_chat_message_error_message">Message obligatoire</string>
+    <string name="pre_chat_message_hint">Message</string>
+    <string name="pre_chat_name_error_message">Nom obligatoire</string>
+    <string name="pre_chat_name_hint">Nom</string>
+    <string name="pre_chat_phone_error_message">Numéro de téléphone obligatoire</string>
+    <string name="pre_chat_phone_hint">Numéro de téléphone</string>
+    <string name="pre_chat_phone_validation_message">Saisissez un numéro de téléphone valide</string>
+    <string name="pre_chat_validation_error_message">Veuillez remplir les champs obligatoires.</string>
+    <string name="rate_this_chat_comment_label">Commentaire</string>
+    <string name="rate_this_chat_edit_comment_button">Modifier le commentaire…</string>
+    <string name="rate_this_chat_leave_a_comment_button">Laisser un commentaire…</string>
+    <string name="rate_this_chat_leave_a_comment_title">Laisser un commentaire</string>
+    <string name="rate_this_chat_menu_item_send">Envoyer</string>
+    <string name="rate_this_chat_title">Noter ce chat</string>
+    <string name="reconnect_timeout_cancel_button">Non</string>
+    <string name="reconnect_timeout_confirm_button">Oui</string>
+    <string name="reconnect_timeout_message">Reconnexion impossible. Continuer d’essayer ?</string>
+    <string name="reconnect_timeout_title">Connexion perdue</string>
+    <string name="reconnecting_toast_message">Reconnexion en cours</string>
+    <string name="request_attachment_generic_unknown_app">Inconnu</string>
+    <string name="request_dialog_body_unsaved_changes">Si vous retournez en arrière, votre message sera supprimé. Voulez-vous vraiment le supprimer ?</string>
+    <string name="request_dialog_button_label_cancel">Annuler</string>
+    <string name="request_dialog_button_label_delete">Supprimer</string>
+    <string name="request_dialog_title_unsaved_changes">Le message n\'a pas été envoyé.</string>
+    <string name="request_email_entry_hint">Adresse e-mail</string>
+    <string name="request_error_create_request">Échec de création de la requête</string>
+    <string name="request_error_load_comments">Échec de téléchargement des commentaires</string>
+    <string name="request_file_attachment_download_in_progress">Téléchargement de fichier en cours</string>
+    <string name="request_list_activity_title">Mes tickets</string>
+    <string name="request_list_empty_start_conversation">LANCER UNE CONVERSATION</string>
+    <string name="request_list_empty_text">Les conversations lancées à partir de cette application apparaitront ici.</string>
+    <string name="request_list_fragment_error_message">Échec de la récupération des tickets</string>
+    <string name="request_list_me">Moi</string>
+    <string name="request_list_re">Re : %s</string>
+    <string name="request_list_ticket_closed">Ticket clos</string>
+    <string name="request_menu_button_label_add_attachments">Ajouter des pièces jointes</string>
+    <string name="request_menu_button_label_send">Envoyer</string>
+    <string name="request_message_date_today">AUJOURD’HUI</string>
+    <string name="request_message_date_yesterday">HIER</string>
+    <string name="request_message_entry_hint">Message</string>
+    <string name="request_message_status_delivered">Livré</string>
+    <string name="request_messages_status_error">Échec du message. Appuyez pour réessayer</string>
+    <string name="request_name_entry_hint">Nom</string>
+    <string name="request_retry_dialog_delete_message">Supprimer le message</string>
+    <string name="request_retry_dialog_retry">Renvoyer</string>
+    <string name="request_system_message_closed_ticket">Cette conversation a été fermée.</string>
+    <string name="request_toolbar_last_reply">Dernière réponse le %s</string>
+    <string name="request_write_a_message">Écrivez un message</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">Réessayer</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Rechercher"</string>
+    <string name="sections_list_fragment_error_message">Échec de la récupération des sections</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">Assistance</string>
+    <string name="support_conversations_menu">Conversations</string>
+    <string name="view_article_attachments_error">Échec de la récupération des pièces jointes</string>
+    <string name="view_article_vote_prompt">Cet article vous a-t-il été utile ?</string>
+    <string name="zs_general_contact_us_button_label_accessibility">Contactez-nous</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">Centre d’aide chargé</string>
+    <string name="zs_help_center_search_loaded_accessibility">Résultats de la recherche chargés</string>
+    <string name="zs_request_announce_comment_created_accessibility">Commentaire avec le texte %s envoyé.</string>
+    <string name="zs_request_announce_comment_failed_accessibility">Échec de création du commentaire avec le texte %s.</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">Commentaires chargés.</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">Fichier joint avec le nom %s.</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">Supprimer la pièce jointe avec le nom %s.</string>
+    <string name="zs_request_attachment_indicator_accessibility">Sélectionner une pièce jointe.</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">Il y a %d pièces jointes sélectionnées.</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">Il n’y a aucune pièce jointe sélectionnée.</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">Il y a une pièce jointe sélectionnée.</string>
+    <string name="zs_request_contact_option_leave_a_message">Laisser un message</string>
+    <string name="zs_request_list_content_load_failed_accessibility">Échec de chargement des tickets d’assistance</string>
+    <string name="zs_request_list_content_loaded_accessibility">Tickets d’assistance chargés</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">Aucun ticket d’assistance</string>
+    <string name="zs_request_list_content_loading_accessibility">Chargement des tickets d’assistance en cours</string>
+    <string name="zs_request_message_agent_file_accessibility">Fichier joint par l’agent avec le nom %s.</string>
+    <string name="zs_request_message_agent_image_accessibility">Image jointe par l’agent avec le nom %s.</string>
+    <string name="zs_request_message_agent_sent_accessibility">Envoyé par %1$s à %2$s.</string>
+    <string name="zs_request_message_agent_text_accessibility">Message de l’agent %s.</string>
+    <string name="zs_request_message_user_error_accessibility">Échec de l’envoi. Appuyez pour accéder aux options.</string>
+    <string name="zs_request_message_user_file_accessibility">Fichier avec le nom %s.</string>
+    <string name="zs_request_message_user_image_accessibility">Image avec le nom %s.</string>
+    <string name="zs_request_message_user_sent_accessibility">Envoyé par vous-même à %s</string>
+    <string name="zs_request_message_user_text_accessibility">Message %s.</string>
+    <string name="zs_request_toolbar_accessibility">Dernière réponse par %1$s à %2$s.</string>
+    <string name="zs_view_article_error">Échec de récupération de l’article</string>
+    <string name="zs_view_article_loaded_accessibility">%s article chargé</string>
+    <string name="zs_view_article_vote_no_accessibility">Aucun vote</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">Supprimer le vote positif</string>
+    <string name="zs_view_article_vote_yes_accessibility">Vote positif</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">Supprimer le vote négatif</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">Échec du vote</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">A voté Non</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">A voté Oui</string>
+    <string name="zui_attachment_indicator_accessibility">Sélectionnez une pièce jointe</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">Il y a %d pièces jointes sélectionnées</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">Il n’y a aucune pièce jointe sélectionnée</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">Une pièce jointe sélectionnée</string>
+    <string name="zui_bot_label">BOT</string>
+    <string name="zui_button_label_no">Non</string>
+    <string name="zui_button_label_yes">Oui</string>
+    <string name="zui_cell_text_suggested_article_header">Voici un article qui pourrait être utile :</string>
+    <string name="zui_cell_text_suggested_articles_header">Voici des articles qui pourraient être utiles :</string>
+    <string name="zui_failed_message_copy">Copier</string>
+    <string name="zui_failed_message_delete">Supprimer</string>
+    <string name="zui_failed_message_retry">Réessayer</string>
+    <string name="zui_hint_type_message">Saisissez un message…</string>
+    <string name="zui_hint_write_a_message">Écrivez un message</string>
+    <string name="zui_label_dialog_delete_btn">Supprimer le message</string>
+    <string name="zui_label_dialog_retry_btn">Renvoyer</string>
+    <string name="zui_label_failed">Échec de l’envoi</string>
+    <string name="zui_label_send">Envoyer</string>
+    <string name="zui_label_sent">Envoyé</string>
+    <string name="zui_label_tap_retry">Appuyez pour réessayer</string>
+    <string name="zui_retry_button_label">Réessayer</string>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"นำทางไปหน้าแรก"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"นำทางขึ้น"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"ตัวเลือกอื่น"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"เสร็จสิ้น"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"ดูทั้งหมด"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"เลือกแอป"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ปิด"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"เปิด"</string>
+    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"Enter"</string>
+    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"Space"</string>
+    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"เมนู+"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"ค้นหา…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"ล้างข้อความค้นหา"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"ข้อความค้นหา"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"ค้นหา"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"ส่งข้อความค้นหา"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"ค้นหาด้วยเสียง"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"แชร์กับ"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"แชร์ทาง <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"ยุบ"</string>
+    <string name="articles_list_fragment_error_message">ไม่สามารถรับบทความได้</string>
+    <string name="articles_list_fragment_no_articles_found">ไม่พบบทความ</string>
+    <string name="ask_request_list_failed_request_message">ส่งข้อความไม่สำเร็จ</string>
+    <string name="attachment_download_failed_message">ไม่สามารถดาวน์โหลดได้ แตะเพื่อลองอีกครั้ง</string>
+    <string name="attachment_open_error_message">ไม่สามารถเปิดไฟล์แนบได้</string>
+    <string name="attachment_upload_access_error_message">เกิดข้อผิดพลาดในการเข้าใช้งานไฟล์</string>
+    <string name="attachment_upload_size_limit_error_message">ขนาดไฟล์ใหญ่เกินไป</string>
+    <string name="attachment_upload_source_camera_button">ถ่ายภาพ</string>
+    <string name="attachment_upload_source_gallery_button">แนบภาพถ่าย</string>
+    <string name="attachment_upload_type_error_message">ประเภทไฟล์ไม่ได้รับอนุญาต</string>
+    <string name="belvedere_dialog_camera">กล้อง</string>
+    <string name="belvedere_dialog_gallery">แกลเลอรี</string>
+    <string name="belvedere_fam_desc_collapse_fam">ยุบเมนูการดำเนินการแบบลอย</string>
+    <string name="belvedere_fam_desc_expand_fam">ขยายเมนูการดำเนินการแบบลอย</string>
+    <string name="belvedere_fam_desc_open_gallery">อิมพอร์ตไฟล์จากแกลเลอรี</string>
+    <string name="belvedere_fam_desc_open_google_photos">อิมพอร์ตภาพจาก Google Photos</string>
+    <string name="belvedere_image_stream_file_too_large">ไฟล์ใหญ่เกินไป</string>
+    <string name="belvedere_image_stream_title">คลังภาพ</string>
+    <string name="belvedere_image_stream_unknown_app">ไม่ทราบ</string>
+    <string name="belvedere_permissions_denied">สิทธิ์การอนุญาตถูกปฏิเสธ</string>
+    <string name="belvedere_stream_item_camera_tile_desc">อิมพอร์ตภาพจากกล้อง</string>
+    <string name="belvedere_stream_item_select_file_desc">เลือกไฟล์ %s</string>
+    <string name="belvedere_stream_item_select_image_desc">เลือกภาพ %s</string>
+    <string name="belvedere_stream_item_unselect_file_desc">ยกเลิกเลือกไฟล์ %s</string>
+    <string name="belvedere_stream_item_unselect_image_desc">ยกเลิกเลือกภาพ %s</string>
+    <string name="belvedere_toolbar_desc_collapse">ปิดตัวเลือกภาพ</string>
+    <string name="categories_list_fragment_error_message">ไม่สามารถเรียกหมวดหมู่ได้</string>
+    <string name="chat_account_offline_message">ไม่มีเจ้าหน้าที่ออนไลน์อยู่ในขณะนี้</string>
+    <string name="chat_activity_title">แชท</string>
+    <string name="chat_agent_joined_message">%1$s เข้าร่วมการแชทแล้ว</string>
+    <string name="chat_agent_left_message">%1$s ออกจากการแชทแล้ว</string>
+    <string name="chat_end_dialog_cancel_button">ยกเลิก</string>
+    <string name="chat_end_dialog_confirm_button">สิ้นสุด</string>
+    <string name="chat_end_dialog_message">เซสชันการแชทของคุณจะปิดลง</string>
+    <string name="chat_end_dialog_title">สิ้นสุดการแชทนี้หรือไม่</string>
+    <string name="chat_ended_message">การแชทสิ้นสุด</string>
+    <string name="chat_loading_message">กำลังเริ่มต้นการแชท...</string>
+    <string name="chat_menu_end_button">สิ้นสุดการแชท</string>
+    <string name="chat_notification_content_text">%sได้เริ่มการแชท</string>
+    <string name="chat_notification_notification_channel">การแจ้งเตือนการบริการพื้นฐานของ SDK การแชทของ Zopim</string>
+    <string name="chat_push_chat_ended_body">การแชทกับ %31.45฿s สิ้นสุดลงแล้ว</string>
+    <string name="chat_push_chat_ended_title">การแชทสิ้นสุด</string>
+    <string name="chat_session_timeout_message">คุณไม่ได้ตอบสนองนานเกินไป เซสชันการแชทนี้จึงปิดลง โปรดเริ่มต้นการแชทใหม่หากคุณยังคงมีคำถาม</string>
+    <string name="chat_visitor_queue_message">โปรดรอเจ้าหน้าที่ ผู้เยี่ยมชมที่กำลังรอรับบริการ: %1$s</string>
+    <string name="contact_fragment_title">ติดต่อเรา</string>
+    <string name="could_not_connect_error_message">ขออภัย เราไม่สามารถเชื่อมต่อกับคุณได้ในขณะนี้ โปรดลองอีกครั้งในภายหลัง</string>
+    <string name="could_not_connect_error_title">ไม่สามารถเชื่อมต่อได้</string>
+    <string name="email_transcript_cancel_button">ไม่ส่ง</string>
+    <string name="email_transcript_confirm_button">ส่ง</string>
+    <string name="email_transcript_email_cancel_button">ยกเลิก</string>
+    <string name="email_transcript_email_confirm_button">ตกลง</string>
+    <string name="email_transcript_email_hint">email@address.com</string>
+    <string name="email_transcript_email_message">โปรดป้อนที่อยู่อีเมลของคุณ</string>
+    <string name="email_transcript_message">ส่งทรานสคริปต์การแชทครั้งนี้ไปยังที่อยู่อีเมลของคุณ</string>
+    <string name="email_transcript_title">ส่งทรานสคริปต์ทางอีเมลหรือไม่</string>
+    <string name="error_msg_invalid_email">ป้อนที่อยู่อีเมลที่ถูกต้อง</string>
+    <string name="error_msg_invalid_message">ป้อนข้อความของคุณ</string>
+    <string name="error_msg_invalid_name">ป้อนชื่อเต็มของคุณ</string>
+    <string name="help_search_no_results_label">ไม่พบผลลัพธ์การค้นหาสำหรับ</string>
+    <string name="help_see_all_articles_label">ดูบทความทั้งหมด</string>
+    <string name="help_see_all_n_articles_label">ดูบทความทั้งหมด %d บทความ</string>
+    <string name="input_field_hint">ข้อความ</string>
+    <string name="message_failed_tap_to_retry">ไม่สามารถส่งได้ แตะเพื่อลองอีกครั้ง</string>
+    <string name="network_activity_no_connectivity">ไม่มีการเชื่อมต่อ</string>
+    <string name="no_agents_message">ขออภัย ไม่มีเจ้าหน้าที่พร้อมสำหรับการแชท โปรดลองอีกครั้งในภายหลัง หรือฝากข้อความถึงเรา</string>
+    <string name="no_agents_title">ไม่มีเจ้าหน้าที่พร้อมให้บริการ</string>
+    <string name="no_connection_error_message">คุณไม่ได้เชื่อมต่ออินเทอร์เน็ตอยู่ในขณะนี้ โปรดลองอีกครั้งเมื่อได้เชื่อมต่อแล้ว</string>
+    <string name="no_connection_error_title">ไม่มีการเชื่อมต่อ</string>
+    <string name="no_connectivity_toast_message">ไม่มีการเชื่อมต่อ</string>
+    <string name="offline_email_error_hint">โปรดป้อนที่อยู่อีเมลของคุณ</string>
+    <string name="offline_email_error_message">ต้องมีอีเมล</string>
+    <string name="offline_email_hint">ที่อยู่อีเมล</string>
+    <string name="offline_menu_send_button">ส่ง</string>
+    <string name="offline_message_button">ฝากข้อความ</string>
+    <string name="offline_message_cancel_button">ยกเลิก</string>
+    <string name="offline_message_error_hint">โปรดป้อนข้อความ</string>
+    <string name="offline_message_error_message">ต้องมีข้อความ</string>
+    <string name="offline_message_hint">ข้อความ</string>
+    <string name="offline_message_retry_button">ลองอีกครั้ง</string>
+    <string name="offline_message_send_failed">ไม่สามารถส่งข้อความได้</string>
+    <string name="offline_name_error_hint">โปรดป้อนชื่อของคุณ</string>
+    <string name="offline_name_error_message">ต้องมีชื่อ</string>
+    <string name="offline_name_hint">ชื่อ</string>
+    <string name="offline_sent_confirmation_message">ส่งข้อความของคุณแล้ว</string>
+    <string name="offline_validation_error_message">โปรดแก้ไขข้อผิดพลาดข้างต้น</string>
+    <string name="pre_chat_account_offline_dialog_cancel_button">ยกเลิก</string>
+    <string name="pre_chat_account_offline_dialog_confirm_button">ข้อความ</string>
+    <string name="pre_chat_account_offline_dialog_message">ไม่มีเจ้าหน้าที่ออนไลน์อยู่ในขณะนี้ คุณต้องการส่งข้อความหรือไม่</string>
+    <string name="pre_chat_departments_error_hint">โปรดเลือกแผนก</string>
+    <string name="pre_chat_departments_error_message">ต้องมีแผนก</string>
+    <string name="pre_chat_departments_hint">เลือกแผนก</string>
+    <string name="pre_chat_email_error_message">ต้องมีอีเมล</string>
+    <string name="pre_chat_email_hint">ที่อยู่อีเมล</string>
+    <string name="pre_chat_email_validation_message">โปรดป้อนที่อยู่อีเมลที่ถูกต้อง</string>
+    <string name="pre_chat_menu_next_button">ถัดไป</string>
+    <string name="pre_chat_message_error_message">ต้องมีข้อความ</string>
+    <string name="pre_chat_message_hint">ข้อความ</string>
+    <string name="pre_chat_name_error_message">ต้องมีชื่อ</string>
+    <string name="pre_chat_name_hint">ชื่อ</string>
+    <string name="pre_chat_phone_error_message">ต้องมีหมายเลขโทรศัพท์</string>
+    <string name="pre_chat_phone_hint">หมายเลขโทรศัพท์</string>
+    <string name="pre_chat_phone_validation_message">โปรดป้อนหมายเลขโทรศัพท์ที่ถูกต้อง</string>
+    <string name="pre_chat_validation_error_message">โปรดกรอกข้อมูลในฟิลด์ที่จำเป็น</string>
+    <string name="rate_this_chat_comment_label">ข้อคิดเห็น</string>
+    <string name="rate_this_chat_edit_comment_button">แก้ไขข้อคิดเห็น...</string>
+    <string name="rate_this_chat_leave_a_comment_button">ฝากข้อคิดเห็น...</string>
+    <string name="rate_this_chat_leave_a_comment_title">ฝากข้อคิดเห็น</string>
+    <string name="rate_this_chat_menu_item_send">ส่ง</string>
+    <string name="rate_this_chat_title">ให้คะแนนการแชทนี้</string>
+    <string name="reconnect_timeout_cancel_button">ไม่</string>
+    <string name="reconnect_timeout_confirm_button">ใช่</string>
+    <string name="reconnect_timeout_message">ไม่สามารถเชื่อมต่อซ้ำได้ ต้องการพยายามต่อดำเนินการต่อหรือไม่</string>
+    <string name="reconnect_timeout_title">การเชื่อมต่อขาดหายไป</string>
+    <string name="reconnecting_toast_message">กำลังเชื่อมต่ออีกครั้ง...</string>
+    <string name="request_attachment_generic_unknown_app">ไม่รู้จัก</string>
+    <string name="request_dialog_body_unsaved_changes">การย้อนกลับจะลบข้อความของคุณ คุณแน่ใจหรือไม่ ว่าต้องการลบ</string>
+    <string name="request_dialog_button_label_cancel">ยกเลิก</string>
+    <string name="request_dialog_button_label_delete">ลบทิ้ง</string>
+    <string name="request_dialog_title_unsaved_changes">ข้อความไม่ถูกส่ง</string>
+    <string name="request_email_entry_hint">อีเมล</string>
+    <string name="request_error_create_request">สร้างคำร้องขอไม่สำเร็จ</string>
+    <string name="request_error_load_comments">โหลดข้อคิดเห็นไม่สำเร็จ</string>
+    <string name="request_file_attachment_download_in_progress">อยู่ในระหว่างดาวน์โหลดไฟล์</string>
+    <string name="request_list_activity_title">ใบสั่งงานของฉัน</string>
+    <string name="request_list_empty_start_conversation">เริ่มบทสนทนา</string>
+    <string name="request_list_empty_text">บทสนทนาที่เริ่มจากแอปนี้จะปรากฏขึ้นที่นี่</string>
+    <string name="request_list_fragment_error_message">ไม่สามารถเรียกใบสั่งงานได้</string>
+    <string name="request_list_me">ฉัน</string>
+    <string name="request_list_re">ตอบกลับ: %s</string>
+    <string name="request_list_ticket_closed">ใบสั่งงานที่ปิดแล้ว</string>
+    <string name="request_menu_button_label_add_attachments">ใส่ไฟล์แนบ</string>
+    <string name="request_menu_button_label_send">ส่ง</string>
+    <string name="request_message_date_today">วันนี้</string>
+    <string name="request_message_date_yesterday">เมื่อวานนี้</string>
+    <string name="request_message_entry_hint">ข้อความ</string>
+    <string name="request_message_status_delivered">ส่งแล้ว</string>
+    <string name="request_messages_status_error">ส่งข้อความไม่สำเร็จ แตะเพื่อลองอีกครั้ง</string>
+    <string name="request_name_entry_hint">ชื่อ</string>
+    <string name="request_retry_dialog_delete_message">ลบข้อความ</string>
+    <string name="request_retry_dialog_retry">กำลังลองส่งใหม่</string>
+    <string name="request_system_message_closed_ticket">บทสนทนานี้ถูกปิดแล้ว</string>
+    <string name="request_toolbar_last_reply">ตอบกลับครั้งล่าสุดเมื่อ %s</string>
+    <string name="request_write_a_message">เขียนข้อความ</string>
+    <string name="required_field_template">%1$s *</string>
+    <string name="retry_view_button_label">ลองอีกครั้ง</string>
+    <string msgid="146198913615257606" name="search_menu_title">"ค้นหา"</string>
+    <string name="sections_list_fragment_error_message">ไม่สามารถเรียกส่วนต่างๆ ได้</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="support_activity_title">ฝ่ายสนับสนุน</string>
+    <string name="support_conversations_menu">การสนทนา</string>
+    <string name="view_article_attachments_error">ไม่สามารถดึงข้อมูลไฟล์แนบได้</string>
+    <string name="view_article_vote_prompt">บทความนี้มีประโยชน์หรือไม่</string>
+    <string name="zs_general_contact_us_button_label_accessibility">ติดต่อเรา</string>
+    <string name="zs_general_referrer_logo_label_accessibility">Zendesk</string>
+    <string name="zs_help_center_content_loaded_accessibility">โหลดศูนย์ความช่วยเหลือแล้ว</string>
+    <string name="zs_help_center_search_loaded_accessibility">โหลดผลลัพธ์การค้นหาแล้ว</string>
+    <string name="zs_request_announce_comment_created_accessibility">ส่งข้อคิดเห็นพร้อมข้อความ %s แล้ว</string>
+    <string name="zs_request_announce_comment_failed_accessibility">ไม่สามารถสร้างข้อคิดเห็นพร้อมข้อความ %s</string>
+    <string name="zs_request_announce_comments_loaded_accessibility">โหลดข้อคิดเห็นแล้ว</string>
+    <string name="zs_request_attachment_carousel_attachment_accessibility">แนบไฟล์ที่มีชื่อ %s แล้ว</string>
+    <string name="zs_request_attachment_carousel_remove_attachment_accessibility">ลบไฟล์แนบที่มีชื่อ %s แล้ว</string>
+    <string name="zs_request_attachment_indicator_accessibility">เลือกไฟล์แนบ</string>
+    <string name="zs_request_attachment_indicator_n_attachments_selected_accessibility">มีไฟล์แนบเลือกไว้ %d ไฟล์</string>
+    <string name="zs_request_attachment_indicator_no_attachments_selected_accessibility">ไม่มีีไฟล์แนบเลือกไว้</string>
+    <string name="zs_request_attachment_indicator_one_attachments_selected_accessibility">มีไฟล์แนบเลือกไว้หนึ่งไฟล์</string>
+    <string name="zs_request_contact_option_leave_a_message">ฝากข้อความ</string>
+    <string name="zs_request_list_content_load_failed_accessibility">โหลดใบสั่งงานการสนับสนุนไม่สำเร็จ</string>
+    <string name="zs_request_list_content_loaded_accessibility">โหลดใบสั่งงานการสนับสนุนแล้ว</string>
+    <string name="zs_request_list_content_loaded_empty_accessibility">ไม่มีใบสั่งงานการสนับสนุน</string>
+    <string name="zs_request_list_content_loading_accessibility">กำลังโหลดใบสั่งงานการสนับสนุน</string>
+    <string name="zs_request_message_agent_file_accessibility">ไฟล์แนบเจ้าหน้าที่ที่มีชื่อ %s</string>
+    <string name="zs_request_message_agent_image_accessibility">ไฟล์แนบภาพเจ้าหน้าที่ที่มีชื่อ %s</string>
+    <string name="zs_request_message_agent_sent_accessibility">ส่งแล้ว โดย %1$s เมื่อ %2$s</string>
+    <string name="zs_request_message_agent_text_accessibility">ข้อความเจ้าหน้าที่ %s</string>
+    <string name="zs_request_message_user_error_accessibility">ส่งไม่สำเร็จ แตะเพื่อดูตัวเลือก</string>
+    <string name="zs_request_message_user_file_accessibility">ไฟล์ที่มีชื่อ %s</string>
+    <string name="zs_request_message_user_image_accessibility">ภาพที่มีชื่อ %s</string>
+    <string name="zs_request_message_user_sent_accessibility">ส่งแล้ว โดยคุณ เมื่อ %s</string>
+    <string name="zs_request_message_user_text_accessibility">ข้อความ %s</string>
+    <string name="zs_request_toolbar_accessibility">ตอบกลับครั้งล่าสุด โดย %1$s เมื่อ %2$s</string>
+    <string name="zs_view_article_error">ไม่สามารถเรียกดูบทความได้</string>
+    <string name="zs_view_article_loaded_accessibility">โหลด %s บทความ</string>
+    <string name="zs_view_article_vote_no_accessibility">โหวต ไม่</string>
+    <string name="zs_view_article_vote_no_remove_accessibility">ลบโหวต ใช่</string>
+    <string name="zs_view_article_vote_yes_accessibility">โหวต ใช่</string>
+    <string name="zs_view_article_vote_yes_remove_accessibility">ลบโหวต ไม่</string>
+    <string name="zs_view_article_voted_failed_accessibility_announce">โหวตไม่สำเร็จ</string>
+    <string name="zs_view_article_voted_no_accessibility_announce">โหวต ไม่ แล้ว</string>
+    <string name="zs_view_article_voted_yes_accessibility_announce">โหวต ใช่ แล้ว</string>
+    <string name="zui_attachment_indicator_accessibility">เลือกไฟล์แนบ</string>
+    <string name="zui_attachment_indicator_n_attachments_selected_accessibility">มีไฟล์แนบที่เลือกไว้ %d ไฟล์</string>
+    <string name="zui_attachment_indicator_no_attachments_selected_accessibility">ไม่มีไฟล์แนบที่เลือกไว้</string>
+    <string name="zui_attachment_indicator_one_attachments_selected_accessibility">มีไฟล์แนบที่เลือกไว้หนึ่งไฟล์</string>
+    <string name="zui_bot_label">บอท</string>
+    <string name="zui_button_label_no">ไม่ใช่</string>
+    <string name="zui_button_label_yes">ใช่</string>
+    <string name="zui_cell_text_suggested_article_header">นี่คือบทความที่อาจช่วยคุณได้:</string>
+    <string name="zui_cell_text_suggested_articles_header">นี่คือบทความที่อาจช่วยคุณได้:</string>
+    <string name="zui_failed_message_copy">สำเนา</string>
+    <string name="zui_failed_message_delete">ลบ</string>
+    <string name="zui_failed_message_retry">ลองอีกครั้ง</string>
+    <string name="zui_hint_type_message">พิมพ์ข้อความ...</string>
+    <string name="zui_hint_write_a_message">เขียนข้อความ</string>
+    <string name="zui_label_dialog_delete_btn">ลบข้อความ</string>
+    <string name="zui_label_dialog_retry_btn">กำลังลองส่งใหม่</string>
+    <string name="zui_label_failed">ล้มเหลว</string>
+    <string name="zui_label_send">ส่ง</string>
+    <string name="zui_label_sent">ส่งแล้ว</string>
+    <string name="zui_label_tap_retry">แตะเพื่อลองอีกครั้ง</string>
+    <string name="zui_retry_button_label">ลองอีกครั้ง</string>
+</resources>
