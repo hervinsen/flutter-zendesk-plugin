@@ -1,7 +1,7 @@
 name: zendesk_flutter_plugin
 description: A new flutter plugin project.
 version: 1.0.0
-author:
+author: ChangeFinance <gabriel@getchange.com>
 homepage: https://github.com/ChangeFinance/zendesk-flutter-plugin
 
 environment:
