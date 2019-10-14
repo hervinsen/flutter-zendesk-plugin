@@ -2,7 +2,7 @@
 
 ##### Documentation Changes
 
-* **release:** Initial release to pub dart, adding author, changelog and license
+* **release:** Initial release to pub dart, adding author, changelog and licenses
 
 ##### New Features
 
