@@ -321,7 +321,7 @@ public class ZendeskFlutterPlugin implements MethodCallHandler {
         .setFieldNamingPolicy(LOWER_CASE_WITH_UNDERSCORES)
         .create()
         .toJson(object)
-        .replaceAll("\\$.+?\":", "\":");
+        .replaceAll("\\$(string|int|bool)\":", "\":");
   }
 
   private ChatLog.Rating toChatLogRating(String rating) {
