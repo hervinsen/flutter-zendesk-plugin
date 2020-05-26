@@ -52,106 +52,107 @@ class _DashboardScreenState extends State<DashboardScreen> {
               .copyWith(color: AppColors.offWhite),
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 28),
-        child: Column(
-          children: <Widget>[
-            TextInputWidgetCustom(
-                context: context,
-                controller: nameController,
-                label: CommonConstant.name,
-                onSubmitted: (String _) {
-                  FocusScope.of(context).requestFocus(emailFocusNode);
-                },
-                focusNode: nameFocusNode),
-            SpacerVerticalSmall(),
-            TextInputWidgetCustom(
-                context: context,
-                controller: emailController,
-                label: CommonConstant.email,
-                onSubmitted: (String _) {
-                  FocusScope.of(context).requestFocus(phoneNumberFocusNode);
-                },
-                textInputType: TextInputType.emailAddress,
-                focusNode: emailFocusNode),
-            SpacerVerticalSmall(),
-            TextInputWidgetCustom(
-                context: context,
-                controller: phoneNumberController,
-                label: CommonConstant.phoneNumber,
-                textInputType: TextInputType.phone,
-                focusNode: phoneNumberFocusNode),
-            SpacerVerticalMedium(),
-            DropdownButtonHideUnderline(
-              child: Container(
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            width: selectedDepartment != null ? 2 : 1,
-                            color: selectedDepartment != null
-                                ? AppColors.primaryColor
-                                : AppColors.gray))),
-                child: DropdownButton<BaseModel>(
-                  value: selectedDepartment,
-                  hint: const Text('Select item'),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedDepartment = value;
-                    });
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 28),
+          child: Column(
+            children: <Widget>[
+              TextInputWidgetCustom(
+                  context: context,
+                  controller: nameController,
+                  label: CommonConstant.name,
+                  onSubmitted: (String _) {
+                    FocusScope.of(context).requestFocus(emailFocusNode);
                   },
-                  items: ZendeskConstant.departmentDropDown
-                      .map((element) => DropdownMenuItem<BaseModel>(
-                            value: element,
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 12.0),
-                              child: Text(
-                                element.value,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6
-                                    .copyWith(
-                                      textBaseline: TextBaseline.alphabetic,
-                                    ),
+                  focusNode: nameFocusNode),
+              SpacerVerticalSmall(),
+              TextInputWidgetCustom(
+                  context: context,
+                  controller: emailController,
+                  label: CommonConstant.email,
+                  onSubmitted: (String _) {
+                    FocusScope.of(context).requestFocus(phoneNumberFocusNode);
+                  },
+                  textInputType: TextInputType.emailAddress,
+                  focusNode: emailFocusNode),
+              SpacerVerticalSmall(),
+              TextInputWidgetCustom(
+                  context: context,
+                  controller: phoneNumberController,
+                  label: CommonConstant.phoneNumber,
+                  textInputType: TextInputType.phone,
+                  focusNode: phoneNumberFocusNode),
+              SpacerVerticalMedium(),
+              DropdownButtonHideUnderline(
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                              width: selectedDepartment != null ? 2 : 1,
+                              color: selectedDepartment != null
+                                  ? AppColors.primaryColor
+                                  : AppColors.gray))),
+                  child: DropdownButton<BaseModel>(
+                    value: selectedDepartment,
+                    hint: const Text('Select item'),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedDepartment = value;
+                      });
+                    },
+                    items: ZendeskConstant.departmentDropDown
+                        .map((element) => DropdownMenuItem<BaseModel>(
+                              value: element,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 12.0),
+                                child: Text(
+                                  element.value,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6
+                                      .copyWith(
+                                        textBaseline: TextBaseline.alphabetic,
+                                      ),
+                                ),
                               ),
-                            ),
-                          ))
-                      .toList(),
-                  isExpanded: true,
+                            ))
+                        .toList(),
+                    isExpanded: true,
+                  ),
                 ),
               ),
-            ),
-            SpacerVerticalBig(),
-            Container(
-              alignment: Alignment.center,
-              child: RaisedButton(
-                onPressed: () {
-                  if (validate()) {
-                    final args = <String, dynamic>{
-                      'selectedDepartment': selectedDepartment,
-                      CommonConstant.name: nameController.text ?? '',
-                      CommonConstant.phoneNumber:
-                          phoneNumberController.text ?? '',
-                      CommonConstant.email: emailController.text ?? '',
-                    };
-                    Get.toNamed<dynamic>(ChatScreen.route,
-                        arguments: args);
-                  } else {
-                    Get.snackbar(
-                      'Error!', // title
-                      'Mohon Periksa data ', // message
-                      icon: Icon(Icons.error),
-                      backgroundColor: AppColors.red,
-                      shouldIconPulse: true,
-                      barBlur: 20,
-                      isDismissible: true,
-                      duration: const Duration(seconds: 3),
-                    );
-                  }
-                },
-                child: Text(CommonConstant.submit),
-              ),
-            )
-          ],
+              SpacerVerticalBig(),
+              Container(
+                alignment: Alignment.center,
+                child: RaisedButton(
+                  onPressed: () {
+                    if (validate()) {
+                      final args = <String, dynamic>{
+                        'selectedDepartment': selectedDepartment,
+                        CommonConstant.name: nameController.text ?? '',
+                        CommonConstant.phoneNumber:
+                            phoneNumberController.text ?? '',
+                        CommonConstant.email: emailController.text ?? '',
+                      };
+                      Get.toNamed<dynamic>(ChatScreen.route, arguments: args);
+                    } else {
+                      Get.snackbar(
+                        'Error!', // title
+                        'Mohon Periksa data ', // message
+                        icon: Icon(Icons.error),
+                        backgroundColor: AppColors.red,
+                        shouldIconPulse: true,
+                        barBlur: 20,
+                        isDismissible: true,
+                        duration: const Duration(seconds: 3),
+                      );
+                    }
+                  },
+                  child: Text(CommonConstant.submit),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

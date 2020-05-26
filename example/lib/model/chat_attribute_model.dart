@@ -1,5 +1,6 @@
 import 'package:dash_chat/dash_chat.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
+import 'package:zendesk_flutter_plugin_example/constant/view_constant.dart';
 
 class ChatAttribute {
   String id;
@@ -77,6 +78,67 @@ class ChatAttribute {
     }
 
     return result;
+  }
+
+  static List<ChatMessage> convertFromChatLog(
+      List<ChatItem> chatItems, ChatUser currentUser, ChatUser defaultCSUser) {
+    final result = List<ChatMessage>();
+
+    try {
+      if (chatItems == null || chatItems.isEmpty) {
+        throw Exception('Chat Is Empty');
+      }
+
+      for (final item in chatItems) {
+        final message = handleChatMessage(item, currentUser, defaultCSUser);
+        if (message != null) {
+          result.add(message);
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+
+    return result;
+  }
+
+  static ChatMessage handleChatMessage(
+      ChatItem item, ChatUser currentUser, ChatUser defaultCSUser) {
+    ChatUser user =
+        item.displayName == currentUser.name ? currentUser : defaultCSUser;
+
+    final chatMessage = ChatMessage(
+      user: user,
+      text: item.message ?? '',
+      id: item.id,
+      createdAt: item.timestamp,
+    );
+
+    // Check Visitor Join Chat
+    if (item.type == ChatItemType.MEMBER_JOIN) {
+      final tempMsg = '${item.displayName} ${ViewConstant.hasJoin}';
+      chatMessage.text = tempMsg;
+
+      // IF current User connect no need to add to chat
+      // Already have greeting from zendesk
+      if (user.uid == currentUser.uid) {
+        /*
+        chatMessage.user = defaultCSUser;
+        chatMessage.text = '${ViewConstant.welcome} ${user.name}';
+        */
+
+        return null;
+      }
+    }
+
+    // check Send Attachment
+    else if (item.attachment != null && item.attachment.url != null) {
+      chatMessage
+        ..text = ''
+        ..image = item.attachment.url;
+    }
+
+    return chatMessage;
   }
 }
 

@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
 import 'package:zendesk_flutter_plugin_example/constant/common.dart';
+import 'package:zendesk_flutter_plugin_example/constant/view_constant.dart';
 import 'package:zendesk_flutter_plugin_example/constant/zendesk_constant.dart';
 import 'package:zendesk_flutter_plugin_example/model/base.dart';
 import 'package:zendesk_flutter_plugin_example/model/chat_attribute_model.dart';
@@ -26,13 +27,15 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   String name;
   String phoneNumber;
   String email;
-  List<ChatMessage> chatMsg;
+  List<ChatMessage> chatMsg = List<ChatMessage>();
+  ConnectionStatus connectionStatus = ConnectionStatus.UNKNOWN;
 
   ChatUser user;
 
   final ChatUser otherUser = ChatUser(
-    name: "Agent",
-    uid: "25649654",
+    name: "Customer Service",
+    uid: "DEFAULT_CUSTOMER_SERVICE",
+    avatar: "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
   );
 
   final GlobalKey<DashChatState> _chatViewKey = GlobalKey<DashChatState>();
@@ -93,6 +96,10 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   }
 
   void _chatConnectivityUpdated(ConnectionStatus status) {
+    setState(() {
+      connectionStatus = status;
+    });
+
     print('chatConnectivityUpdated: $status');
   }
 
@@ -107,10 +114,9 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
 
   void _chatItemsUpdated(List<ChatItem> chatLog) {
     if (chatLog != null && chatLog.isNotEmpty) {
-      final tmp = ChatAttribute.fromFullListChatItem(chatLog);
-      chatMsg = ChatAttribute.convertFromMessageAttribute(tmp, user, otherUser);
-      print(chatMsg);
-      setState(() {});
+      setState(() {
+        chatMsg = ChatAttribute.convertFromChatLog(chatLog, user, otherUser);
+      });
     }
     print('chatItemsUpdated:');
     chatLog.forEach((e) => debugPrint(e.toString()));
@@ -132,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
       body: Container(
           color: AppColors.offWhite,
           child: Container(
-              child: checkMessage() ? chatWidget() : loadingWidget())),
+              child: checkConnection() ? chatWidget() : loadingWidget())),
     );
   }
 
@@ -156,8 +162,8 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
       textInputAction: TextInputAction.send,
       user: user,
       inputDecoration:
-          InputDecoration.collapsed(hintText: "Add message here..."),
-      dateFormat: DateFormat('yyyy-MMM-dd'),
+          InputDecoration.collapsed(hintText: ViewConstant.chatHintText),
+      dateFormat: DateFormat('dd-MMM-yyyy'),
       timeFormat: DateFormat('HH:mm'),
       showUserAvatar: false,
       showAvatarForEveryMessage: false,
@@ -179,7 +185,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
       shouldShowLoadEarlier: false,
       showTraillingBeforeSend: true,
       onLoadEarlier: () {
-        print("laoding...");
+        print(ViewConstant.pleaseWait);
       },
       trailing: <Widget>[
         IconButton(
@@ -192,8 +198,9 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
     );
   }
 
-  bool checkMessage() {
-    if (chatMsg != null && chatMsg.isNotEmpty) {
+  bool checkConnection() {
+    if (connectionStatus != null &&
+        connectionStatus == ConnectionStatus.CONNECTED) {
       return true;
     } else {
       return false;
@@ -210,7 +217,6 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
     user = ChatUser(
       name: name,
       uid: phoneNumber,
-      avatar: "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
     );
   }
 
@@ -221,11 +227,13 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
         department: selectedDepartment.value ?? ZendeskConstant.noDepartment);
   }
 
-  Future<void> sendGoodRating({String message = 'Good service'}) async {
+  Future<void> sendGoodRating(
+      {String message = ViewConstant.goodService}) async {
     await _chatApi.sendChatRating(ChatRating.GOOD, comment: message);
   }
 
-  Future<void> sendBadService({String message = 'Bad service'}) async {
+  Future<void> sendBadService(
+      {String message = ViewConstant.badService}) async {
     await _chatApi.sendChatRating(ChatRating.BAD, comment: message);
   }
 
