@@ -110,6 +110,10 @@ class AbstractModel {
 
   AbstractModel(this._id, this._attributes, [@visibleForTesting this._os]);
 
+  Map<String, dynamic> get attributes {
+    return _attributes;
+  }
+
   String get id {
     return _id;
   }

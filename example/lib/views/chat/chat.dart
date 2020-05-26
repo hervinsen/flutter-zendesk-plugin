@@ -1,23 +1,40 @@
 import 'dart:async';
-import 'package:image_picker/image_picker.dart';
+
+import 'package:after_layout/after_layout.dart';
 import 'package:dash_chat/dash_chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
-import 'package:zendeskchat/constant/zendesk_constant.dart';
-import 'package:zendeskchat/model/base.dart';
-import 'package:zendeskchat/util/app_colors.dart';
+import 'package:zendesk_flutter_plugin_example/constant/common.dart';
+import 'package:zendesk_flutter_plugin_example/constant/zendesk_constant.dart';
+import 'package:zendesk_flutter_plugin_example/model/base.dart';
+import 'package:zendesk_flutter_plugin_example/model/chat_attribute_model.dart';
+import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
 
 class ChatScreen extends StatefulWidget {
   static const String route = 'chat';
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   BaseModel selectedDepartment;
+  String name;
+  String phoneNumber;
+  String email;
+  List<ChatMessage> chatMsg;
+
+  ChatUser user;
+
+  final ChatUser otherUser = ChatUser(
+    name: "Agent",
+    uid: "25649654",
+  );
+
   final GlobalKey<DashChatState> _chatViewKey = GlobalKey<DashChatState>();
   String _platformVersion = 'Unknown';
   String _chatStatus = 'Uninitialized';
@@ -89,6 +106,12 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   void _chatItemsUpdated(List<ChatItem> chatLog) {
+    if (chatLog != null && chatLog.isNotEmpty) {
+      final tmp = ChatAttribute.fromFullListChatItem(chatLog);
+      chatMsg = ChatAttribute.convertFromMessageAttribute(tmp, user, otherUser);
+      print(chatMsg);
+      setState(() {});
+    }
     print('chatItemsUpdated:');
     chatLog.forEach((e) => debugPrint(e.toString()));
   }
@@ -96,9 +119,8 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-    final arguments = Get.arguments;
-    selectedDepartment = arguments;
+
+    handleIncomingArgument();
   }
 
   @override
@@ -108,8 +130,123 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('Department ${selectedDepartment.value ?? '-'}'),
       ),
       body: Container(
-        color: AppColors.offWhite,
+          color: AppColors.offWhite,
+          child: Container(
+              child: checkMessage() ? chatWidget() : loadingWidget())),
+    );
+  }
+
+  Widget loadingWidget() {
+    return Center(
+      child: CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(
+          Theme.of(context).primaryColor,
+        ),
       ),
     );
+  }
+
+  Widget chatWidget() {
+    return DashChat(
+      messages: chatMsg,
+      onSend: (ChatMessage msg) {
+        sendMessage(msg.text);
+      },
+      inverted: false,
+      textInputAction: TextInputAction.send,
+      user: user,
+      inputDecoration:
+          InputDecoration.collapsed(hintText: "Add message here..."),
+      dateFormat: DateFormat('yyyy-MMM-dd'),
+      timeFormat: DateFormat('HH:mm'),
+      showUserAvatar: false,
+      showAvatarForEveryMessage: false,
+      scrollToBottom: false,
+      onPressAvatar: (ChatUser user) {
+        print("OnPressAvatar: ${user.name}");
+      },
+      onLongPressAvatar: (ChatUser user) {
+        print("OnLongPressAvatar: ${user.name}");
+      },
+      inputMaxLines: 5,
+      messageContainerPadding: EdgeInsets.only(left: 5.0, right: 5.0),
+      alwaysShowSend: true,
+      inputTextStyle: TextStyle(fontSize: 16.0),
+      inputContainerStyle: BoxDecoration(
+        border: Border.all(width: 0.0),
+        color: Colors.white,
+      ),
+      shouldShowLoadEarlier: false,
+      showTraillingBeforeSend: true,
+      onLoadEarlier: () {
+        print("laoding...");
+      },
+      trailing: <Widget>[
+        IconButton(
+          icon: Icon(Icons.photo),
+          onPressed: () async {
+            await sendAttachment();
+          },
+        )
+      ],
+    );
+  }
+
+  bool checkMessage() {
+    if (chatMsg != null && chatMsg.isNotEmpty) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void handleIncomingArgument() {
+    final Map<String, dynamic> arguments = Get.arguments;
+    selectedDepartment = arguments['selectedDepartment'];
+    name = arguments[CommonConstant.name];
+    phoneNumber = arguments[CommonConstant.phoneNumber];
+    email = arguments[CommonConstant.email];
+
+    user = ChatUser(
+      name: name,
+      uid: phoneNumber,
+      avatar: "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
+    );
+  }
+
+  Future<void> startChat() async {
+    await _chatApi.startChat(name,
+        visitorEmail: email,
+        visitorPhone: phoneNumber,
+        department: selectedDepartment.value ?? ZendeskConstant.noDepartment);
+  }
+
+  Future<void> sendGoodRating({String message = 'Good service'}) async {
+    await _chatApi.sendChatRating(ChatRating.GOOD, comment: message);
+  }
+
+  Future<void> sendBadService({String message = 'Bad service'}) async {
+    await _chatApi.sendChatRating(ChatRating.BAD, comment: message);
+  }
+
+  Future<void> sendMessage(String message) async {
+    await _chatApi.sendMessage(message);
+  }
+
+  Future<void> sendAttachment() async {
+    final file = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if (file != null) {
+      try {
+        await _chatApi.sendAttachment(file.path);
+      } on PlatformException catch (e) {
+        debugPrint('An error occurred: ${e.code}');
+      }
+    }
+  }
+
+  @override
+  Future<void> afterFirstLayout(BuildContext context) async {
+    await initPlatformState();
+    await startChat();
   }
 }

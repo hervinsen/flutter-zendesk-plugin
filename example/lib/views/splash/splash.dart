@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zendeskchat/util/app_colors.dart';
-import 'package:zendeskchat/util/debouncer.dart';
-import 'package:zendeskchat/views/dashboard/dashboard.dart';
+import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
+import 'package:zendesk_flutter_plugin_example/util/debouncer.dart';
+import 'package:zendesk_flutter_plugin_example/views/dashboard/dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   static const route = '/';

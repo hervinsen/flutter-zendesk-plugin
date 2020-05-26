@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:zendeskchat/views/chat/chat.dart';
-import 'package:zendeskchat/views/dashboard/dashboard.dart';
-import 'package:zendeskchat/views/splash/splash.dart';
+import 'package:zendesk_flutter_plugin_example/views/chat/chat.dart';
+import 'package:zendesk_flutter_plugin_example/views/dashboard/dashboard.dart';
+import 'package:zendesk_flutter_plugin_example/views/splash/splash.dart';
 
 class AppRoutes {
   Route<dynamic> onGenerateRoutes(RouteSettings routeSettings) {

@@ -1,4 +1,4 @@
-import 'package:zendeskchat/model/base.dart';
+import 'package:zendesk_flutter_plugin_example/model/base.dart';
 
 class ZendeskConstant {
   static const String accountKey = 'C1CTbSEeLEsbB4XXek9yyjEgCuEOgz4v';
@@ -6,6 +6,8 @@ class ZendeskConstant {
   static const String appId =
       'bf715b4c0c3cfd735f086a41d66f8bee18820b84432288d3';
   static const String clientId = 'mobile_sdk_client_0066cd535527780fde07';
+
+  static const String noDepartment = 'No Department';
 
   static final _liveChat = BaseModel(
       code: 'LIVECHAT-INT-PREF',

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zendeskchat/constant/common.dart';
-import 'package:zendeskchat/constant/zendesk_constant.dart';
-import 'package:zendeskchat/model/base.dart';
-import 'package:zendeskchat/util/app_colors.dart';
-import 'package:zendeskchat/views/chat/chat.dart';
-import 'package:zendeskchat/widget/spacer.dart';
-import 'package:zendeskchat/widget/text_input_widget.dart';
+import 'package:zendesk_flutter_plugin_example/constant/common.dart';
+import 'package:zendesk_flutter_plugin_example/constant/zendesk_constant.dart';
+import 'package:zendesk_flutter_plugin_example/model/base.dart';
+import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
+import 'package:zendesk_flutter_plugin_example/views/chat/chat.dart';
+import 'package:zendesk_flutter_plugin_example/widget/spacer.dart';
+import 'package:zendesk_flutter_plugin_example/widget/text_input_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
   static const route = '/dashboard';
@@ -126,8 +126,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
               child: RaisedButton(
                 onPressed: () {
                   if (validate()) {
+                    final args = <String, dynamic>{
+                      'selectedDepartment': selectedDepartment,
+                      CommonConstant.name: nameController.text ?? '',
+                      CommonConstant.phoneNumber:
+                          phoneNumberController.text ?? '',
+                      CommonConstant.email: emailController.text ?? '',
+                    };
                     Get.toNamed<dynamic>(ChatScreen.route,
-                        arguments: selectedDepartment);
+                        arguments: args);
                   } else {
                     Get.snackbar(
                       'Error!', // title

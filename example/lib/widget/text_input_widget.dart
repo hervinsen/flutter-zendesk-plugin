@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:zendeskchat/util/app_colors.dart';
+import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
 
 Widget TextInputWidgetCustom({
   @required BuildContext context,
