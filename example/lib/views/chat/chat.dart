@@ -12,8 +12,8 @@ import 'package:zendesk_flutter_plugin_example/constant/common.dart';
 import 'package:zendesk_flutter_plugin_example/constant/view_constant.dart';
 import 'package:zendesk_flutter_plugin_example/constant/zendesk_constant.dart';
 import 'package:zendesk_flutter_plugin_example/model/base.dart';
-import 'package:zendesk_flutter_plugin_example/model/chat_attribute_model.dart';
 import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ChatScreen extends StatefulWidget {
   static const String route = 'chat';
@@ -30,9 +30,11 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   List<ChatMessage> chatMsg = List<ChatMessage>();
   ConnectionStatus connectionStatus = ConnectionStatus.UNKNOWN;
 
+  List<ChatUser> anotherUsers = List<ChatUser>();
+
   ChatUser user;
 
-  final ChatUser otherUser = ChatUser(
+  final ChatUser defaultCSUser = ChatUser(
     name: "Customer Service",
     uid: "DEFAULT_CUSTOMER_SERVICE",
     avatar: "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
@@ -108,6 +110,9 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   }
 
   void _chatAgentsUpdated(List<Agent> agents) {
+    setState(() {
+      anotherUsers = convertAgentZendeskToFirebaseUserModel(agents);
+    });
     print('chatAgentsUpdated:');
     agents.forEach((e) => debugPrint(e.toString()));
   }
@@ -115,7 +120,8 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   void _chatItemsUpdated(List<ChatItem> chatLog) {
     if (chatLog != null && chatLog.isNotEmpty) {
       setState(() {
-        chatMsg = ChatAttribute.convertFromChatLog(chatLog, user, otherUser);
+        chatMsg = convertFromChatLog(chatLog, user, defaultCSUser,
+            anotherUser: anotherUsers);
       });
     }
     print('chatItemsUpdated:');
@@ -154,6 +160,9 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
 
   Widget chatWidget() {
     return DashChat(
+      avatarBuilder: (chatUser) {
+        return avatarBuilder(chatUser);
+      },
       messages: chatMsg,
       onSend: (ChatMessage msg) {
         sendMessage(msg.text);
@@ -163,7 +172,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
       user: user,
       inputDecoration:
           InputDecoration.collapsed(hintText: ViewConstant.chatHintText),
-      dateFormat: DateFormat('dd-MMM-yyyy'),
+      dateFormat: DateFormat('dd MMM yyyy'),
       timeFormat: DateFormat('HH:mm'),
       showUserAvatar: false,
       showAvatarForEveryMessage: false,
@@ -198,6 +207,56 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
     );
   }
 
+  Widget avatarBuilder(ChatUser _user) {
+    final constraints = BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width);
+
+    return Column(
+      children: <Widget>[
+        Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            ClipOval(
+              child: Container(
+                height: constraints.maxWidth * 0.08,
+                width: constraints.maxWidth * 0.08,
+                color: Colors.grey,
+                child: Center(
+                    child: Text(_user.name == null || _user.name.isEmpty
+                        ? ''
+                        : _user.name[0])),
+              ),
+            ),
+            _user.avatar != null && _user.avatar.length != 0
+                ? Center(
+                    child: ClipOval(
+                      child: FadeInImage.memoryNetwork(
+                        image: _user.avatar,
+                        placeholder: kTransparentImage,
+                        fit: BoxFit.cover,
+                        height: constraints.maxWidth * 0.08,
+                        width: constraints.maxWidth * 0.08,
+                      ),
+                    ),
+                  )
+                : Container()
+          ],
+        ),
+        SizedBox(
+          height: constraints.maxWidth * 0.008,
+        ),
+        Container(
+          width: constraints.maxWidth * 0.1,
+          child: Text(
+            _user.name,
+            style: Theme.of(context).textTheme.overline,
+          ),
+        )
+      ],
+    );
+  }
+
   bool checkConnection() {
     if (connectionStatus != null &&
         connectionStatus == ConnectionStatus.CONNECTED) {
@@ -216,7 +275,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
 
     user = ChatUser(
       name: name,
-      uid: phoneNumber,
+      uid: '${CommonConstant.visitor}:$phoneNumber',
     );
   }
 
@@ -256,5 +315,125 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   Future<void> afterFirstLayout(BuildContext context) async {
     await initPlatformState();
     await startChat();
+  }
+
+  static List<ChatMessage> convertFromChatLog(
+      List<ChatItem> chatItems, ChatUser currentUser, ChatUser defaultCSUser,
+      {@required List<ChatUser> anotherUser}) {
+    final result = List<ChatMessage>();
+
+    try {
+      if (chatItems == null || chatItems.isEmpty) {
+        throw Exception('Chat Is Empty');
+      }
+
+      for (final item in chatItems) {
+        final message = handleChatMessage(item, currentUser, defaultCSUser,
+            anotherUser: anotherUser);
+        if (message != null) {
+          result.add(message);
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+
+    return result;
+  }
+
+  static ChatMessage handleChatMessage(
+      ChatItem item, ChatUser currentUser, ChatUser defaultCSUser,
+      {@required List<ChatUser> anotherUser}) {
+    ChatUser user =
+        item.displayName == currentUser.name ? currentUser : defaultCSUser;
+
+    // Check if another User is Coming to Chat
+    if (item.nick != null &&
+        [currentUser.uid, defaultCSUser.uid].contains(item.nick) == false) {
+      try {
+        final filter =
+            anotherUser.firstWhere((element) => element.uid == item.nick);
+        if (filter != null) {
+          user = filter;
+        }
+      } catch (e) {
+//        print(e);
+      }
+    }
+
+    final chatMessage = ChatMessage(
+      user: user,
+      text: item.message ?? '',
+      id: item.id,
+      createdAt: item.timestamp,
+    );
+
+    // Check Visitor Join Chat
+    if (item.type == ChatItemType.MEMBER_JOIN) {
+      final tempMsg = '${item.displayName} ${ViewConstant.hasJoin}';
+      chatMessage.text = tempMsg;
+
+      // IF current User connect no need to add to chat
+      // Already have greeting from zendesk
+      if (user.uid == currentUser.uid) {
+        /*
+        chatMessage.user = defaultCSUser;
+        chatMessage.text = '${ViewConstant.welcome} ${user.name}';
+        */
+
+        return null;
+      }
+    } else if (item.type == ChatItemType.MEMBER_LEAVE) {
+      chatMessage.text = '${item.displayName} ${ViewConstant.hasLeft}';
+
+      if (user.uid == currentUser.uid) {
+        chatMessage.user = defaultCSUser;
+      }
+    }
+    // IF ZENDESK SCHEDULE IS CLOSE HOUR
+    else if (item.attribute('type') == 'ACCOUNT_OFFLINE') {
+      chatMessage
+        ..user = defaultCSUser
+        ..text = ViewConstant.alertCloseHour;
+    }
+
+    // check Send Attachment
+    else if (item.attachment != null && item.attachment.url != null) {
+      chatMessage
+        ..text = ''
+        ..image = item.attachment.url;
+    }
+
+    return chatMessage;
+  }
+
+  List<ChatUser> convertAgentZendeskToFirebaseUserModel(List<Agent> agents) {
+    final users = List<ChatUser>();
+    if (agents == null || agents.isEmpty) {
+      return users;
+    }
+
+    for (final agent in agents) {
+      final user = ChatUser(
+        name: agent.displayName,
+        uid: agent.id,
+      );
+      if (agent.avatarUri != null) {
+        user.avatar = agent.avatarUri;
+      }
+
+      //check agent is typing
+      if (agent.isTyping != null) {
+        user.customProperties = Map<String, dynamic>();
+        if (agent.isTyping) {
+          user.customProperties[CommonConstant.isTyping] = true;
+        } else {
+          user.customProperties[CommonConstant.isTyping] = false;
+        }
+      }
+
+      users.add(user);
+    }
+    return users;
   }
 }
