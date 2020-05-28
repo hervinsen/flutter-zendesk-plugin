@@ -8,12 +8,9 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:zendesk_flutter_plugin/chat_models.dart';
 import 'package:zendesk_flutter_plugin/zendesk_flutter_plugin.dart';
-import 'package:zendesk_flutter_plugin_example/constant/common.dart';
-import 'package:zendesk_flutter_plugin_example/constant/view_constant.dart';
-import 'package:zendesk_flutter_plugin_example/constant/zendesk_constant.dart';
-import 'package:zendesk_flutter_plugin_example/model/base.dart';
 import 'package:zendesk_flutter_plugin_example/util/app_colors.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:zendesk_flutter_plugin_example/views/chat/constant.dart';
 
 class ChatScreen extends StatefulWidget {
   static const String route = 'chat';
@@ -23,7 +20,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
-  BaseModel selectedDepartment;
+  String selectedDepartment;
   String name;
   String phoneNumber;
   String email;
@@ -139,7 +136,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Department ${selectedDepartment.value ?? '-'}'),
+        title: Text('Department ${selectedDepartment ?? '-'}'),
       ),
       body: Container(
           color: AppColors.offWhite,
@@ -283,7 +280,7 @@ class _ChatScreenState extends State<ChatScreen> with AfterLayoutMixin {
     await _chatApi.startChat(name,
         visitorEmail: email,
         visitorPhone: phoneNumber,
-        department: selectedDepartment.value ?? ZendeskConstant.noDepartment);
+        department: selectedDepartment ?? ZendeskConstant.noDepartment);
   }
 
   Future<void> sendGoodRating(
