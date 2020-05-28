@@ -24,7 +24,6 @@ apply plugin: 'com.android.library'
 
 dependencies {
     implementation 'com.zopim.android:sdk:1.4.5'
-    implementation files('libs/flutter.jar')
 }
 
 android {
